@@ -1,15 +1,15 @@
-title:  Welcome to ZHANG FANGLI
-tagline:
+title: ZHANG Fangli
+tagline: ☜ 张方利
 author:
   name: "funtry"
   twitter:  funtry@qq.com
 
 menu:
-- {name: 'ZHANG', url: 'about.html'}
-- {name: 'CV', url: 'cv.html'}
+- {name: 'About', url: 'about.html'}
+- {name: 'Vitae', url: 'cv.html'}
 - {name: 'Publication', url: 'publication.html'}
-- {name: 'Project', url: 'project.html'}
-- {name: 'Contact Fangli', url: 'contact.html'}
+- {name: 'Blog', url: 'blog.html'}
+- {name: 'Contact', url: 'contact.html'}
 
 # social:
 # - {icon: 'github', link: 'https://www.github.com/lenpaul'}
