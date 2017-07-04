@@ -4,7 +4,7 @@ paginate:            5
 disqus:              #"your-disqus"
 
 # Build settings
-markdown:            kramdown
+# markdown:            kramdown
 highlighter:         rouge
 permalink:           none
 gems:                [jekyll-paginate]
