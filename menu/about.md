@@ -7,6 +7,6 @@ title: Research Interests
 
 
 # Current focus
-+ Temporal and spatial data mining with RS, GIS, DTA and statistical approaches
-+ Geo-computation and process-based time-space dynamic modeling on the earth
-+ Physically-based distributed hydrological responses to rainfall in watershed
++ Data mining with RS, GIS, DTA and statistical approaches
++ Geo-computation and simulation of earth processes
++ Physically-based watershed hydrological responses

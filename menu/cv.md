@@ -3,11 +3,18 @@ layout: page
 title: Curriculum Vitae
 ---
 
-### Current situation
-+ Ph.D. Candidature
-  + Department of Geography, Hong Kong Baptist University
+<img src="/assets/img/funtry_2013.jpg" align="right" width="135" />
+## Current
 
-### Background
++ Ph.D. Candidature
+  + Department of Geography
+  + Hong Kong Baptist University
+
++ Contact Information
+  + Email: [flzhang.szu@gmail.com](mialto:flzhang.szu@gmail.com)
+  + AAB 1236, 15 Baptist University Road, Hong Kong
+
+## Background
 + 2014-2017 Ph.D. (expect to receive degree by December 2017)
   + Remote Sensing and GIS Application
   + Department of Geography, Hong Kong Baptist University
@@ -18,3 +25,13 @@ title: Curriculum Vitae
 + 2007-2011 Bachelor of Science (B.S.)
   + Geographical Information System (GIS)
   + School of Resource and Environmental Science, Wuhan University
+
+## Technical Skills
+
+| Programming:  | C/C++, Java, MATLAB, Python|
+|---:|:----|
+| | Visual Studio, GCC, Eclipse, R|
+| __GIS & RS tool:__| __ArcGIS, ENVI, eCognition__|
+|  | ArcGIS API, MPICH, GDAL, Web Map Service, ArcSWAT      |
+| __Expertise:__    | __Cartography, data visualization, image and terrain analysis__|
+|    | watershed hydrology, fluvial geomorphology, high-performance computing |

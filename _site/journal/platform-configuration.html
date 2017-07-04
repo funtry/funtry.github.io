@@ -76,7 +76,429 @@
   <img src="/assets/img/input-output.png">
 
 
+<h2 class="no_toc" id="particle-set-a-parallel-tool-for-runoff-routing">Particle-set: a parallel tool for runoff routing</h2>
+<!-- by Fangli ZHANG, Qiming ZHOU, Qingquan LI, Guofeng WU, and Jun LIU -->
+<p>by Fangli ZHANG, Qiming ZHOU, and Jun LIU</p>
+
+<p><strong>More information on:</strong>
+<a href="http://funtry.github.io">http://funtry.github.io</a></p>
+
+<p><em>Latest revision:</em> (2017-07-01).</p>
+
 <p>The transportation platform is a MPI parallel computing prototype for real-time simulation of surface flow transportation.</p>
+
+<h3 class="no_toc" id="table-of-contents">Table of Contents</h3>
+
+<ol id="markdown-toc">
+  <li><a href="#overview" id="markdown-toc-overview">Overview</a></li>
+  <li><a href="#system-requirements" id="markdown-toc-system-requirements">System Requirements</a></li>
+  <li><a href="#environment-deployment" id="markdown-toc-environment-deployment">Environment Deployment</a></li>
+  <li><a href="#experimental-plan" id="markdown-toc-experimental-plan">Experimental plan</a></li>
+  <li><a href="#main-contributions" id="markdown-toc-main-contributions">Main contributions</a></li>
+  <li><a href="#ubuntu-commands" id="markdown-toc-ubuntu-commands">Ubuntu commands</a></li>
+  <li><a href="#acknowledgements" id="markdown-toc-acknowledgements">Acknowledgements</a></li>
+</ol>
+
+<h3 id="overview">Overview</h3>
+<p>This tool consists of several modules:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Module  </th>
+      <th style="text-align: left">Function</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><strong><em>drainage</em></strong>  </td>
+      <td style="text-align: left">constructing upstream-downstream flow path networks</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong><em>rainfall</em></strong> </td>
+      <td style="text-align: left">loading spatial and temporal rainfall inputs</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong><em>runoff</em></strong> </td>
+      <td style="text-align: left">generating and tracing runoff particles</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong><em>accumulation</em></strong> </td>
+      <td style="text-align: left">exporting flow maps and time costs</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="system-requirements">System Requirements</h3>
+<p>This experimental environment is deployed on:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: right">Requirement  </th>
+      <th style="text-align: left">To support</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: right"><strong><em>HPC environment</em></strong>  </td>
+      <td style="text-align: left">environment configuration (e.g., <a href="https://aws.amazon.com/ec2/">Amazon EC2</a>)</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong><em>cluster instance</em></strong>  </td>
+      <td style="text-align: left">high-performance computing (e.g., <a href="https://aws.amazon.com/ec2/instance-types/">m4.16xlarge</a>)</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong><em>operating system</em></strong>  </td>
+      <td style="text-align: left">parallel computing (e.g., <a href="http://releases.ubuntu.com/14.04/">Ubuntu Server 14.04 LTS</a>)</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong><em>C-language compiler</em></strong>  </td>
+      <td style="text-align: left">program execution (e.g., <a href="https://gcc.gnu.org">GCC 7.1</a>)</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong><em>MPI implementation</em></strong>  </td>
+      <td style="text-align: left">process communication (e.g., <a href="https://www.mpich.org/downloads/">mpich-3.2</a>)</td>
+    </tr>
+    <tr>
+      <td style="text-align: right"><strong><em>process manager</em></strong>  </td>
+      <td style="text-align: left">process management (e.g., <a href="https://www.mpich.org/downloads/">hydra-3.2</a>)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="environment-deployment">Environment Deployment</h3>
+
+<p>The deployment consists of following five steps:</p>
+<ol>
+  <li>Ubuntu Server OS installation
+    <ul>
+      <li>
+        <p>machine instance on <a href="https://aws.amazon.com">Amazon web service</a>
+<img src="/assets/img/aws/aws_01.png" alt="" /></p>
+      </li>
+      <li>
+        <p>multi-processor instance (hourly fee)
+<img src="/assets/img/aws/aws_02.png" alt="" /></p>
+      </li>
+      <li>
+        <p>RSA private key for SSH login (automatic generation)
+<img src="/assets/img/aws/aws_03.png" alt="" /></p>
+      </li>
+      <li>SSH login in with private key and target ip address
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>ssh -i <span class="s2">"key.pem"</span> ubuntu@54.202.97.199 <span class="o">(</span>ip-address<span class="o">)</span>
+</code></pre>
+        </div>
+        <p><img src="/assets/img/aws/aws_04.png" alt="" /></p>
+      </li>
+      <li>check the number of processors (64)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>grep <span class="s1">'processor'</span> /proc/cpuinfo | sort -u | wc -l
+</code></pre>
+        </div>
+        <p><img src="/assets/img/aws/aws_05.png" alt="" /></p>
+      </li>
+    </ul>
+  </li>
+  <li>GCC compiling environment configuration
+    <ul>
+      <li>get source list of applications updated
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
+</code></pre>
+        </div>
+      </li>
+      <li>install gcc complier
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gcc
+</code></pre>
+        </div>
+      </li>
+      <li>install make complier
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get install make
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>MPICH framework configuration
+    <ul>
+      <li>send source codes to AWS instance
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>scp -i <span class="s2">"key.pem"</span> mpich-3.2.tar.gz ubuntu@54.202.97.199:/home/ubuntu
+</code></pre>
+        </div>
+      </li>
+      <li>create installation path on AWS instance
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir ~/mpich
+</code></pre>
+        </div>
+      </li>
+      <li>authorize read and write permission
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>chmod -R 777 ~/mpich
+</code></pre>
+        </div>
+      </li>
+      <li>unzip installation files
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>tar xfz mpich-3.2.tar.gz
+</code></pre>
+        </div>
+      </li>
+      <li>get into the source installation files
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/mpich-3.2
+</code></pre>
+        </div>
+      </li>
+      <li>compiling configuration (only need C language)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>./configure -prefix<span class="o">=</span>/home/ubuntu/mpich -disable-fortran -disable-cxx
+</code></pre>
+        </div>
+      </li>
+      <li>compile (after “configuration” completed)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make
+</code></pre>
+        </div>
+      </li>
+      <li>install (after “make” completed)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make install
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>HYDRA process manager configuration
+    <ul>
+      <li>send source codes to AWS instance
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>scp -i <span class="s2">"key.pem"</span> hydra-3.2.tar.gz ubuntu@54.202.97.199:/home/ubuntu
+</code></pre>
+        </div>
+      </li>
+      <li>create installation path on AWS instance
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir ~/hydra
+</code></pre>
+        </div>
+      </li>
+      <li>authorize read and write permission
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>chmod -R 777 ~/hydra
+</code></pre>
+        </div>
+      </li>
+      <li>unzip installation files
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>tar xfz hydra-3.2.tar.gz
+</code></pre>
+        </div>
+      </li>
+      <li>get into the source installation files
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/hydra-3.2
+</code></pre>
+        </div>
+      </li>
+      <li>compiling configuration (only need C language)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>./configure -prefix<span class="o">=</span>/home/ubuntu/hydra
+</code></pre>
+        </div>
+      </li>
+      <li>compile (after “configuration” completed)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make
+</code></pre>
+        </div>
+      </li>
+      <li>install (after “make” completed)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make install
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>parallel environment setups
+    <ul>
+      <li>configure environment variables
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>vim ~/.bashrc
+</code></pre>
+        </div>
+      </li>
+      <li>add variables
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c">#bin</span>
+  <span class="nv">MPI_HOME</span><span class="o">=</span>/home/ubuntu/mpich
+  <span class="nv">HYDRA_HOST_FILE</span><span class="o">=</span>/home/ubuntu/hydra/hosts
+  <span class="nv">PATH</span><span class="o">=</span><span class="nv">$MPI_HOME</span>/bin:<span class="nv">$PATH</span>
+
+  <span class="nb">export </span>MPI_HOME
+  <span class="nb">export </span>HYDRA_HOST_FILE
+  <span class="nb">export </span>PATH
+
+  <span class="c">#GCC include</span>
+  <span class="nv">C_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$C_INCLUDE_PATH</span>:<span class="nv">$MPI_HOME</span>/include
+  <span class="nb">export </span>C_INCLUDE_PATH
+</code></pre>
+        </div>
+      </li>
+      <li>configure process manager
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>vim ~/hydra/hosts
+</code></pre>
+        </div>
+      </li>
+      <li>set number of processors in cluster
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># host ID: number of processors</span>
+ip-54-202-97-199: 64
+            ... : ...
+ip-54-202-97-191: 64
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+</ol>
+
+<h3 id="experimental-plan">Experimental plan</h3>
+<ol>
+  <li>clone particle-set project
+    <ul>
+      <li>create workspace
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># on AWS EC2 machine</span>
+mkdir ~/workspace/amazon
+chmod 777 ~/workspace/amazon
+</code></pre>
+        </div>
+      </li>
+      <li>clone <a href="https://github.com">source project from GitHub</a>
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c">#content of source project</span>
++- particle-set                   <span class="c"># root path</span>
+      /----- README.md            <span class="c"># configuration guide</span>
+      /----- particle.c           <span class="c"># main program</span>
+      +----- input                <span class="c"># input file path</span>
+              /----- pathnode.in  <span class="c"># flow path nodes</span>
+              /----- pathline.in  <span class="c"># flow path segments</span>
+              /----- rainfall.in  <span class="c"># flow production</span>
+      +----- output               <span class="c"># output file path</span>
+              /----- flowmap.out  <span class="c"># dynamic flow maps</span>
+              /----- timecost.out <span class="c"># time costs</span>
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>setup model parameters (e.g., flow velocity, particle density)
+    <ul>
+      <li>pre-define model parameters
+        <div class="language-c highlighter-rouge"><pre class="highlight"><code>     <span class="c1">// head files and macro definition
+</span>     <span class="cp">#include &lt;stdio.h&gt;
+</span>     <span class="cp">#include &lt;stdlib.h&gt;
+</span>     <span class="cp">#include &lt;string.h&gt;
+</span>     <span class="cp">#include &lt;math.h&gt;
+</span>     <span class="cp">#include &lt;time.h&gt;
+</span>     <span class="cp">#include &lt;mpi.h&gt;
+</span>
+     <span class="cp">#define NSIZE 50000     // path node limit
+</span>     <span class="cp">#define LSIZE 50000     // path line limit
+</span>     <span class="cp">#define PSIZE 9999999   // runoff particle limit
+</span>     <span class="cp">#define MCELL 200       // flow map scale
+</span>
+     <span class="cp">#define MEANV 0.034     // average watershed velocity
+</span>     <span class="cp">#define DENSITY 30      // runoff particle density
+</span></code></pre>
+        </div>
+      </li>
+      <li>flow path node struct
+        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+     <span class="kt">int</span> <span class="n">nPNID</span><span class="o">;</span>    <span class="c1">// unique ID number</span>
+     <span class="kt">double</span> <span class="n">fX</span><span class="o">;</span>    <span class="c1">// X coordinate</span>
+     <span class="kt">double</span> <span class="n">fY</span><span class="o">;</span>    <span class="c1">// Y coordinate  </span>
+     <span class="kt">double</span> <span class="n">fZ</span><span class="o">;</span>    <span class="c1">// Z coordinate</span>
+
+     <span class="kt">double</span> <span class="n">fin</span><span class="o">;</span>   <span class="c1">// in-degrees</span>
+     <span class="kt">double</span> <span class="n">fout</span><span class="o">;</span>  <span class="c1">// out-degrees</span>
+
+     <span class="kt">int</span> <span class="n">ntype</span><span class="o">;</span>    <span class="c1">// if a starting node or not</span>
+     <span class="kt">int</span> <span class="n">nPPRID</span><span class="o">;</span>   <span class="c1">// precipitation point</span>
+
+     <span class="kt">int</span> <span class="n">nPLID_2</span><span class="o">;</span>  <span class="c1">// next path segment</span>
+     <span class="kt">int</span> <span class="n">nPNID_2</span><span class="o">;</span>  <span class="c1">// next path node</span>
+<span class="o">}</span><span class="n">PathNode</span><span class="o">;</span>         <span class="c1">// struct of flow path node</span>
+</code></pre>
+        </div>
+      </li>
+      <li>flow path line struct
+        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+     <span class="kt">int</span> <span class="n">nPLID</span><span class="o">;</span>          <span class="c1">// unique ID number</span>
+
+     <span class="kt">int</span> <span class="n">nPNID_1</span><span class="o">;</span>        <span class="c1">// from node</span>
+     <span class="kt">int</span> <span class="n">nPNID_2</span><span class="o">;</span>        <span class="c1">// to node</span>
+     <span class="kt">int</span> <span class="n">nPLID_2</span><span class="o">;</span>        <span class="c1">// next flow path segment</span>
+
+     <span class="kt">int</span> <span class="n">ntype</span><span class="o">;</span>          <span class="c1">// if from a source node</span>
+
+     <span class="kt">double</span> <span class="n">fLength</span><span class="o">;</span>     <span class="c1">// path segment length            double fSlope;      // water surface slope</span>
+     <span class="kt">double</span> <span class="n">fVelocity</span><span class="o">;</span>   <span class="c1">// constant flow velocity</span>
+     <span class="kt">double</span> <span class="n">fTime</span><span class="o">;</span>       <span class="c1">// constant flow time</span>
+<span class="o">}</span><span class="n">PathLine</span><span class="o">;</span>               <span class="c1">// struct of flow path segment</span>
+</code></pre>
+        </div>
+      </li>
+      <li>flow path network struct
+        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+     <span class="n">PathNode</span> <span class="o">*</span><span class="n">pNode_List</span><span class="o">;</span>   <span class="c1">// path node list</span>
+     <span class="n">PathLine</span> <span class="o">*</span><span class="n">pLine_List</span><span class="o">;</span>   <span class="c1">// path line list</span>
+
+     <span class="kt">int</span> <span class="o">*</span><span class="n">pNid_List</span><span class="o">;</span>         <span class="c1">// node id list</span>
+     <span class="kt">int</span> <span class="o">*</span><span class="n">pSNid_List</span><span class="o">;</span>        <span class="c1">// source node id list</span>
+     <span class="kt">int</span> <span class="o">*</span><span class="n">pBNid_List</span><span class="o">;</span>        <span class="c1">// basin node id list</span>
+     <span class="kt">int</span> <span class="o">*</span><span class="n">pLid_List</span><span class="o">;</span>         <span class="c1">// line id list</span>
+
+     <span class="kt">int</span> <span class="n">nNumNodes</span><span class="o">;</span>          <span class="c1">// number of path nodes</span>
+     <span class="kt">int</span> <span class="n">nNumLines</span><span class="o">;</span>          <span class="c1">// number of path segments</span>
+     <span class="kt">int</span> <span class="n">nNumSources</span><span class="o">;</span>        <span class="c1">// number of source nodes</span>
+     <span class="kt">int</span> <span class="n">nNumBasins</span><span class="o">;</span>         <span class="c1">// number of outlets</span>
+
+     <span class="kt">double</span> <span class="n">fLeft</span><span class="o">;</span>           <span class="c1">// minimal X</span>
+     <span class="kt">double</span> <span class="n">fRight</span><span class="o">;</span>          <span class="c1">// maximal X</span>
+     <span class="kt">double</span> <span class="n">fTop</span><span class="o">;</span>            <span class="c1">// maximal Y</span>
+     <span class="kt">double</span> <span class="n">fBottom</span><span class="o">;</span>         <span class="c1">// minimal Y</span>
+ <span class="o">}</span><span class="n">DrainageNet</span><span class="o">;</span>               <span class="c1">// struct of flow path network</span>
+</code></pre>
+        </div>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <p>load rainfall event (e.g., <a href="http://vivoni.asu.edu/tribs/weather.html">Peacheater Creek</a>, November 1994)</p>
+  </li>
+  <li>
+    <p>perform runoff simulation (e.g., time step, spatial scale)</p>
+  </li>
+  <li>analyze model performance (e.g., accuracy, efficiency)</li>
+</ol>
+
+<h3 id="main-contributions">Main contributions</h3>
+<ul>
+  <li>realistic representation of surface water movements</li>
+  <li>high-performance computation of rainfall-runoff modeling</li>
+  <li>unified description of watershed physical mechanisms</li>
+</ul>
+
+<h3 id="ubuntu-commands">Ubuntu commands</h3>
+<ul>
+  <li>connect to Amazon EC2 instance
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>  <span class="c"># ensure the private key key.pem is assessible</span>
+  <span class="nb">cd</span> ~
+  chmod 400 key.pem
+  ssh -i <span class="s2">"key.pem"</span> ubuntu@ip-address
+</code></pre>
+    </div>
+  </li>
+  <li>turn off firewall
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>  <span class="c"># after login in AWS instance</span>
+  sudo ufw disable
+</code></pre>
+    </div>
+  </li>
+  <li>send file to AWS instance
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>  <span class="c"># go to the path of file on local machine</span>
+  <span class="nb">cd</span> ~/<span class="o">(</span>file path<span class="o">)</span>
+  scp -i <span class="s2">"key.pem"</span> file ubuntu@ip-address:/home/ubuntu
+</code></pre>
+    </div>
+  </li>
+</ul>
+
+<h3 id="acknowledgements">Acknowledgements</h3>
+<p>Additional contributors: Qingquan LI and Guofeng WU, for giving me valuable suggestions and support on experimental plan.</p>
 
 
 <span class="post-date">
@@ -106,19 +528,19 @@
     
       
         
+        
+      
+        
           <li>
             <h4>
               <a href="/journal/runoff-transportation.html">
                 Runoff transportation
                 <!--<img src="http://localhost:4000/images/platform.gif">-->
-                <!--<small>July 1, 2017</small>-->
+                <!--<small>June 1, 2017</small>-->
               </a>
             </h4>
           </li>
           
-        
-      
-        
         
       
     
