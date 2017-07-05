@@ -16,7 +16,7 @@ image:
 by Fangli ZHANG, Qiming ZHOU, and Jun LIU
 
 **More information on:**
-<http://funtry.github.io>
+[www.zhangfangli.cn](http://zhangfangli.cn)
 
 *Latest revision:* (2017-07-01).
 
