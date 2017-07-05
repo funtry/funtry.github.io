@@ -212,6 +212,8 @@ The deployment consists of following five steps:
                     /----- flowmap.out  # dynamic flow maps
                     /----- timecost.out # time costs
     ```
+    +  screenshot of inputs (e.g., [Peacheater Creek](http://vivoni.asu.edu/tribs/weather.html), November 1996)
+    ![](/assets/img/aws/aws_06.png)
 
 1.  setup model parameters (e.g., flow velocity, particle density)
     +  pre-define model parameters
@@ -289,9 +291,44 @@ The deployment consists of following five steps:
         }DrainageNet;               // struct of flow path network
     ```
 
-1.  load rainfall event (e.g., [Peacheater Creek](http://vivoni.asu.edu/tribs/weather.html), November 1994)
+1.  load rainfall event (e.g., [Peacheater Creek](http://vivoni.asu.edu/tribs/weather.html), November 1996)
+    +  Struct of flow production on starting point
+    ```java
+    typedef struct{
+            int nPPRID;     // index of starting node ID
+            double *pfPPR;  // rainfall rate list mm/hr
+            int nTimeFrame; // number of frames (list size)
+    }PPRate;             //flow on starting points
+    ```
+    +  Struct of distributed rainfall map
+    ```java
+    typedef struct{
+            PPRate *pPPR_List;  // list of starting points
+            int nNumPoints;     // number of starting points
+            int nNumFrames;     // number of time frames
+    }PPMap;                  //dynamic rainfall map
+    ```
 
 1.  perform runoff simulation (e.g., time step, spatial scale)
+    +  Preset in main program (particle-set.c)
+    ```java
+            // from 1996-11-23 00:00 to 11-28 23:00 (144 hours)
+            int nST = 1;    // starting time (first hour)
+            int nIT = 1;    // time interval (1 hour)
+            int nET = 144;  // ending time (last hour)
+
+            // input file path
+            char strFilePath[120] = "/home/ubuntu/workspace/amazon/input";
+            char* pNPath = join_string(pFilePath, "./input/pathnode.in");
+            char* pTopoPath = join_string(pFilePath, "./input/pathline.txt");
+            char* pPPRPath = join_string(pFilePath, "input/rainfall.in");
+    ```
+
+    +  Execution of main program (#! /bin/sh)
+    ```bash
+            # compiling with MPICH framework
+            mpicc -o ./workspace/amazon/particle-set ./workspace/amazon/particle-set.c -lm
+    ```
 
 1.  analyze model performance (e.g., accuracy, efficiency)
 

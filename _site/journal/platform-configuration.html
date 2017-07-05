@@ -372,6 +372,8 @@ chmod 777 ~/workspace/amazon
 </code></pre>
         </div>
       </li>
+      <li>screenshot of inputs (e.g., <a href="http://vivoni.asu.edu/tribs/weather.html">Peacheater Creek</a>, November 1996)
+<img src="/assets/img/aws/aws_06.png" alt="" /></li>
     </ul>
   </li>
   <li>setup model parameters (e.g., flow velocity, particle density)
@@ -456,11 +458,51 @@ chmod 777 ~/workspace/amazon
       </li>
     </ul>
   </li>
-  <li>
-    <p>load rainfall event (e.g., <a href="http://vivoni.asu.edu/tribs/weather.html">Peacheater Creek</a>, November 1994)</p>
+  <li>load rainfall event (e.g., <a href="http://vivoni.asu.edu/tribs/weather.html">Peacheater Creek</a>, November 1996)
+    <ul>
+      <li>Struct of flow production on starting point
+        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+     <span class="kt">int</span> <span class="n">nPPRID</span><span class="o">;</span>     <span class="c1">// index of starting node ID</span>
+     <span class="kt">double</span> <span class="o">*</span><span class="n">pfPPR</span><span class="o">;</span>  <span class="c1">// rainfall rate list mm/hr</span>
+     <span class="kt">int</span> <span class="n">nTimeFrame</span><span class="o">;</span> <span class="c1">// number of frames (list size)</span>
+<span class="o">}</span><span class="n">PPRate</span><span class="o">;</span>             <span class="c1">//flow on starting points</span>
+</code></pre>
+        </div>
+      </li>
+      <li>Struct of distributed rainfall map
+        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+     <span class="n">PPRate</span> <span class="o">*</span><span class="n">pPPR_List</span><span class="o">;</span>  <span class="c1">// list of starting points</span>
+     <span class="kt">int</span> <span class="n">nNumPoints</span><span class="o">;</span>     <span class="c1">// number of starting points</span>
+     <span class="kt">int</span> <span class="n">nNumFrames</span><span class="o">;</span>     <span class="c1">// number of time frames</span>
+<span class="o">}</span><span class="n">PPMap</span><span class="o">;</span>                  <span class="c1">//dynamic rainfall map</span>
+</code></pre>
+        </div>
+      </li>
+    </ul>
   </li>
-  <li>
-    <p>perform runoff simulation (e.g., time step, spatial scale)</p>
+  <li>perform runoff simulation (e.g., time step, spatial scale)
+    <ul>
+      <li>Preset in main program (particle-set.c)
+        <div class="language-java highlighter-rouge"><pre class="highlight"><code>     <span class="c1">// from 1996-11-23 00:00 to 11-28 23:00 (144 hours)</span>
+     <span class="kt">int</span> <span class="n">nST</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>    <span class="c1">// starting time (first hour)</span>
+     <span class="kt">int</span> <span class="n">nIT</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>    <span class="c1">// time interval (1 hour)</span>
+     <span class="kt">int</span> <span class="n">nET</span> <span class="o">=</span> <span class="mi">144</span><span class="o">;</span>  <span class="c1">// ending time (last hour)</span>
+
+     <span class="c1">// input file path</span>
+     <span class="kt">char</span> <span class="n">strFilePath</span><span class="o">[</span><span class="mi">120</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/home/ubuntu/workspace/amazon/input"</span><span class="o">;</span>
+     <span class="kt">char</span><span class="o">*</span> <span class="n">pNPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"./input/pathnode.in"</span><span class="o">);</span>
+     <span class="kt">char</span><span class="o">*</span> <span class="n">pTopoPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"./input/pathline.txt"</span><span class="o">);</span>
+     <span class="kt">char</span><span class="o">*</span> <span class="n">pPPRPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"input/rainfall.in"</span><span class="o">);</span>
+</code></pre>
+        </div>
+      </li>
+      <li>Execution of main program (#! /bin/sh)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># compiling with MPICH framework</span>
+     mpicc -o ./workspace/amazon/particle-set ./workspace/amazon/particle-set.c -lm
+</code></pre>
+        </div>
+      </li>
+    </ul>
   </li>
   <li>analyze model performance (e.g., accuracy, efficiency)</li>
 </ol>
