@@ -8,7 +8,7 @@ title: Contact me
         <style>
             #chartdiv {
                 width: 100%;
-                height: 280px;
+                height: 320px;
             }
             .map-marker {
                 margin-left: -5px;

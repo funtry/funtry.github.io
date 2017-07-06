@@ -77,13 +77,12 @@
 
 
 <h2 class="no_toc" id="particle-set-a-parallel-tool-for-runoff-routing">Particle-set: a parallel tool for runoff routing</h2>
-<!-- by Fangli ZHANG, Qiming ZHOU, Qingquan LI, Guofeng WU, and Jun LIU -->
-<p>by Fangli ZHANG, Qiming ZHOU, and Jun LIU</p>
+<p>by Fangli ZHANG, Qiming ZHOU, Qingquan LI, Guofeng WU, and Jun LIU</p>
 
 <p><strong>More information on:</strong>
 <a href="http://zhangfangli.cn">www.zhangfangli.cn</a></p>
 
-<p><em>Latest revision:</em> (2017-07-01).</p>
+<p><em>Latest revision:</em> (2017-07-06).</p>
 
 <p>The transportation platform is a MPI parallel computing prototype for real-time simulation of surface flow transportation.</p>
 
@@ -95,7 +94,7 @@
   <li><a href="#environment-deployment" id="markdown-toc-environment-deployment">Environment Deployment</a></li>
   <li><a href="#experimental-plan" id="markdown-toc-experimental-plan">Experimental plan</a></li>
   <li><a href="#main-contributions" id="markdown-toc-main-contributions">Main contributions</a></li>
-  <li><a href="#ubuntu-commands" id="markdown-toc-ubuntu-commands">Ubuntu commands</a></li>
+  <li><a href="#linux-commands" id="markdown-toc-linux-commands">Linux commands</a></li>
   <li><a href="#acknowledgements" id="markdown-toc-acknowledgements">Acknowledgements</a></li>
 </ol>
 
@@ -620,15 +619,15 @@ chmod -R 777 ~/aws
 <ul>
   <li>
     <p>realistic representation of surface water movements
-<img src="/assets/img/aws/aws_17.gif" alt="" /></p>
+<img src="/assets/img/aws/aws_17.gif" width="350" /></p>
   </li>
   <li>
     <p>high-performance computation of rainfall-runoff modeling
-<img src="/assets/img/aws/aws_18.png" width="300" /></p>
+<img src="/assets/img/aws/aws_18.png" width="350" /></p>
   </li>
   <li>
     <p>unified description of watershed physical mechanisms
-<img src="/assets/img/aws/aws_19.png" alt="" /></p>
+<img src="/assets/img/aws/aws_19.png" width="350" /></p>
 
     <script type="math/tex; mode=display">{v_m = f_1(\text{topographical, geographical and hydrological factors)}}</script>
 
@@ -646,7 +645,7 @@ chmod -R 777 ~/aws
   </li>
 </ul>
 
-<h3 id="ubuntu-commands">Ubuntu commands</h3>
+<h3 id="linux-commands">Linux commands</h3>
 <ul>
   <li>connect to Amazon EC2 instance
     <div class="language-bash highlighter-rouge"><pre class="highlight"><code>   <span class="c"># ensure the private key key.pem is assessible</span>
@@ -694,7 +693,7 @@ chmod -R 777 ~/aws
 </ul>
 
 <h3 id="acknowledgements">Acknowledgements</h3>
-<p>Additional contributors: Qingquan LI and Guofeng WU, for giving me valuable suggestions and support on experimental plan.</p>
+<p>Special thanks to <a href="http://vivoni.asu.edu/tribs.html">Valeriy Y. Ivanov et al., 2004</a>, <a href="http://www.pihm.psu.edu/announcement_20141026.html">Yizhong Qu and Christopher J. Duffy 2007</a>, and <a href="http://www.tandfonline.com/doi/abs/10.1080/13658816.2014.917312">Yumin Chen et al., 2014</a>, for their antecedent efforts and achievements on TIN-based hydrological modeling applications. Additionally, we are very grateful for the computing resources provided by <a href="https://aws.amazon.com/ec2/">Amazon web services</a>.</p>
 
 
 <span class="post-date">

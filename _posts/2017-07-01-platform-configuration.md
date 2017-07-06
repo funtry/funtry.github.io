@@ -12,13 +12,12 @@ image:
 ---
 ## Particle-set: a parallel tool for runoff routing
 {:.no_toc}
-<!-- by Fangli ZHANG, Qiming ZHOU, Qingquan LI, Guofeng WU, and Jun LIU -->
-by Fangli ZHANG, Qiming ZHOU, and Jun LIU
+by Fangli ZHANG, Qiming ZHOU, Qingquan LI, Guofeng WU, and Jun LIU
 
 **More information on:**
 [www.zhangfangli.cn](http://zhangfangli.cn)
 
-*Latest revision:* (2017-07-01).
+*Latest revision:* (2017-07-06).
 
 The transportation platform is a MPI parallel computing prototype for real-time simulation of surface flow transportation.
 
@@ -435,13 +434,13 @@ The deployment consists of following five steps:
 
 ### Main contributions
 + realistic representation of surface water movements
-![](/assets/img/aws/aws_17.gif)
+<img src="/assets/img/aws/aws_17.gif" width="350" />
 
 + high-performance computation of rainfall-runoff modeling
-<img src="/assets/img/aws/aws_18.png" width="300" />
+<img src="/assets/img/aws/aws_18.png" width="350" />
 
 + unified description of watershed physical mechanisms
-![](/assets/img/aws/aws_19.png)
+<img src="/assets/img/aws/aws_19.png" width="350" />
 
     $${v_m = f_1(\text{topographical, geographical and hydrological factors)}}$$
 
@@ -498,4 +497,4 @@ The deployment consists of following five steps:
   ```
 
 ### Acknowledgements
-Additional contributors: Qingquan LI and Guofeng WU, for giving me valuable suggestions and support on experimental plan.
+Special thanks to [Valeriy Y. Ivanov et al., 2004](http://vivoni.asu.edu/tribs.html), [Yizhong Qu and Christopher J. Duffy 2007](http://www.pihm.psu.edu/announcement_20141026.html), and [Yumin Chen et al., 2014](http://www.tandfonline.com/doi/abs/10.1080/13658816.2014.917312), for their antecedent efforts and achievements on TIN-based hydrological modeling applications. Additionally, we are very grateful for the computing resources provided by [Amazon web services](https://aws.amazon.com/ec2/).
