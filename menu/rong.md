@@ -191,7 +191,7 @@ title: Rong
 
       "linesSettings": {
         "arc": -0.8,
-        "arrow": "middle",
+        "arrow": "none",
         "color": "#FFFF00",
         "alpha": 1,
         "arrowAlpha": 0.9,
