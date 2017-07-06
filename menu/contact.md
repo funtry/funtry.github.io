@@ -18,8 +18,8 @@ title: Contact me
                 cursor: pointer;
             }
             .pulse {
-                width: 4px;
-                height: 4px;
+                width: 0px;
+                height: 0px;
                 border: 0px solid #f7f14c;
                 -webkit-border-radius: 30px;
                 -moz-border-radius: 30px;
@@ -626,4 +626,6 @@ title: Contact me
     <div id="chartdiv"></div>
 </html>
 
-If you are having any questions or suggestions, feel free to contact [me]({{ site.baseurl }}/menu/rong.html).
+If you are having any questions or suggestions, feel free to contact me.
+
+<!-- [me]({{ site.baseurl }}/menu/rong.html) -->

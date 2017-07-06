@@ -46,7 +46,7 @@ This experimental environment is deployed on:
 | ___HPC environment___ &emsp; | environment configuration (e.g., [Amazon EC2](https://aws.amazon.com/ec2/)) |
 | ___cluster instance___ &emsp; | high-performance computing (e.g., [m4.16xlarge](https://aws.amazon.com/ec2/instance-types/)) |
 | ___operating system___ &emsp; | parallel computing (e.g., [Ubuntu Server 14.04 LTS](http://releases.ubuntu.com/14.04/)) |
-| ___C-language compiler___ &emsp; | program execution (e.g., [GCC 7.1](https://gcc.gnu.org)) |
+| ___C-language compiler___ &emsp; | program execution (e.g., [GCC 4.8.4](https://gcc.gnu.org)) |
 | ___MPI implementation___ &emsp; | process communication (e.g., [mpich-3.2](https://www.mpich.org/downloads/)) |
 | ___process manager___ &emsp; | process management (e.g., [hydra-3.2](https://www.mpich.org/downloads/)) |
 
@@ -85,10 +85,12 @@ The deployment consists of following five steps:
     ```bash
     sudo apt-get install gcc
     ```
+    ![](/assets/img/aws/aws_09.png)
     + install make complier
     ```bash
     sudo apt-get install make
     ```
+    ![](/assets/img/aws/aws_10.png)
 
 1.  MPICH framework configuration
     + send source codes to AWS instance
@@ -123,6 +125,7 @@ The deployment consists of following five steps:
     ```bash
     make install
     ```
+    ![](/assets/img/aws/aws_11.png)
 
 1.  HYDRA process manager configuration
     + send source codes to AWS instance
@@ -157,6 +160,7 @@ The deployment consists of following five steps:
     ```bash
     make install
     ```
+    ![](/assets/img/aws/aws_12.png)
 
 1.  parallel environment setups
     + configure environment variables
@@ -182,6 +186,8 @@ The deployment consists of following five steps:
     ```bash
     vim ~/hydra/hosts
     ```
+    ![](/assets/img/aws/aws_13.png)
+    ![](/assets/img/aws/aws_15.png)
     + set number of processors in cluster
     ```bash
     # host ID: number of processors
@@ -189,14 +195,15 @@ The deployment consists of following five steps:
                   ... : ...
     ip-54-202-97-191: 64
     ```
+    ![](/assets/img/aws/aws_14.png)
 
 ### Experimental plan
 1.  clone particle-set project
     + create workspace
     ```bash
     # on AWS EC2 machine
-    mkdir ~/workspace/amazon
-    chmod 777 ~/workspace/amazon
+    mkdir ~/aws
+    chmod -R 777 ~/aws
     ```
     + clone [source project from GitHub](https://github.com)
     ```bash
@@ -210,6 +217,7 @@ The deployment consists of following five steps:
                     /----- rainfall.in  # flow production
             +----- output               # output file path
                     /----- flowmap.out  # dynamic flow maps
+                    /----- outlet.out   # outlet discharges
                     /----- timecost.out # time costs
     ```
     +  screenshot of inputs (e.g., [Peacheater Creek](http://vivoni.asu.edu/tribs/weather.html), November 1996)
@@ -318,40 +326,49 @@ The deployment consists of following five steps:
             int nET = 144;  // ending time (last hour)
 
             // input file path
-            char strFilePath[120] = "/home/ubuntu/workspace/amazon/input";
-            char* pNPath = join_string(pFilePath, "./input/pathnode.in");
-            char* pTopoPath = join_string(pFilePath, "./input/pathline.txt");
-            char* pPPRPath = join_string(pFilePath, "./input/rainfall.in");
+            char strFilePath[120] = "/home/ubuntu/aws";
+            char* pNPath = join_string(strFilePath, "/input/pathnode.in");
+            char* pTopoPath = join_string(strFilePath, "/input/pathline.in");
+            char* pPPRPath = join_string(strFilePath, "/input/rainfall.in");
     ```
     +  execution of main program (#! /bin/sh)
     ```bash
             # create batch file
-            vim /bin/sh
+            vim ~/run.sh
 
             # write commands into batch file
+                # empty output files
+                rm -rf ./aws/output/*
+
                 # compiling with MPICH framework
-                mpicc -o ./workspace/amazon/particle-set ./workspace/amazon/particle-set.c -lm
-                # executing with increasing processors
-                for i in '1' '2' '3' '4' (... '128');
+                mpicc -o ./aws/particle-set ./aws/particle-set.c -lm
+                # executing with increasing processors (... '128')
+                for i in '1' '2' '3' '4';
                     do
-                        mpiexec -np $i ./workspace/amazon/particle-set
+                        mpiexec -np $i ./aws/particle-set
                 done
 
             # save
             :x!
 
             # run batch file
-            /bin/sh ./run.sh | tee ./timecost.out
+            /bin/sh ./run.sh | tee ./log.txt
     ```
     +  distributed processors (if on multiple computers)
     ```bash
             # copy source code and input files
-            scp -r ./workspace/amazon ubuntu@ip-address_1:/home/ubuntu/workspace/
+            scp -r ./aws ubuntu@ip-address_1:/home/
             ...
-            scp -r ./workspace/amazon ubuntu@ip-address_n:/home/ubuntu/workspace/
+            scp -r ./aws ubuntu@ip-address_n:/home/
     ```
 
 1.  analyze model performance (e.g., accuracy, efficiency)
+    +  get output files from Amazon EC2 instance
+    ```bash
+            # on local machine
+            scp -rp -i "particle.pem" ubuntu@54.245.145.39:/home/ubuntu/aws/output ~/aws/
+    ```
+    ![](/assets/img/aws/aws_16.png)
     +  prediction accuracy of outlet discharges
     ```matlab
             %% comparison of outlet discharges
@@ -390,37 +407,94 @@ The deployment consists of following five steps:
             % balance coefficient
             b = sum(Qh_obs)/sum(Qh_sim);
     ```
+    +  result example of prediction accuracy
     ![](/assets/img/aws/aws_07.png)
     +  simulation efficiency of runoff routing
     ```matlab
-            % compiling with MPICH framework
-            asd = asd;
+            %% comparison of time costs varying multiple processors
+
+            % experimental speedup ratio
+            num = 0:1:7;
+            num_cpu = 2.^num; % from 1 to 128
+            time_cost = [longest time cost on multiple processors];
+            for i=1:length(num_cpu)
+                speed_up(i) = time_cost(i)/time_cost(1);
+            end
+
+            % theoretical speedup ratio (parallel portion)
+            ideal_x = 0:0.1:7;
+            ideal_s = 2.^ideal_x;
+            ideal_y1 = 1./((1-1)+1./ideal_s);
+            ideal_y2 = 1./((1-0.99)+0.99./ideal_s);
+            ideal_y3 = 1./((1-0.95)+0.95./ideal_s);
+            f = fittype('1/1/((1-a)+a/x)','dependent',{'y'},'independent',{'x'},'coefficients',{'a'});
+            [fitresult, gof] = fit(num_cpu',speed_up(:)', f,'start', 1);
     ```
+    +  result example of simulation efficiency
     ![](/assets/img/aws/aws_08.png)
 
 ### Main contributions
 + realistic representation of surface water movements
+![](/assets/img/aws/aws_17.gif)
+
 + high-performance computation of rainfall-runoff modeling
+<img src="/assets/img/aws/aws_18.png" width="300" />
+
 + unified description of watershed physical mechanisms
+![](/assets/img/aws/aws_19.png)
+
+    $${v_m = f_1(\text{topographical, geographical and hydrological factors)}}$$
+
+    $${R = f_2(\text{upstream area)}}$$
+
+    $${S = f_3(\text{water surface slope})}$$
+
+    $${v = v_m \cdot {\frac{R^\beta\cdot S^{0.5}}{E{\left(R^\beta \cdot S^{0.5}\right)}}}}$$
+
+    $${q = f_4(\lambda, v, e)}$$
+
+    $${q(t) = \int_0^t A(i)\cdot Q(t-i) \,di}$$
+
+    $${q(t) = q(t)\cdot(1-e)+\lambda}$$
 
 ### Ubuntu commands
 +  connect to Amazon EC2 instance
   ```bash
-  # ensure the private key key.pem is assessible
-  cd ~
-  chmod 400 key.pem
-  ssh -i "key.pem" ubuntu@ip-address
+      # ensure the private key key.pem is assessible
+      cd ~
+      chmod 400 key.pem
+      ssh -i "key.pem" ubuntu@ip-address
   ```
 +  turn off firewall
   ```bash
-  # after login in AWS instance
-  sudo ufw disable
+      # after login in AWS instance
+      sudo ufw disable
   ```
-+  send file to AWS instance
++  send file and directory to Amazon EC2 instance
   ```bash
-  # go to the path of file on local machine
-  cd ~/(file path)
-  scp -i "key.pem" file ubuntu@ip-address:/home/ubuntu
+      # on local machine
+
+      # send file
+      scp -i "key.pem" file ubuntu@ip-address:/home/ubuntu
+
+      # send directory
+      scp -i "key.pem" -r directory ubuntu@ip-address:/home/ubuntu
+  ```
++  get file and directory from Amazon EC2 instance
+  ```bash
+          # get file
+          scp -p -i "particle.pem" ubuntu@54.245.145.39:/pathto/file ~/local_path
+
+          # get directory
+          scp -rp -i "particle.pem" ubuntu@54.245.145.39:/pathto/directort ~/local_path
+  ```
++ delete file and directory on AWS instance
+  ```bash
+        # delete file
+        rm ~/(file path)
+
+        # delete file
+        rm -rf ~/(directory path)
   ```
 
 ### Acknowledgements

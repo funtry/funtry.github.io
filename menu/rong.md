@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Rong
+title: 
 ---
 
 <html>
@@ -18,8 +18,8 @@ title: Rong
                 cursor: pointer;
             }
             .pulse {
-                width: 4px;
-                height: 4px;
+                width: 0px;
+                height: 0px;
                 border: 0px solid #f7f14c;
                 -webkit-border-radius: 30px;
                 -moz-border-radius: 30px;
@@ -110,7 +110,7 @@ title: Rong
       "mouseWheelZoomEnabled": true,
       "showBalloonOnSelectedObject": true,
       "backgroundAlpha": 1,
-      "backgroundColor": "#000",
+      "backgroundColor": "#000033",
 
       "dataProvider": {
         "map": "worldLow",
@@ -123,8 +123,11 @@ title: Rong
               "latitudes": [ 25.0339698, 30.5390822 ],
               "longitudes": [ 102.704877, 114.3527662 ]
             }, {
-              "latitudes": [ 30.5390822, 21.2961421 ],
-              "longitudes": [ 114.3527662, -157.8197537 ]
+              "latitudes": [ 30.5390822, 28 ],
+              "longitudes": [ 114.3527662, 188 ]
+            }, {
+              "latitudes": [ 28, 21.2961421 ],
+              "longitudes": [ -182, -157.8197537 ]
             }, {
               "latitudes": [ 21.2961421, 44.5637844 ],
               "longitudes": [ -157.8197537, -123.2816383 ]
@@ -165,14 +168,6 @@ title: Rong
           "latitude": 25.0339698,
           "longitude": 102.704877,
           "scale": 0.25
-        }, {
-          "color": "#00FF00",
-          "rollOverColor": "#FF0000",
-          "type": "circle",
-          "title": "Honolulu",
-          "latitude": 21.2961421,
-          "longitude": -157.8197537,
-          "scale": 0.2
         } ]
       },
 
@@ -180,7 +175,7 @@ title: Rong
           "color": "#FFCC00",
           "outlineThickness": 0,
           "unlistedAreasColor": "#999",
-          "unlistedAreasAlpha": 0.6
+          "unlistedAreasAlpha": 0.8
       },
 
       "imagesSettings": {
@@ -216,7 +211,7 @@ title: Rong
       "linesAboveImages": true,
 
       "export": {
-        "enabled": false
+        "enabled": true
       }
     } );
 

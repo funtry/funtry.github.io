@@ -33,5 +33,7 @@ title: Curriculum Vitae
 | | Visual Studio, GCC, Eclipse, R|
 | __GIS & RS tool:__| __ArcGIS, ENVI, eCognition__|
 |  | ArcGIS API, MPICH, GDAL, Web Map Service, ArcSWAT      |
+| __Word processing:__| __Office Word, LaTex, Markdown__|
+|  | Omnigraffle, Papers, Vim, Sublime Text |
 | __Expertise:__    | __Cartography, data visualization, image and terrain analysis__|
 |    | watershed hydrology, fluvial geomorphology, high-performance computing |

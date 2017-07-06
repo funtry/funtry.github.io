@@ -154,7 +154,7 @@
     </tr>
     <tr>
       <td style="text-align: right"><strong><em>C-language compiler</em></strong>  </td>
-      <td style="text-align: left">program execution (e.g., <a href="https://gcc.gnu.org">GCC 7.1</a>)</td>
+      <td style="text-align: left">program execution (e.g., <a href="https://gcc.gnu.org">GCC 4.8.4</a>)</td>
     </tr>
     <tr>
       <td style="text-align: right"><strong><em>MPI implementation</em></strong>  </td>
@@ -210,11 +210,13 @@
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gcc
 </code></pre>
         </div>
+        <p><img src="/assets/img/aws/aws_09.png" alt="" /></p>
       </li>
       <li>install make complier
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get install make
 </code></pre>
         </div>
+        <p><img src="/assets/img/aws/aws_10.png" alt="" /></p>
       </li>
     </ul>
   </li>
@@ -259,6 +261,7 @@
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make install
 </code></pre>
         </div>
+        <p><img src="/assets/img/aws/aws_11.png" alt="" /></p>
       </li>
     </ul>
   </li>
@@ -303,6 +306,7 @@
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make install
 </code></pre>
         </div>
+        <p><img src="/assets/img/aws/aws_12.png" alt="" /></p>
       </li>
     </ul>
   </li>
@@ -333,6 +337,8 @@
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code>vim ~/hydra/hosts
 </code></pre>
         </div>
+        <p><img src="/assets/img/aws/aws_13.png" alt="" />
+<img src="/assets/img/aws/aws_15.png" alt="" /></p>
       </li>
       <li>set number of processors in cluster
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># host ID: number of processors</span>
@@ -341,6 +347,7 @@ ip-54-202-97-199: 64
 ip-54-202-97-191: 64
 </code></pre>
         </div>
+        <p><img src="/assets/img/aws/aws_14.png" alt="" /></p>
       </li>
     </ul>
   </li>
@@ -352,8 +359,8 @@ ip-54-202-97-191: 64
     <ul>
       <li>create workspace
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># on AWS EC2 machine</span>
-mkdir ~/workspace/amazon
-chmod 777 ~/workspace/amazon
+mkdir ~/aws
+chmod -R 777 ~/aws
 </code></pre>
         </div>
       </li>
@@ -368,6 +375,7 @@ chmod 777 ~/workspace/amazon
               /----- rainfall.in  <span class="c"># flow production</span>
       +----- output               <span class="c"># output file path</span>
               /----- flowmap.out  <span class="c"># dynamic flow maps</span>
+              /----- outlet.out   <span class="c"># outlet discharges</span>
               /----- timecost.out <span class="c"># time costs</span>
 </code></pre>
         </div>
@@ -489,39 +497,42 @@ chmod 777 ~/workspace/amazon
      <span class="kt">int</span> <span class="n">nET</span> <span class="o">=</span> <span class="mi">144</span><span class="o">;</span>  <span class="c1">// ending time (last hour)</span>
 
      <span class="c1">// input file path</span>
-     <span class="kt">char</span> <span class="n">strFilePath</span><span class="o">[</span><span class="mi">120</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/home/ubuntu/workspace/amazon/input"</span><span class="o">;</span>
-     <span class="kt">char</span><span class="o">*</span> <span class="n">pNPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"./input/pathnode.in"</span><span class="o">);</span>
-     <span class="kt">char</span><span class="o">*</span> <span class="n">pTopoPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"./input/pathline.txt"</span><span class="o">);</span>
-     <span class="kt">char</span><span class="o">*</span> <span class="n">pPPRPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"./input/rainfall.in"</span><span class="o">);</span>
+     <span class="kt">char</span> <span class="n">strFilePath</span><span class="o">[</span><span class="mi">120</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/home/ubuntu/aws"</span><span class="o">;</span>
+     <span class="kt">char</span><span class="o">*</span> <span class="n">pNPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">strFilePath</span><span class="o">,</span> <span class="s">"/input/pathnode.in"</span><span class="o">);</span>
+     <span class="kt">char</span><span class="o">*</span> <span class="n">pTopoPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">strFilePath</span><span class="o">,</span> <span class="s">"/input/pathline.in"</span><span class="o">);</span>
+     <span class="kt">char</span><span class="o">*</span> <span class="n">pPPRPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">strFilePath</span><span class="o">,</span> <span class="s">"/input/rainfall.in"</span><span class="o">);</span>
 </code></pre>
         </div>
       </li>
       <li>execution of main program (#! /bin/sh)
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># create batch file</span>
-     vim /bin/sh
+     vim ~/run.sh
 
      <span class="c"># write commands into batch file</span>
+         <span class="c"># empty output files</span>
+         rm -rf ./aws/output/<span class="k">*</span>
+
          <span class="c"># compiling with MPICH framework</span>
-         mpicc -o ./workspace/amazon/particle-set ./workspace/amazon/particle-set.c -lm
-         <span class="c"># executing with increasing processors</span>
-         <span class="k">for </span>i <span class="k">in</span> <span class="s1">'1'</span> <span class="s1">'2'</span> <span class="s1">'3'</span> <span class="s1">'4'</span> <span class="o">(</span>... <span class="s1">'128'</span><span class="o">)</span>;
+         mpicc -o ./aws/particle-set ./aws/particle-set.c -lm
+         <span class="c"># executing with increasing processors (... '128')</span>
+         <span class="k">for </span>i <span class="k">in</span> <span class="s1">'1'</span> <span class="s1">'2'</span> <span class="s1">'3'</span> <span class="s1">'4'</span>;
              <span class="k">do
-                 </span>mpiexec -np <span class="nv">$i</span> ./workspace/amazon/particle-set
+                 </span>mpiexec -np <span class="nv">$i</span> ./aws/particle-set
          <span class="k">done</span>
 
      <span class="c"># save</span>
      :x!
 
      <span class="c"># run batch file</span>
-     /bin/sh ./run.sh | tee ./timecost.out
+     /bin/sh ./run.sh | tee ./log.txt
 </code></pre>
         </div>
       </li>
       <li>distributed processors (if on multiple computers)
         <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># copy source code and input files</span>
-     scp -r ./workspace/amazon ubuntu@ip-address_1:/home/ubuntu/workspace/
+     scp -r ./aws ubuntu@ip-address_1:/home/
      ...
-     scp -r ./workspace/amazon ubuntu@ip-address_n:/home/ubuntu/workspace/
+     scp -r ./aws ubuntu@ip-address_n:/home/
 </code></pre>
         </div>
       </li>
@@ -529,6 +540,13 @@ chmod 777 ~/workspace/amazon
   </li>
   <li>analyze model performance (e.g., accuracy, efficiency)
     <ul>
+      <li>get output files from Amazon EC2 instance
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># on local machine</span>
+     scp -rp -i <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/home/ubuntu/aws/output ~/aws/
+</code></pre>
+        </div>
+        <p><img src="/assets/img/aws/aws_16.png" alt="" /></p>
+      </li>
       <li>prediction accuracy of outlet discharges
         <div class="language-matlab highlighter-rouge"><pre class="highlight"><code>     <span class="c1">%% comparison of outlet discharges</span>
 
@@ -567,46 +585,109 @@ chmod 777 ~/workspace/amazon
      <span class="n">b</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Qh_obs</span><span class="p">)/</span><span class="nb">sum</span><span class="p">(</span><span class="n">Qh_sim</span><span class="p">);</span>
 </code></pre>
         </div>
-        <p><img src="/assets/img/aws/aws_07.png" alt="" /></p>
       </li>
+      <li>result example of prediction accuracy
+<img src="/assets/img/aws/aws_07.png" alt="" /></li>
       <li>simulation efficiency of runoff routing
-        <div class="language-matlab highlighter-rouge"><pre class="highlight"><code>     <span class="c1">% compiling with MPICH framework</span>
-     <span class="n">asd</span> <span class="o">=</span> <span class="n">asd</span><span class="p">;</span>
+        <div class="language-matlab highlighter-rouge"><pre class="highlight"><code>     <span class="c1">%% comparison of time costs varying multiple processors</span>
+
+     <span class="c1">% experimental speedup ratio</span>
+     <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">;</span>
+     <span class="n">num_cpu</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">^</span><span class="n">num</span><span class="p">;</span> <span class="c1">% from 1 to 128</span>
+     <span class="n">time_cost</span> <span class="o">=</span> <span class="p">[</span><span class="n">longest</span> <span class="n">time</span> <span class="n">cost</span> <span class="n">on</span> <span class="n">multiple</span> <span class="n">processors</span><span class="p">];</span>
+     <span class="k">for</span> <span class="nb">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">num_cpu</span><span class="p">)</span>
+         <span class="n">speed_up</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">time_cost</span><span class="p">(</span><span class="nb">i</span><span class="p">)/</span><span class="n">time_cost</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+     <span class="k">end</span>
+
+     <span class="c1">% theoretical speedup ratio (parallel portion)</span>
+     <span class="n">ideal_x</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mf">0.1</span><span class="p">:</span><span class="mi">7</span><span class="p">;</span>
+     <span class="n">ideal_s</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">^</span><span class="n">ideal_x</span><span class="p">;</span>
+     <span class="n">ideal_y1</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">/((</span><span class="mi">1</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span><span class="o">+</span><span class="mf">1.</span><span class="p">/</span><span class="n">ideal_s</span><span class="p">);</span>
+     <span class="n">ideal_y2</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">/((</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.99</span><span class="p">)</span><span class="o">+</span><span class="mf">0.99</span><span class="o">.</span><span class="p">/</span><span class="n">ideal_s</span><span class="p">);</span>
+     <span class="n">ideal_y3</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">/((</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.95</span><span class="p">)</span><span class="o">+</span><span class="mf">0.95</span><span class="o">.</span><span class="p">/</span><span class="n">ideal_s</span><span class="p">);</span>
+     <span class="n">f</span> <span class="o">=</span> <span class="n">fittype</span><span class="p">(</span><span class="s1">'1/1/((1-a)+a/x)'</span><span class="p">,</span><span class="s1">'dependent'</span><span class="p">,{</span><span class="s1">'y'</span><span class="p">},</span><span class="s1">'independent'</span><span class="p">,{</span><span class="s1">'x'</span><span class="p">},</span><span class="s1">'coefficients'</span><span class="p">,{</span><span class="s1">'a'</span><span class="p">});</span>
+     <span class="p">[</span><span class="n">fitresult</span><span class="p">,</span> <span class="n">gof</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit</span><span class="p">(</span><span class="n">num_cpu</span><span class="s1">',speed_up(:)'</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span><span class="s1">'start'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 </code></pre>
         </div>
-        <p><img src="/assets/img/aws/aws_08.png" alt="" /></p>
       </li>
+      <li>result example of simulation efficiency
+<img src="/assets/img/aws/aws_08.png" alt="" /></li>
     </ul>
   </li>
 </ol>
 
 <h3 id="main-contributions">Main contributions</h3>
 <ul>
-  <li>realistic representation of surface water movements</li>
-  <li>high-performance computation of rainfall-runoff modeling</li>
-  <li>unified description of watershed physical mechanisms</li>
+  <li>
+    <p>realistic representation of surface water movements
+<img src="/assets/img/aws/aws_17.gif" alt="" /></p>
+  </li>
+  <li>
+    <p>high-performance computation of rainfall-runoff modeling
+<img src="/assets/img/aws/aws_18.png" width="300" /></p>
+  </li>
+  <li>
+    <p>unified description of watershed physical mechanisms
+<img src="/assets/img/aws/aws_19.png" alt="" /></p>
+
+    <script type="math/tex; mode=display">{v_m = f_1(\text{topographical, geographical and hydrological factors)}}</script>
+
+    <script type="math/tex; mode=display">{R = f_2(\text{upstream area)}}</script>
+
+    <script type="math/tex; mode=display">{S = f_3(\text{water surface slope})}</script>
+
+    <script type="math/tex; mode=display">{v = v_m \cdot {\frac{R^\beta\cdot S^{0.5}}{E{\left(R^\beta \cdot S^{0.5}\right)}}}}</script>
+
+    <script type="math/tex; mode=display">{q = f_4(\lambda, v, e)}</script>
+
+    <script type="math/tex; mode=display">{q(t) = \int_0^t A(i)\cdot Q(t-i) \,di}</script>
+
+    <script type="math/tex; mode=display">{q(t) = q(t)\cdot(1-e)+\lambda}</script>
+  </li>
 </ul>
 
 <h3 id="ubuntu-commands">Ubuntu commands</h3>
 <ul>
   <li>connect to Amazon EC2 instance
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>  <span class="c"># ensure the private key key.pem is assessible</span>
-  <span class="nb">cd</span> ~
-  chmod 400 key.pem
-  ssh -i <span class="s2">"key.pem"</span> ubuntu@ip-address
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>   <span class="c"># ensure the private key key.pem is assessible</span>
+   <span class="nb">cd</span> ~
+   chmod 400 key.pem
+   ssh -i <span class="s2">"key.pem"</span> ubuntu@ip-address
 </code></pre>
     </div>
   </li>
   <li>turn off firewall
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>  <span class="c"># after login in AWS instance</span>
-  sudo ufw disable
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>   <span class="c"># after login in AWS instance</span>
+   sudo ufw disable
 </code></pre>
     </div>
   </li>
-  <li>send file to AWS instance
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>  <span class="c"># go to the path of file on local machine</span>
-  <span class="nb">cd</span> ~/<span class="o">(</span>file path<span class="o">)</span>
-  scp -i <span class="s2">"key.pem"</span> file ubuntu@ip-address:/home/ubuntu
+  <li>send file and directory to Amazon EC2 instance
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>   <span class="c"># on local machine</span>
+
+   <span class="c"># send file</span>
+   scp -i <span class="s2">"key.pem"</span> file ubuntu@ip-address:/home/ubuntu
+
+   <span class="c"># send directory</span>
+   scp -i <span class="s2">"key.pem"</span> -r directory ubuntu@ip-address:/home/ubuntu
+</code></pre>
+    </div>
+  </li>
+  <li>get file and directory from Amazon EC2 instance
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>       <span class="c"># get file</span>
+       scp -p -i <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/pathto/file ~/local_path
+
+       <span class="c"># get directory</span>
+       scp -rp -i <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/pathto/directort ~/local_path
+</code></pre>
+    </div>
+  </li>
+  <li>delete file and directory on AWS instance
+    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>      <span class="c"># delete file</span>
+      rm ~/<span class="o">(</span>file path<span class="o">)</span>
+
+      <span class="c"># delete file</span>
+      rm -rf ~/<span class="o">(</span>directory path<span class="o">)</span>
 </code></pre>
     </div>
   </li>
