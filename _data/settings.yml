@@ -22,3 +22,6 @@ menu:
 
 # google-analytics
 google_analytics: UA-102082551-2
+
+gems:
+  - jekyll-relative-links

@@ -292,7 +292,7 @@ The deployment consists of following five steps:
     ```
 
 1.  load rainfall event (e.g., [Peacheater Creek](http://vivoni.asu.edu/tribs/weather.html), November 1996)
-    +  Struct of flow production on starting point
+    +  struct of flow production on starting point
     ```java
     typedef struct{
             int nPPRID;     // index of starting node ID
@@ -300,7 +300,7 @@ The deployment consists of following five steps:
             int nTimeFrame; // number of frames (list size)
     }PPRate;             //flow on starting points
     ```
-    +  Struct of distributed rainfall map
+    +  struct of distributed rainfall map
     ```java
     typedef struct{
             PPRate *pPPR_List;  // list of starting points
@@ -310,7 +310,7 @@ The deployment consists of following five steps:
     ```
 
 1.  perform runoff simulation (e.g., time step, spatial scale)
-    +  Preset in main program (particle-set.c)
+    +  preset in main program (particle-set.c)
     ```java
             // from 1996-11-23 00:00 to 11-28 23:00 (144 hours)
             int nST = 1;    // starting time (first hour)
@@ -321,16 +321,82 @@ The deployment consists of following five steps:
             char strFilePath[120] = "/home/ubuntu/workspace/amazon/input";
             char* pNPath = join_string(pFilePath, "./input/pathnode.in");
             char* pTopoPath = join_string(pFilePath, "./input/pathline.txt");
-            char* pPPRPath = join_string(pFilePath, "input/rainfall.in");
+            char* pPPRPath = join_string(pFilePath, "./input/rainfall.in");
     ```
-
-    +  Execution of main program (#! /bin/sh)
+    +  execution of main program (#! /bin/sh)
     ```bash
-            # compiling with MPICH framework
-            mpicc -o ./workspace/amazon/particle-set ./workspace/amazon/particle-set.c -lm
+            # create batch file
+            vim /bin/sh
+
+            # write commands into batch file
+                # compiling with MPICH framework
+                mpicc -o ./workspace/amazon/particle-set ./workspace/amazon/particle-set.c -lm
+                # executing with increasing processors
+                for i in '1' '2' '3' '4' (... '128');
+                    do
+                        mpiexec -np $i ./workspace/amazon/particle-set
+                done
+
+            # save
+            :x!
+
+            # run batch file
+            /bin/sh ./run.sh | tee ./timecost.out
+    ```
+    +  distributed processors (if on multiple computers)
+    ```bash
+            # copy source code and input files
+            scp -r ./workspace/amazon ubuntu@ip-address_1:/home/ubuntu/workspace/
+            ...
+            scp -r ./workspace/amazon ubuntu@ip-address_n:/home/ubuntu/workspace/
     ```
 
 1.  analyze model performance (e.g., accuracy, efficiency)
+    +  prediction accuracy of outlet discharges
+    ```matlab
+            %% comparison of outlet discharges
+
+            % Qh_obs    observed outlet discharges
+            % Qh_ptc    number of particles passing outlet
+            % Qh_sim    simulated outlet discharges
+            Qh_obs = [field observations (SWAT)];
+            Qh_ptc = [model simulations (particles)];
+
+            % 0.1       10 particles per each mm of water
+            % 10^(-3)   from mm to m
+            % 200*200   cell size of constraining grid
+            % 3600      from hour to seconds
+            Qh_1 = Qh_ptc*0.1*10^(-3)*200*200/3600;
+            theta = (max(Qh_1)*min(Qh_obs)-min(Qh_1)*max(Qh_obs))/(max(Qh_1)-min(Qh_1));
+            e = 1- (max(Qh_obs)-theta)/max(Qh_1);
+            Qh_sim = Qh_1*(1-e) + theta;
+
+            %% calculation of quantitative indicators
+
+            % peak discharge
+            p_o = max(Qh_obs);
+            p_s = max(Qh_sim);
+
+            % Nash and Sutcliffe efficiency
+            diff=observed-simulated;
+            diffmean_o=observed-mean(Qh_obs);
+            diffmean_s=simulated-mean(Qh_sim);
+
+            nse= 1-(sum(diff.^2))/(sum(diffmean_o.^2));
+
+            % correlation coefficient r
+            r = sum(diffmean_o.*diffmean_s)/sqrt(sum(diffmean_o.^2)*sum(diffmean_s.^2));
+
+            % balance coefficient
+            b = sum(Qh_obs)/sum(Qh_sim);
+    ```
+    ![](/assets/img/aws/aws_07.png)
+    +  simulation efficiency of runoff routing
+    ```matlab
+            % compiling with MPICH framework
+            asd = asd;
+    ```
+    ![](/assets/img/aws/aws_08.png)
 
 ### Main contributions
 + realistic representation of surface water movements

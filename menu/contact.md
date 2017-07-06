@@ -8,7 +8,7 @@ title: Contact me
         <style>
             #chartdiv {
                 width: 100%;
-                height: 260px;
+                height: 280px;
             }
             .map-marker {
                 margin-left: -5px;
@@ -626,4 +626,4 @@ title: Contact me
     <div id="chartdiv"></div>
 </html>
 
-If you are having any questions or suggestions, feel free to contact me.
+If you are having any questions or suggestions, feel free to contact [me]({{ site.baseurl }}/menu/rong.html).

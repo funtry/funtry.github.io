@@ -460,7 +460,7 @@ chmod 777 ~/workspace/amazon
   </li>
   <li>load rainfall event (e.g., <a href="http://vivoni.asu.edu/tribs/weather.html">Peacheater Creek</a>, November 1996)
     <ul>
-      <li>Struct of flow production on starting point
+      <li>struct of flow production on starting point
         <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
      <span class="kt">int</span> <span class="n">nPPRID</span><span class="o">;</span>     <span class="c1">// index of starting node ID</span>
      <span class="kt">double</span> <span class="o">*</span><span class="n">pfPPR</span><span class="o">;</span>  <span class="c1">// rainfall rate list mm/hr</span>
@@ -469,7 +469,7 @@ chmod 777 ~/workspace/amazon
 </code></pre>
         </div>
       </li>
-      <li>Struct of distributed rainfall map
+      <li>struct of distributed rainfall map
         <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
      <span class="n">PPRate</span> <span class="o">*</span><span class="n">pPPR_List</span><span class="o">;</span>  <span class="c1">// list of starting points</span>
      <span class="kt">int</span> <span class="n">nNumPoints</span><span class="o">;</span>     <span class="c1">// number of starting points</span>
@@ -482,7 +482,7 @@ chmod 777 ~/workspace/amazon
   </li>
   <li>perform runoff simulation (e.g., time step, spatial scale)
     <ul>
-      <li>Preset in main program (particle-set.c)
+      <li>preset in main program (particle-set.c)
         <div class="language-java highlighter-rouge"><pre class="highlight"><code>     <span class="c1">// from 1996-11-23 00:00 to 11-28 23:00 (144 hours)</span>
      <span class="kt">int</span> <span class="n">nST</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>    <span class="c1">// starting time (first hour)</span>
      <span class="kt">int</span> <span class="n">nIT</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>    <span class="c1">// time interval (1 hour)</span>
@@ -492,19 +492,92 @@ chmod 777 ~/workspace/amazon
      <span class="kt">char</span> <span class="n">strFilePath</span><span class="o">[</span><span class="mi">120</span><span class="o">]</span> <span class="o">=</span> <span class="s">"/home/ubuntu/workspace/amazon/input"</span><span class="o">;</span>
      <span class="kt">char</span><span class="o">*</span> <span class="n">pNPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"./input/pathnode.in"</span><span class="o">);</span>
      <span class="kt">char</span><span class="o">*</span> <span class="n">pTopoPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"./input/pathline.txt"</span><span class="o">);</span>
-     <span class="kt">char</span><span class="o">*</span> <span class="n">pPPRPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"input/rainfall.in"</span><span class="o">);</span>
+     <span class="kt">char</span><span class="o">*</span> <span class="n">pPPRPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">pFilePath</span><span class="o">,</span> <span class="s">"./input/rainfall.in"</span><span class="o">);</span>
 </code></pre>
         </div>
       </li>
-      <li>Execution of main program (#! /bin/sh)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># compiling with MPICH framework</span>
-     mpicc -o ./workspace/amazon/particle-set ./workspace/amazon/particle-set.c -lm
+      <li>execution of main program (#! /bin/sh)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># create batch file</span>
+     vim /bin/sh
+
+     <span class="c"># write commands into batch file</span>
+         <span class="c"># compiling with MPICH framework</span>
+         mpicc -o ./workspace/amazon/particle-set ./workspace/amazon/particle-set.c -lm
+         <span class="c"># executing with increasing processors</span>
+         <span class="k">for </span>i <span class="k">in</span> <span class="s1">'1'</span> <span class="s1">'2'</span> <span class="s1">'3'</span> <span class="s1">'4'</span> <span class="o">(</span>... <span class="s1">'128'</span><span class="o">)</span>;
+             <span class="k">do
+                 </span>mpiexec -np <span class="nv">$i</span> ./workspace/amazon/particle-set
+         <span class="k">done</span>
+
+     <span class="c"># save</span>
+     :x!
+
+     <span class="c"># run batch file</span>
+     /bin/sh ./run.sh | tee ./timecost.out
+</code></pre>
+        </div>
+      </li>
+      <li>distributed processors (if on multiple computers)
+        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># copy source code and input files</span>
+     scp -r ./workspace/amazon ubuntu@ip-address_1:/home/ubuntu/workspace/
+     ...
+     scp -r ./workspace/amazon ubuntu@ip-address_n:/home/ubuntu/workspace/
 </code></pre>
         </div>
       </li>
     </ul>
   </li>
-  <li>analyze model performance (e.g., accuracy, efficiency)</li>
+  <li>analyze model performance (e.g., accuracy, efficiency)
+    <ul>
+      <li>prediction accuracy of outlet discharges
+        <div class="language-matlab highlighter-rouge"><pre class="highlight"><code>     <span class="c1">%% comparison of outlet discharges</span>
+
+     <span class="c1">% Qh_obs    observed outlet discharges</span>
+     <span class="c1">% Qh_ptc    number of particles passing outlet</span>
+     <span class="c1">% Qh_sim    simulated outlet discharges</span>
+     <span class="n">Qh_obs</span> <span class="o">=</span> <span class="p">[</span><span class="n">field</span> <span class="n">observations</span> <span class="p">(</span><span class="n">SWAT</span><span class="p">)];</span>
+     <span class="n">Qh_ptc</span> <span class="o">=</span> <span class="p">[</span><span class="n">model</span> <span class="n">simulations</span> <span class="p">(</span><span class="n">particles</span><span class="p">)];</span>
+
+     <span class="c1">% 0.1       10 particles per each mm of water</span>
+     <span class="c1">% 10^(-3)   from mm to m</span>
+     <span class="c1">% 200*200   cell size of constraining grid</span>
+     <span class="c1">% 3600      from hour to seconds</span>
+     <span class="n">Qh_1</span> <span class="o">=</span> <span class="n">Qh_ptc</span><span class="o">*</span><span class="mf">0.1</span><span class="o">*</span><span class="mi">10</span><span class="o">^</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">)</span><span class="o">*</span><span class="mi">200</span><span class="o">*</span><span class="mi">200</span><span class="p">/</span><span class="mi">3600</span><span class="p">;</span>
+     <span class="n">theta</span> <span class="o">=</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">Qh_1</span><span class="p">)</span><span class="o">*</span><span class="nb">min</span><span class="p">(</span><span class="n">Qh_obs</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">Qh_1</span><span class="p">)</span><span class="o">*</span><span class="nb">max</span><span class="p">(</span><span class="n">Qh_obs</span><span class="p">))/(</span><span class="nb">max</span><span class="p">(</span><span class="n">Qh_1</span><span class="p">)</span><span class="o">-</span><span class="nb">min</span><span class="p">(</span><span class="n">Qh_1</span><span class="p">));</span>
+     <span class="n">e</span> <span class="o">=</span> <span class="mi">1</span><span class="o">-</span> <span class="p">(</span><span class="nb">max</span><span class="p">(</span><span class="n">Qh_obs</span><span class="p">)</span><span class="o">-</span><span class="n">theta</span><span class="p">)/</span><span class="nb">max</span><span class="p">(</span><span class="n">Qh_1</span><span class="p">);</span>
+     <span class="n">Qh_sim</span> <span class="o">=</span> <span class="n">Qh_1</span><span class="o">*</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">e</span><span class="p">)</span> <span class="o">+</span> <span class="n">theta</span><span class="p">;</span>
+
+     <span class="c1">%% calculation of quantitative indicators</span>
+
+     <span class="c1">% peak discharge</span>
+     <span class="n">p_o</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">Qh_obs</span><span class="p">);</span>
+     <span class="n">p_s</span> <span class="o">=</span> <span class="nb">max</span><span class="p">(</span><span class="n">Qh_sim</span><span class="p">);</span>
+
+     <span class="c1">% Nash and Sutcliffe efficiency</span>
+     <span class="nb">diff</span><span class="o">=</span><span class="n">observed</span><span class="o">-</span><span class="n">simulated</span><span class="p">;</span>
+     <span class="n">diffmean_o</span><span class="o">=</span><span class="n">observed</span><span class="o">-</span><span class="nb">mean</span><span class="p">(</span><span class="n">Qh_obs</span><span class="p">);</span>
+     <span class="n">diffmean_s</span><span class="o">=</span><span class="n">simulated</span><span class="o">-</span><span class="nb">mean</span><span class="p">(</span><span class="n">Qh_sim</span><span class="p">);</span>
+
+     <span class="n">nse</span><span class="o">=</span> <span class="mi">1</span><span class="o">-</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="nb">diff</span><span class="o">.^</span><span class="mi">2</span><span class="p">))/(</span><span class="nb">sum</span><span class="p">(</span><span class="n">diffmean_o</span><span class="o">.^</span><span class="mi">2</span><span class="p">));</span>
+
+     <span class="c1">% correlation coefficient r</span>
+     <span class="n">r</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">diffmean_o</span><span class="o">.*</span><span class="n">diffmean_s</span><span class="p">)/</span><span class="nb">sqrt</span><span class="p">(</span><span class="nb">sum</span><span class="p">(</span><span class="n">diffmean_o</span><span class="o">.^</span><span class="mi">2</span><span class="p">)</span><span class="o">*</span><span class="nb">sum</span><span class="p">(</span><span class="n">diffmean_s</span><span class="o">.^</span><span class="mi">2</span><span class="p">));</span>
+
+     <span class="c1">% balance coefficient</span>
+     <span class="n">b</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Qh_obs</span><span class="p">)/</span><span class="nb">sum</span><span class="p">(</span><span class="n">Qh_sim</span><span class="p">);</span>
+</code></pre>
+        </div>
+        <p><img src="/assets/img/aws/aws_07.png" alt="" /></p>
+      </li>
+      <li>simulation efficiency of runoff routing
+        <div class="language-matlab highlighter-rouge"><pre class="highlight"><code>     <span class="c1">% compiling with MPICH framework</span>
+     <span class="n">asd</span> <span class="o">=</span> <span class="n">asd</span><span class="p">;</span>
+</code></pre>
+        </div>
+        <p><img src="/assets/img/aws/aws_08.png" alt="" /></p>
+      </li>
+    </ul>
+  </li>
 </ol>
 
 <h3 id="main-contributions">Main contributions</h3>
