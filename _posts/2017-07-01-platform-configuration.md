@@ -457,7 +457,7 @@ The deployment consists of following five steps:
 
     $${q(t) = q(t)\cdot(1-e)+\lambda}$$
 
-### Ubuntu commands
+### Linux commands
 +  connect to Amazon EC2 instance
   ```bash
       # ensure the private key key.pem is assessible
