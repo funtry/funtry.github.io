@@ -1,6 +1,6 @@
 ---
 layout: page
-title:
+title: Trajectory
 ---
 
 <html>
@@ -115,7 +115,7 @@ title:
       "dataProvider": {
         "map": "worldLow",
         "zoomLevel": 1,
-        "zoomLongitude": 10,
+        "zoomLongitude": 10.685223,
         "zoomLatitude": 25,
         <!-- "getAreasFromMap": true, -->
 
@@ -124,10 +124,10 @@ title:
               "longitudes": [ 102.704877, 114.3527662 ]
             }, {
               "latitudes": [ 30.5390822, 28 ],
-              "longitudes": [ 114.3527662, 188 ]
+              "longitudes": [ 114.3527662, 190.480712 ]
             }, {
-              "latitudes": [ 28, 21.2961421 ],
-              "longitudes": [ -182, -157.8197537 ]
+              "latitudes": [ 30, 21.2961421 ],
+              "longitudes": [ -169.110266, -157.8197537 ]
             }, {
               "latitudes": [ 21.2961421, 44.5637844 ],
               "longitudes": [ -157.8197537, -123.2816383 ]
@@ -261,3 +261,6 @@ title:
     </body>
     <div id="chartdiv"></div>
 </html>
+
+## [Across the Pacific Ocean]({{site.baseurl}}/menu/rong_usa.html)
+![](/assets/map/world_pacific.svg)
