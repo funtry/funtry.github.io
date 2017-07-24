@@ -52,6 +52,11 @@ image:
     -   Kunming (12.19)
     -   Hong Kong (2017.01.04)
     -   Corvallis (2017.01.05)
+-   2017 from Corvallis (07.03) to
+    -   Denver (07.03)
+    -   Hong Kong (07.13)
+    -   Shenzhen (07.20)
+    -   Kunming (07.23)
 
 <html>
     <head>
@@ -170,7 +175,7 @@ image:
             "zoomLongitude": 114.15,
 
             "lines": [
-            { "color": "#FF0000", "id": "line1", "arc": -0.6, "latitudes": [ 22.315547, 22.368413], "longitudes": [ 113.93539, 114.078033]},
+            { "color": "#00FF00", "id": "line1", "arc": -0.89, "latitudes": [ 22.315547, 22.368413, 22.292533 ], "longitudes": [ 113.93539, 114.078033, 114.200764]},
             { "id": "line2", "arc": -0.6, "latitudes": [ 22.315547, 22.329893], "longitudes": [ 113.93539, 114.192996]},
             { "id": "line3", "arc": -0.6, "latitudes": [ 22.315547, 22.287591], "longitudes": [ 113.93539, 114.147563]},
             { "id": "line4", "arc": -0.6, "latitudes": [ 22.315547, 22.249687], "longitudes": [ 113.93539, 114.169053]}
@@ -179,6 +184,7 @@ image:
             "images": [
 {"color": "#00FF00", "svgPath": targetSVG, "title": "Hong Kong International Airport", "latitude": 22.315547, "longitude": 113.93539, "scale": 0.8},
 {"color": "#FF0000", "svgPath": targetSVG, "title": "Royal View Hotel", "latitude": 22.368413, "longitude": 114.078033, "scale": 0.8},
+{"color": "#FF0000", "svgPath": targetSVG, "title": "Ibis North Point", "latitude": 22.292533, "longitude": 114.200764, "scale": 0.8},
 {"type": "circle", "title": "Hong Kong Baptist University", "latitude": 22.337857, "longitude": 114.181962, "scale": 0.5},
 {"type": "circle", "title": "Regal Oriental Hotel", "latitude": 22.329893, "longitude": 114.192996, "scale": 0.5},
 {"type": "circle", "title": "ibis Central and Sheung Wan", "latitude": 22.287591, "longitude": 114.147563, "scale": 0.5},
@@ -205,13 +211,14 @@ image:
 {"type": "circle", "title": "Kowloon Walled City", "latitude": 22.331835, "longitude": 114.190229, "scale": 0.5},
 {"type": "circle", "title": "Sai Wan War Cemetery", "latitude": 22.259283, "longitude": 114.234398, "scale": 0.5},
 {"type": "circle", "title": "Sai Wan War Cemetery", "latitude": 22.259283, "longitude": 114.234398, "scale": 0.5},
-{"color": "#FF0000", "type": "circle", "title": "Hen Keng", "latitude": 22.361471, "longitude": 114.171836, "scale": 0.5},
-{"color": "#FF0000", "type": "circle", "title": "Hong Kong Heritage Museum", "latitude": 22.377524, "longitude": 114.186285, "scale": 0.5},
-{"color": "#FF0000", "type": "circle", "title": "Sham Shui Po", "latitude": 22.329071, "longitude": 114.163497, "scale": 0.5},
-{"color": "#FF0000", "type": "circle", "title": "Sha Tin Racecourse", "latitude": 22.40037, "longitude": 114.206189, "scale": 0.5},
-{"color": "#FF0000", "type": "circle", "title": "Hong Kong Gold Coast", "latitude": 22.371098, "longitude": 113.989288, "scale": 0.5},
-{"color": "#FF0000", "type": "circle", "title": "Butterfly Beach", "latitude": 22.373539, "longitude": 113.958817, "scale": 0.5},
-{"color": "#FF0000", "type": "circle", "title": "Silverstrand Beach", "latitude": 22.322392, "longitude": 114.270947, "scale": 0.5},  
+{"color": "#FFFF00", "type": "circle", "title": "Hen Keng", "latitude": 22.361471, "longitude": 114.171836, "scale": 0.5},
+{"color": "#FFFF00", "type": "circle", "title": "Hong Kong Heritage Museum", "latitude": 22.377524, "longitude": 114.186285, "scale": 0.5},
+{"color": "#FFFF00", "type": "circle", "title": "Sham Shui Po", "latitude": 22.329071, "longitude": 114.163497, "scale": 0.5},
+{"color": "#FFFF00", "type": "circle", "title": "Sha Tin Racecourse", "latitude": 22.40037, "longitude": 114.206189, "scale": 0.5},
+{"color": "#FFFF00", "type": "circle", "title": "Hong Kong Gold Coast", "latitude": 22.371098, "longitude": 113.989288, "scale": 0.5},
+{"color": "#FFFF00", "type": "circle", "title": "Butterfly Beach", "latitude": 22.373539, "longitude": 113.958817, "scale": 0.5},
+{"color": "#FFFF00", "type": "circle", "title": "Sai Kung", "latitude": 22.380377, "longitude": 114.272727, "scale": 0.5},
+{"color": "#FFFF00", "type": "circle", "title": "Silverstrand Beach", "latitude": 22.322392, "longitude": 114.270947, "scale": 0.5},  
             {
               "svgPath": planeSVG,
               "positionOnLine": 0,
