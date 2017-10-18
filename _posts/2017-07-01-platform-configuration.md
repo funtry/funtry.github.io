@@ -12,7 +12,8 @@ image:
 ---
 ## Particle-set: a parallel tool for runoff routing
 {:.no_toc}
-by Fangli ZHANG, Qiming ZHOU, Qingquan LI, Guofeng WU, and Jun LIU
+by Fangli ZHANG, Qiming ZHOU and Jun LIU
+<!-- , Qingquan LI, Guofeng WU,  -->
 
 **More information on:**
 [www.zhangfangli.cn](http://zhangfangli.cn)
