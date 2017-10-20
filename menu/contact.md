@@ -289,11 +289,10 @@ title: Contact me
       .bizmail_loginpanel .bizmail_SubmitArea a{font-size:12px;margin-left:5px;}
       .bizmail_loginpanel select{width:110px;height:20px;margin:0 2px;}
       </style>
-      <script type="text/javascript" src="http://exmail.qq.com/en_US/htmledition/js_biz/outerlogin.js"  charset="utf-8"></script>
+      <script type="text/javascript" src="http://exmail.qq.com/en_US/htmledition/js_biz/outerlogin.js"  charset="gb18030"></script>
       <script type="text/javascript">
       writeLoginPanel({domainlist:"zhangfangli.cn", mode:"vertical"});
       </script>
-
 </html>
 
 If you are having any questions or suggestions, feel free to contact [me]({{ site.baseurl }}/menu/rong.html).
