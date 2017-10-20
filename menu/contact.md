@@ -276,7 +276,7 @@ title: Contact me
 
       <!-- qq enterprise mail -->
       <style>
-      .bizmail_loginpanel{font-size:12px;width:350px;height:auto;border:1px solid #cccccc;background:#ffffff;}
+      .bizmail_loginpanel{font-size:12px;width:420px;height:auto;border:1px solid #cccccc;background:#ffffff;}
       .bizmail_LoginBox{padding:10px 15px;}
       .bizmail_loginpanel h3{padding-bottom:5px;margin:0 0 5px 0;border-bottom:1px solid #cccccc;font-size:14px;}
       .bizmail_loginpanel form{margin:10;padding:10;}
