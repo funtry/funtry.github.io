@@ -282,7 +282,7 @@ title: Contact me
       .bizmail_loginpanel form{margin:10;padding:10;}
       .bizmail_loginpanel input.text{font-size:12px;width:200px;height:20px;margin:0 2px;border:1px solid #C3C3C3;border-color:#7C7C7C #C3C3C3 #C3C3C3 #9A9A9A;}
       .bizmail_loginpanel .bizmail_column{height:28px;}
-      .bizmail_loginpanel .bizmail_column label{display:block;float:left;width:200px;height:24px;line-height:24px;font-size:12px;}
+      .bizmail_loginpanel .bizmail_column label{display:block;float:left;width:100px;height:24px;line-height:24px;font-size:12px;}
       .bizmail_loginpanel .bizmail_column .bizmail_inputArea{float:left;width:200px;}
       .bizmail_loginpanel .bizmail_column span{font-size:12px;word-wrap:break-word;margin-left: 2px;line-height:200%;}
       .bizmail_loginpanel .bizmail_SubmitArea{margin-left:30px;clear:both;}
