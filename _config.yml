@@ -1,5 +1,5 @@
 # Site Settings
-
+github:              [metadata]
 paginate:            5
 disqus:              #"your-disqus"
 
@@ -7,4 +7,4 @@ disqus:              #"your-disqus"
 # markdown:            kramdown
 highlighter:         rouge
 permalink:           none
-gems:                [jekyll-paginate]
+plugins:                [jekyll-paginate]
