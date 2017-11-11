@@ -6,12 +6,12 @@ title: Curriculum Vitae
 <img src="/assets/img/funtry_2013.jpg" align="right" width="135" />
 ## Current
 
-+ Ph.D. Candidature
++ Doctor of Philosophy (Ph.D.)
   + Department of Geography
   + Hong Kong Baptist University
 
 + Contact Information
-  + Email: [flzhang.szu@gmail.com](mialto:flzhang.szu@gmail.com)
+  + Email: [flzhang@zhangfangli.cn](mialto:flzhang@zhangfangli.cn)
   + AAB 1236, 15 Baptist University Road, Hong Kong
 
 ## Background

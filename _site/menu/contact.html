@@ -202,6 +202,7 @@
         {"svgPath": targetSVG, "title": "Wuhan", "latitude": 30.5390822, "longitude": 114.3527662, "scale": 0.3, "color": "#FF0000"},
         {"svgPath": targetSVG, "title": "Beijing", "latitude": 39.9869171, "longitude": 116.3036799, "scale": 0.3, "color": "#FF0000"},
         {"svgPath": targetSVG, "title": "Hong Kong", "latitude": 22.337857, "longitude": 114.181962, "scale": 0.5, "color": "#FF0000"},
+        {"svgPath": targetSVG, "title": "Nanjing", "latitude": 32.110798, "longitude": 118.9626781, "scale": 0.5, "color": "#FF0000"},
         {"svgPath": targetSVG, "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.5, "color": "#FFFF00"},
         {"type": "circle", "title": "Honolulu", "latitude": 21.2961421, "longitude": -157.8197537, "scale": 0.2},
         {"type": "circle", "title": "Soeul", "latitude": 37.56171, "longitude": 126.969821, "scale": 0.2},
@@ -229,7 +230,6 @@
         {"type": "circle", "title": "Yueyang", "latitude": 29.363103, "longitude": 113.114635, "scale": 0.2},
         {"type": "circle", "title": "Changsha", "latitude": 28.216436, "longitude": 112.940859, "scale": 0.2},
         {"type": "circle", "title": "Changzhou", "latitude": 31.808967, "longitude": 119.974338, "scale": 0.2},
-        {"type": "circle", "title": "Nanjing", "latitude": 32.065932, "longitude": 118.788722, "scale": 0.2},
         {"type": "circle", "title": "Jiujiang Lushan", "latitude": 29.556552, "longitude": 116.013272, "scale": 0.2},
         {"type": "circle", "title": "Nanchang", "latitude": 28.679786, "longitude": 115.855627, "scale": 0.2},
         {"type": "circle", "title": "Qingdao", "latitude": 36.058188, "longitude": 120.364583, "scale": 0.2},
@@ -266,7 +266,7 @@
       },
 
       "linesSettings": {
-        "arc": 0.8,
+        "arc": 0.4,
         "arrow": "none",
         "color": "#FFFF00",
         "alpha": 1,
@@ -304,7 +304,7 @@
 
       for ( var x in map.dataProvider.images ) {
         var image = map.dataProvider.images[ x ];
-        if (x == 4 || x == 5) {
+        if (x == 4 || x == 6) {
             if ( 'undefined' == typeof image.externalElement )
             image.externalElement = createCustomMarker( image );
             var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
@@ -342,11 +342,29 @@
     </script>
     </body>
     <div id="chartdiv"></div>
+
+    <!-- qq enterprise mail -->
+    <style>
+      .bizmail_loginpanel{font-size:12px;width:99.5%;height:auto;border:1px solid #cccccc;background:#ffffff;}
+      .bizmail_LoginBox{padding:20px 20px;}
+      .bizmail_loginpanel h3{padding-bottom:5px;margin:0 0 5px 0;border-bottom:1px solid #cccccc;font-size:14px;}
+      .bizmail_loginpanel form{margin:10;padding:10;}
+      .bizmail_loginpanel input.text{font-size:12px;width:130px;height:20px;margin:0 2px;border:1px solid #C3C3C3;border-color:#7C7C7C #C3C3C3 #C3C3C3 #9A9A9A;}
+      .bizmail_loginpanel .bizmail_column{height:28px;}
+      .bizmail_loginpanel .bizmail_column label{display:block;float:left;width:50px;height:24px;line-height:24px;font-size:12px;}
+      .bizmail_loginpanel .bizmail_column .bizmail_inputArea{float:left;width:240px;}
+      .bizmail_loginpanel .bizmail_column span{font-size:12px;word-wrap:break-word;margin-left: 2px;line-height:200%;}
+      .bizmail_loginpanel .bizmail_SubmitArea{margin-left:30px;clear:both;}
+      .bizmail_loginpanel .bizmail_SubmitArea a{font-size:12px;margin-left:5px;}
+      .bizmail_loginpanel select{width:110px;height:20px;margin:0 2px;}
+  </style>
+  <script type="text/javascript" src="http://exmail.qq.com/en_US/htmledition/js_biz/outerlogin.js" charset="gb18030"></script>
+  <script type="text/javascript">
+      writeLoginPanel({domainlist:"zhangfangli.cn", mode:"vertical"});
+    </script>
 </html>
 
-<p>If you are having any questions or suggestions, feel free to contact me.</p>
-
-<!-- [me](/menu/rong.html) -->
+<p>If you are having any questions or suggestions, feel free to contact <a href="/menu/rong.html">me</a>.</p>
 
 
     </div>

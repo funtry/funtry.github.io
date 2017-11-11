@@ -77,7 +77,8 @@
 
 
 <h2 class="no_toc" id="particle-set-a-parallel-tool-for-runoff-routing">Particle-set: a parallel tool for runoff routing</h2>
-<p>by Fangli ZHANG, Qiming ZHOU, Qingquan LI, Guofeng WU, and Jun LIU</p>
+<p>by Fangli ZHANG, Qiming ZHOU and Jun LIU
+<!-- , Qingquan LI, Guofeng WU,  --></p>
 
 <p><strong>More information on:</strong>
 <a href="http://zhangfangli.cn">www.zhangfangli.cn</a></p>
@@ -185,15 +186,13 @@
 <img src="/assets/img/aws/aws_03.png" alt="" /></p>
       </li>
       <li>SSH login in with private key and target ip address
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>ssh -i <span class="s2">"key.pem"</span> ubuntu@54.202.97.199 <span class="o">(</span>ip-address<span class="o">)</span>
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ssh <span class="nt">-i</span> <span class="s2">"key.pem"</span> ubuntu@54.202.97.199 <span class="o">(</span>ip-address<span class="o">)</span>
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_04.png" alt="" /></p>
       </li>
       <li>check the number of processors (64)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>grep <span class="s1">'processor'</span> /proc/cpuinfo | sort -u | wc -l
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">grep</span> <span class="s1">'processor'</span> /proc/cpuinfo | sort <span class="nt">-u</span> | wc <span class="nt">-l</span>
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_05.png" alt="" /></p>
       </li>
     </ul>
@@ -201,20 +200,17 @@
   <li>GCC compiling environment configuration
     <ul>
       <li>get source list of applications updated
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get update
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get update
+</code></pre></div>        </div>
       </li>
       <li>install gcc complier
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get install gcc
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install gcc
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_09.png" alt="" /></p>
       </li>
       <li>install make complier
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>sudo apt-get install make
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt-get install make
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_10.png" alt="" /></p>
       </li>
     </ul>
@@ -222,44 +218,36 @@
   <li>MPICH framework configuration
     <ul>
       <li>send source codes to AWS instance
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>scp -i <span class="s2">"key.pem"</span> mpich-3.2.tar.gz ubuntu@54.202.97.199:/home/ubuntu
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp <span class="nt">-i</span> <span class="s2">"key.pem"</span> mpich-3.2.tar.gz ubuntu@54.202.97.199:/home/ubuntu
+</code></pre></div>        </div>
       </li>
       <li>create installation path on AWS instance
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir ~/mpich
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir ~/mpich
+</code></pre></div>        </div>
       </li>
       <li>authorize read and write permission
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>chmod -R 777 ~/mpich
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod <span class="nt">-R</span> 777 ~/mpich
+</code></pre></div>        </div>
       </li>
       <li>unzip installation files
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>tar xfz mpich-3.2.tar.gz
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tar </span>xfz mpich-3.2.tar.gz
+</code></pre></div>        </div>
       </li>
       <li>get into the source installation files
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/mpich-3.2
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/mpich-3.2
+</code></pre></div>        </div>
       </li>
       <li>compiling configuration (only need C language)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>./configure -prefix<span class="o">=</span>/home/ubuntu/mpich -disable-fortran -disable-cxx
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./configure <span class="nt">-prefix</span><span class="o">=</span>/home/ubuntu/mpich <span class="nt">-disable-fortran</span> <span class="nt">-disable-cxx</span>
+</code></pre></div>        </div>
       </li>
       <li>compile (after “configuration” completed)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+</code></pre></div>        </div>
       </li>
       <li>install (after “make” completed)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make install
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make install
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_11.png" alt="" /></p>
       </li>
     </ul>
@@ -267,44 +255,36 @@
   <li>HYDRA process manager configuration
     <ul>
       <li>send source codes to AWS instance
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>scp -i <span class="s2">"key.pem"</span> hydra-3.2.tar.gz ubuntu@54.202.97.199:/home/ubuntu
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>scp <span class="nt">-i</span> <span class="s2">"key.pem"</span> hydra-3.2.tar.gz ubuntu@54.202.97.199:/home/ubuntu
+</code></pre></div>        </div>
       </li>
       <li>create installation path on AWS instance
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>mkdir ~/hydra
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir ~/hydra
+</code></pre></div>        </div>
       </li>
       <li>authorize read and write permission
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>chmod -R 777 ~/hydra
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>chmod <span class="nt">-R</span> 777 ~/hydra
+</code></pre></div>        </div>
       </li>
       <li>unzip installation files
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>tar xfz hydra-3.2.tar.gz
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">tar </span>xfz hydra-3.2.tar.gz
+</code></pre></div>        </div>
       </li>
       <li>get into the source installation files
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="nb">cd</span> ~/hydra-3.2
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">cd</span> ~/hydra-3.2
+</code></pre></div>        </div>
       </li>
       <li>compiling configuration (only need C language)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>./configure -prefix<span class="o">=</span>/home/ubuntu/hydra
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./configure <span class="nt">-prefix</span><span class="o">=</span>/home/ubuntu/hydra
+</code></pre></div>        </div>
       </li>
       <li>compile (after “configuration” completed)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make
+</code></pre></div>        </div>
       </li>
       <li>install (after “make” completed)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>make install
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>make install
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_12.png" alt="" /></p>
       </li>
     </ul>
@@ -312,12 +292,11 @@
   <li>parallel environment setups
     <ul>
       <li>configure environment variables
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>vim ~/.bashrc
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.bashrc
+</code></pre></div>        </div>
       </li>
       <li>add variables
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c">#bin</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#bin</span>
   <span class="nv">MPI_HOME</span><span class="o">=</span>/home/ubuntu/mpich
   <span class="nv">HYDRA_HOST_FILE</span><span class="o">=</span>/home/ubuntu/hydra/hosts
   <span class="nv">PATH</span><span class="o">=</span><span class="nv">$MPI_HOME</span>/bin:<span class="nv">$PATH</span>
@@ -329,23 +308,20 @@
   <span class="c">#GCC include</span>
   <span class="nv">C_INCLUDE_PATH</span><span class="o">=</span><span class="nv">$C_INCLUDE_PATH</span>:<span class="nv">$MPI_HOME</span>/include
   <span class="nb">export </span>C_INCLUDE_PATH
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>configure process manager
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>vim ~/hydra/hosts
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/hydra/hosts
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_13.png" alt="" />
 <img src="/assets/img/aws/aws_15.png" alt="" /></p>
       </li>
       <li>set number of processors in cluster
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># host ID: number of processors</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># host ID: number of processors</span>
 ip-54-202-97-199: 64
             ... : ...
 ip-54-202-97-191: 64
-</code></pre>
-        </div>
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_14.png" alt="" /></p>
       </li>
     </ul>
@@ -357,14 +333,13 @@ ip-54-202-97-191: 64
   <li>clone particle-set project
     <ul>
       <li>create workspace
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c"># on AWS EC2 machine</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># on AWS EC2 machine</span>
 mkdir ~/aws
-chmod -R 777 ~/aws
-</code></pre>
-        </div>
+chmod <span class="nt">-R</span> 777 ~/aws
+</code></pre></div>        </div>
       </li>
       <li>clone <a href="https://github.com">source project from GitHub</a>
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code><span class="c">#content of source project</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c">#content of source project</span>
 +- particle-set                   <span class="c"># root path</span>
       /----- README.md            <span class="c"># configuration guide</span>
       /----- particle.c           <span class="c"># main program</span>
@@ -376,8 +351,7 @@ chmod -R 777 ~/aws
               /----- flowmap.out  <span class="c"># dynamic flow maps</span>
               /----- outlet.out   <span class="c"># outlet discharges</span>
               /----- timecost.out <span class="c"># time costs</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>screenshot of inputs (e.g., <a href="http://vivoni.asu.edu/tribs/weather.html">Peacheater Creek</a>, November 1996)
 <img src="/assets/img/aws/aws_06.png" alt="" /></li>
@@ -386,7 +360,7 @@ chmod -R 777 ~/aws
   <li>setup model parameters (e.g., flow velocity, particle density)
     <ul>
       <li>pre-define model parameters
-        <div class="language-c highlighter-rouge"><pre class="highlight"><code>     <span class="c1">// head files and macro definition
+        <div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="c1">// head files and macro definition
 </span>     <span class="cp">#include &lt;stdio.h&gt;
 </span>     <span class="cp">#include &lt;stdlib.h&gt;
 </span>     <span class="cp">#include &lt;string.h&gt;
@@ -401,11 +375,10 @@ chmod -R 777 ~/aws
 </span>
      <span class="cp">#define MEANV 0.034     // average watershed velocity
 </span>     <span class="cp">#define DENSITY 30      // runoff particle density
-</span></code></pre>
-        </div>
+</span></code></pre></div>        </div>
       </li>
       <li>flow path node struct
-        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
      <span class="kt">int</span> <span class="n">nPNID</span><span class="o">;</span>    <span class="c1">// unique ID number</span>
      <span class="kt">double</span> <span class="n">fX</span><span class="o">;</span>    <span class="c1">// X coordinate</span>
      <span class="kt">double</span> <span class="n">fY</span><span class="o">;</span>    <span class="c1">// Y coordinate  </span>
@@ -420,11 +393,10 @@ chmod -R 777 ~/aws
      <span class="kt">int</span> <span class="n">nPLID_2</span><span class="o">;</span>  <span class="c1">// next path segment</span>
      <span class="kt">int</span> <span class="n">nPNID_2</span><span class="o">;</span>  <span class="c1">// next path node</span>
 <span class="o">}</span><span class="n">PathNode</span><span class="o">;</span>         <span class="c1">// struct of flow path node</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>flow path line struct
-        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
      <span class="kt">int</span> <span class="n">nPLID</span><span class="o">;</span>          <span class="c1">// unique ID number</span>
 
      <span class="kt">int</span> <span class="n">nPNID_1</span><span class="o">;</span>        <span class="c1">// from node</span>
@@ -437,11 +409,10 @@ chmod -R 777 ~/aws
      <span class="kt">double</span> <span class="n">fVelocity</span><span class="o">;</span>   <span class="c1">// constant flow velocity</span>
      <span class="kt">double</span> <span class="n">fTime</span><span class="o">;</span>       <span class="c1">// constant flow time</span>
 <span class="o">}</span><span class="n">PathLine</span><span class="o">;</span>               <span class="c1">// struct of flow path segment</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>flow path network struct
-        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
      <span class="n">PathNode</span> <span class="o">*</span><span class="n">pNode_List</span><span class="o">;</span>   <span class="c1">// path node list</span>
      <span class="n">PathLine</span> <span class="o">*</span><span class="n">pLine_List</span><span class="o">;</span>   <span class="c1">// path line list</span>
 
@@ -460,37 +431,34 @@ chmod -R 777 ~/aws
      <span class="kt">double</span> <span class="n">fTop</span><span class="o">;</span>            <span class="c1">// maximal Y</span>
      <span class="kt">double</span> <span class="n">fBottom</span><span class="o">;</span>         <span class="c1">// minimal Y</span>
  <span class="o">}</span><span class="n">DrainageNet</span><span class="o">;</span>               <span class="c1">// struct of flow path network</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>
   <li>load rainfall event (e.g., <a href="http://vivoni.asu.edu/tribs/weather.html">Peacheater Creek</a>, November 1996)
     <ul>
       <li>struct of flow production on starting point
-        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
      <span class="kt">int</span> <span class="n">nPPRID</span><span class="o">;</span>     <span class="c1">// index of starting node ID</span>
      <span class="kt">double</span> <span class="o">*</span><span class="n">pfPPR</span><span class="o">;</span>  <span class="c1">// rainfall rate list mm/hr</span>
      <span class="kt">int</span> <span class="n">nTimeFrame</span><span class="o">;</span> <span class="c1">// number of frames (list size)</span>
 <span class="o">}</span><span class="n">PPRate</span><span class="o">;</span>             <span class="c1">//flow on starting points</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>struct of distributed rainfall map
-        <div class="language-java highlighter-rouge"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">typedef</span> <span class="n">struct</span><span class="o">{</span>
      <span class="n">PPRate</span> <span class="o">*</span><span class="n">pPPR_List</span><span class="o">;</span>  <span class="c1">// list of starting points</span>
      <span class="kt">int</span> <span class="n">nNumPoints</span><span class="o">;</span>     <span class="c1">// number of starting points</span>
      <span class="kt">int</span> <span class="n">nNumFrames</span><span class="o">;</span>     <span class="c1">// number of time frames</span>
 <span class="o">}</span><span class="n">PPMap</span><span class="o">;</span>                  <span class="c1">//dynamic rainfall map</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>
   <li>perform runoff simulation (e.g., time step, spatial scale)
     <ul>
       <li>preset in main program (particle-set.c)
-        <div class="language-java highlighter-rouge"><pre class="highlight"><code>     <span class="c1">// from 1996-11-23 00:00 to 11-28 23:00 (144 hours)</span>
+        <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="c1">// from 1996-11-23 00:00 to 11-28 23:00 (144 hours)</span>
      <span class="kt">int</span> <span class="n">nST</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>    <span class="c1">// starting time (first hour)</span>
      <span class="kt">int</span> <span class="n">nIT</span> <span class="o">=</span> <span class="mi">1</span><span class="o">;</span>    <span class="c1">// time interval (1 hour)</span>
      <span class="kt">int</span> <span class="n">nET</span> <span class="o">=</span> <span class="mi">144</span><span class="o">;</span>  <span class="c1">// ending time (last hour)</span>
@@ -500,23 +468,22 @@ chmod -R 777 ~/aws
      <span class="kt">char</span><span class="o">*</span> <span class="n">pNPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">strFilePath</span><span class="o">,</span> <span class="s">"/input/pathnode.in"</span><span class="o">);</span>
      <span class="kt">char</span><span class="o">*</span> <span class="n">pTopoPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">strFilePath</span><span class="o">,</span> <span class="s">"/input/pathline.in"</span><span class="o">);</span>
      <span class="kt">char</span><span class="o">*</span> <span class="n">pPPRPath</span> <span class="o">=</span> <span class="n">join_string</span><span class="o">(</span><span class="n">strFilePath</span><span class="o">,</span> <span class="s">"/input/rainfall.in"</span><span class="o">);</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>execution of main program (#! /bin/sh)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># create batch file</span>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="c"># create batch file</span>
      vim ~/run.sh
 
      <span class="c"># write commands into batch file</span>
          <span class="c"># empty output files</span>
-         rm -rf ./aws/output/<span class="k">*</span>
+         rm <span class="nt">-rf</span> ./aws/output/<span class="k">*</span>
 
          <span class="c"># compiling with MPICH framework</span>
-         mpicc -o ./aws/particle-set ./aws/particle-set.c -lm
+         mpicc <span class="nt">-o</span> ./aws/particle-set ./aws/particle-set.c <span class="nt">-lm</span>
          <span class="c"># executing with increasing processors (... '128')</span>
-         <span class="k">for </span>i <span class="k">in</span> <span class="s1">'1'</span> <span class="s1">'2'</span> <span class="s1">'3'</span> <span class="s1">'4'</span>;
+         <span class="k">for </span>i <span class="k">in</span> <span class="s1">'1'</span> <span class="s1">'2'</span> <span class="s1">'3'</span> <span class="s1">'4'</span><span class="p">;</span>
              <span class="k">do
-                 </span>mpiexec -np <span class="nv">$i</span> ./aws/particle-set
+                 </span>mpiexec <span class="nt">-np</span> <span class="nv">$i</span> ./aws/particle-set
          <span class="k">done</span>
 
      <span class="c"># save</span>
@@ -524,30 +491,27 @@ chmod -R 777 ~/aws
 
      <span class="c"># run batch file</span>
      /bin/sh ./run.sh | tee ./log.txt
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>distributed processors (if on multiple computers)
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># copy source code and input files</span>
-     scp -r ./aws ubuntu@ip-address_1:/home/
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="c"># copy source code and input files</span>
+     scp <span class="nt">-r</span> ./aws ubuntu@ip-address_1:/home/
      ...
-     scp -r ./aws ubuntu@ip-address_n:/home/
-</code></pre>
-        </div>
+     scp <span class="nt">-r</span> ./aws ubuntu@ip-address_n:/home/
+</code></pre></div>        </div>
       </li>
     </ul>
   </li>
   <li>analyze model performance (e.g., accuracy, efficiency)
     <ul>
       <li>get output files from Amazon EC2 instance
-        <div class="language-bash highlighter-rouge"><pre class="highlight"><code>     <span class="c"># on local machine</span>
-     scp -rp -i <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/home/ubuntu/aws/output ~/aws/
-</code></pre>
-        </div>
+        <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="c"># on local machine</span>
+     scp <span class="nt">-rp</span> <span class="nt">-i</span> <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/home/ubuntu/aws/output ~/aws/
+</code></pre></div>        </div>
         <p><img src="/assets/img/aws/aws_16.png" alt="" /></p>
       </li>
       <li>prediction accuracy of outlet discharges
-        <div class="language-matlab highlighter-rouge"><pre class="highlight"><code>     <span class="c1">%% comparison of outlet discharges</span>
+        <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="c1">%% comparison of outlet discharges</span>
 
      <span class="c1">% Qh_obs    observed outlet discharges</span>
      <span class="c1">% Qh_ptc    number of particles passing outlet</span>
@@ -582,18 +546,17 @@ chmod -R 777 ~/aws
 
      <span class="c1">% balance coefficient</span>
      <span class="n">b</span> <span class="o">=</span> <span class="nb">sum</span><span class="p">(</span><span class="n">Qh_obs</span><span class="p">)/</span><span class="nb">sum</span><span class="p">(</span><span class="n">Qh_sim</span><span class="p">);</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>result example of prediction accuracy
 <img src="/assets/img/aws/aws_07.png" alt="" /></li>
       <li>simulation efficiency of runoff routing
-        <div class="language-matlab highlighter-rouge"><pre class="highlight"><code>     <span class="c1">%% comparison of time costs varying multiple processors</span>
+        <div class="language-matlab highlighter-rouge"><div class="highlight"><pre class="highlight"><code>     <span class="c1">%% comparison of time costs varying multiple processors</span>
 
      <span class="c1">% experimental speedup ratio</span>
      <span class="n">num</span> <span class="o">=</span> <span class="mi">0</span><span class="p">:</span><span class="mi">1</span><span class="p">:</span><span class="mi">7</span><span class="p">;</span>
      <span class="n">num_cpu</span> <span class="o">=</span> <span class="mf">2.</span><span class="o">^</span><span class="n">num</span><span class="p">;</span> <span class="c1">% from 1 to 128</span>
-     <span class="n">time_cost</span> <span class="o">=</span> <span class="p">[</span><span class="n">longest</span> <span class="n">time</span> <span class="n">cost</span> <span class="n">on</span> <span class="n">multiple</span> <span class="n">processors</span><span class="p">];</span>
+     <span class="n">time_cost</span> <span class="o">=</span> <span class="p">[</span><span class="n">longest</span> <span class="nb">time</span> <span class="n">cost</span> <span class="n">on</span> <span class="n">multiple</span> <span class="n">processors</span><span class="p">];</span>
      <span class="k">for</span> <span class="nb">i</span><span class="o">=</span><span class="mi">1</span><span class="p">:</span><span class="nb">length</span><span class="p">(</span><span class="n">num_cpu</span><span class="p">)</span>
          <span class="n">speed_up</span><span class="p">(</span><span class="nb">i</span><span class="p">)</span> <span class="o">=</span> <span class="n">time_cost</span><span class="p">(</span><span class="nb">i</span><span class="p">)/</span><span class="n">time_cost</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
      <span class="k">end</span>
@@ -606,8 +569,7 @@ chmod -R 777 ~/aws
      <span class="n">ideal_y3</span> <span class="o">=</span> <span class="mf">1.</span><span class="p">/((</span><span class="mi">1</span><span class="o">-</span><span class="mf">0.95</span><span class="p">)</span><span class="o">+</span><span class="mf">0.95</span><span class="o">.</span><span class="p">/</span><span class="n">ideal_s</span><span class="p">);</span>
      <span class="n">f</span> <span class="o">=</span> <span class="n">fittype</span><span class="p">(</span><span class="s1">'1/1/((1-a)+a/x)'</span><span class="p">,</span><span class="s1">'dependent'</span><span class="p">,{</span><span class="s1">'y'</span><span class="p">},</span><span class="s1">'independent'</span><span class="p">,{</span><span class="s1">'x'</span><span class="p">},</span><span class="s1">'coefficients'</span><span class="p">,{</span><span class="s1">'a'</span><span class="p">});</span>
      <span class="p">[</span><span class="n">fitresult</span><span class="p">,</span> <span class="n">gof</span><span class="p">]</span> <span class="o">=</span> <span class="n">fit</span><span class="p">(</span><span class="n">num_cpu</span><span class="s1">',speed_up(:)'</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span><span class="s1">'start'</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
-</code></pre>
-        </div>
+</code></pre></div>        </div>
       </li>
       <li>result example of simulation efficiency
 <img src="/assets/img/aws/aws_08.png" alt="" /></li>
@@ -648,47 +610,42 @@ chmod -R 777 ~/aws
 <h3 id="linux-commands">Linux commands</h3>
 <ul>
   <li>connect to Amazon EC2 instance
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>   <span class="c"># ensure the private key key.pem is assessible</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c"># ensure the private key key.pem is assessible</span>
    <span class="nb">cd</span> ~
    chmod 400 key.pem
-   ssh -i <span class="s2">"key.pem"</span> ubuntu@ip-address
-</code></pre>
-    </div>
+   ssh <span class="nt">-i</span> <span class="s2">"key.pem"</span> ubuntu@ip-address
+</code></pre></div>    </div>
   </li>
   <li>turn off firewall
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>   <span class="c"># after login in AWS instance</span>
-   sudo ufw disable
-</code></pre>
-    </div>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c"># after login in AWS instance</span>
+   <span class="nb">sudo </span>ufw disable
+</code></pre></div>    </div>
   </li>
   <li>send file and directory to Amazon EC2 instance
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>   <span class="c"># on local machine</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>   <span class="c"># on local machine</span>
 
    <span class="c"># send file</span>
-   scp -i <span class="s2">"key.pem"</span> file ubuntu@ip-address:/home/ubuntu
+   scp <span class="nt">-i</span> <span class="s2">"key.pem"</span> file ubuntu@ip-address:/home/ubuntu
 
    <span class="c"># send directory</span>
-   scp -i <span class="s2">"key.pem"</span> -r directory ubuntu@ip-address:/home/ubuntu
-</code></pre>
-    </div>
+   scp <span class="nt">-i</span> <span class="s2">"key.pem"</span> <span class="nt">-r</span> directory ubuntu@ip-address:/home/ubuntu
+</code></pre></div>    </div>
   </li>
   <li>get file and directory from Amazon EC2 instance
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>       <span class="c"># get file</span>
-       scp -p -i <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/pathto/file ~/local_path
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>       <span class="c"># get file</span>
+       scp <span class="nt">-p</span> <span class="nt">-i</span> <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/pathto/file ~/local_path
 
        <span class="c"># get directory</span>
-       scp -rp -i <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/pathto/directort ~/local_path
-</code></pre>
-    </div>
+       scp <span class="nt">-rp</span> <span class="nt">-i</span> <span class="s2">"particle.pem"</span> ubuntu@54.245.145.39:/pathto/directort ~/local_path
+</code></pre></div>    </div>
   </li>
   <li>delete file and directory on AWS instance
-    <div class="language-bash highlighter-rouge"><pre class="highlight"><code>      <span class="c"># delete file</span>
+    <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>      <span class="c"># delete file</span>
       rm ~/<span class="o">(</span>file path<span class="o">)</span>
 
       <span class="c"># delete file</span>
-      rm -rf ~/<span class="o">(</span>directory path<span class="o">)</span>
-</code></pre>
-    </div>
+      rm <span class="nt">-rf</span> ~/<span class="o">(</span>directory path<span class="o">)</span>
+</code></pre></div>    </div>
   </li>
 </ul>
 
