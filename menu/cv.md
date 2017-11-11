@@ -11,7 +11,7 @@ title: Curriculum Vitae
   + Hong Kong Baptist University
 
 + Contact Information
-  + Email: [flzhang@zhangfangli.cn](mialto:flzhang@zhangfangli.cn)
+  + Email: [flzhang@zhangfangli.cn](mailto:flzhang@zhangfangli.cn)
   + AAB 1236, 15 Baptist University Road, Hong Kong
 
 ## Background
