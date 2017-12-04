@@ -2,7 +2,6 @@
 layout: page
 title: Contact me
 ---
-
 <html>
     <head>
         <style>
