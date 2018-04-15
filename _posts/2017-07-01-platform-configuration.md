@@ -16,7 +16,7 @@ by Fangli ZHANG, Qiming ZHOU and Jun LIU
 <!-- , Qingquan LI, Guofeng WU,  -->
 
 **More information on:**
-[www.zhangfangli.cn](http://zhangfangli.cn)
+[www.zhangfangli.cn](http://www.zhangfangli.cn)
 
 *Latest revision:* (2017-07-06).
 
