@@ -6,16 +6,12 @@ title: Curriculum Vitae
 <img src="/assets/img/funtry_2013.jpg" align="right" width="135" />
 ## Current
 
-+ Doctor of Philosophy (Ph.D.)
-  + Department of Geography
-  + Hong Kong Baptist University
-
-+ Contact Information
-  + Email: [flzhang@zhangfangli.cn](mailto:flzhang@zhangfangli.cn)
-  + AAB 1236, 15 Baptist University Road, Hong Kong
++ 2018-present Assistant Research Fellow
+  + Integration Application of Remote Sensing and GIS
+  + School of Geographic and Oceanographic Sciences, Nanjing University
 
 ## Background
-+ 2014-2017 Ph.D. (expect to receive degree by December 2017)
++ 2014-2017 Ph.D.
   + Remote Sensing and GIS Application
   + Department of Geography, Hong Kong Baptist University
   <!-- + _Joint PhD Program with Shenzhen University_ -->

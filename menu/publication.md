@@ -4,7 +4,7 @@ title: Peer-reviewed Journal Publications
 ---
 1.  __Zhang, F.__, & Zhou, Q. (2017). Application of Terrain Analysis in Watershed Hydrologic Modeling. _Geography and Geo-Information Science_, (CSCD, In Chinese)
 
-1.  __Zhang, F.__, Zhou, Q., Li, Q., Wu, G., & Liu, J. (2017). An enhanced approach for surface flow routing over drainage-constrained triangulated irregular networks. _Transactions in GIS_, [http://doi.org/10.1111/tgis.12294]() (Early View, SSCI)
+1.  __Zhang, F.__, Zhou, Q., Li, Q., Wu, G., & Liu, J. (2017). An enhanced approach for surface flow routing over drainage-constrained triangulated irregular networks. _Transactions in GIS_, 22(1), 43-57. [http://doi.org/10.1111/tgis.12294](http://doi.org/10.1111/tgis.12294) (SSCI)
 
 1.  Du, S., __Zhang, F.__, & Zhang, X. (2015). Semantic classification of urban buildings combining VHR image and GIS data: An improved random forest approach. _ISPRS Journal of Photogrammetry and Remote Sensing_, 105, 107–119. [http://doi.org/10.1016/j.isprsjprs.2015.03.011](http://doi.org/10.1016/j.isprsjprs.2015.03.011)
 
