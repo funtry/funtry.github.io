@@ -6,9 +6,9 @@ title: Curriculum Vitae
 <img src="/assets/img/funtry_2013.jpg" align="right" width="135" />
 ## Current
 
-+ 2018-present Assistant Research Fellow
+<!-- + 2018-present Assistant Research Fellow
   + Integration Application of Remote Sensing and GIS
-  + School of Geographic and Oceanographic Sciences, Nanjing University
+  + School of Geographic and Oceanographic Sciences, Nanjing University -->
 
 ## Background
 + 2014-2017 Ph.D.
