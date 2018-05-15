@@ -118,13 +118,13 @@ title: Contact me
         "zoomLatitude": 25.0,
         <!-- "getAreasFromMap": true, -->
 
-        "lines": [
+        <!--"lines": [
             {"latitudes": [ 29.9948936 , 30.341304 ], "longitudes": [ 112.660802 , 112.212773 ]},
             {"latitudes": [ 30.341304 , 30.5390822 ], "longitudes": [ 112.212773 , 114.3527662 ]},
             {"latitudes": [ 30.5390822 , 39.9869171 ], "longitudes": [ 114.3527662 , 116.3036799 ]},
             {"latitudes": [ 39.9869171 , 22.337857 ], "longitudes": [ 116.3036799 , 114.181962 ]},
             {"latitudes": [ 32.110798 , 22.337857 ], "longitudes": [ 118.9626781 , 114.181962 ]}
-        ],
+        ],-->
 
         "images": [
         <!-- resident -->
@@ -132,10 +132,11 @@ title: Contact me
         {"type": "circle", "title": "Jingzhou", "latitude": 30.341304, "longitude": 112.212773, "scale": 0.3, "color": "#FF0000"},
         {"svgPath": targetSVG, "title": "Wuhan", "latitude": 30.5390822, "longitude": 114.3527662, "scale": 0.3, "color": "#FF0000"},
         {"svgPath": targetSVG, "title": "Beijing", "latitude": 39.9869171, "longitude": 116.3036799, "scale": 0.3, "color": "#FF0000"},
-        {"svgPath": targetSVG, "title": "Hong Kong", "latitude": 22.337857, "longitude": 114.181962, "scale": 0.5, "color": "#FF0000"},
+        {"svgPath": targetSVG, "title": "Hong Kong", "latitude": 22.337857, "longitude": 114.181962, "scale": 0.3, "color": "#FF0000"},
         {"svgPath": targetSVG, "title": "Nanjing", "latitude": 32.110798, "longitude": 118.9626781, "scale": 0.5, "color": "#FF0000"},
-        {"svgPath": targetSVG, "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.5, "color": "#FFFF00"},
+        <!--{"svgPath": targetSVG, "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.5, "color": "#FFFF00"},-->
         {"type": "circle", "title": "Honolulu", "latitude": 21.2961421, "longitude": -157.8197537, "scale": 0.2},
+        {"type": "circle", "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.2},
         {"type": "circle", "title": "Soeul", "latitude": 37.56171, "longitude": 126.969821, "scale": 0.2},
         {"type": "circle", "title": "Chiasso", "latitude": 45.833905, "longitude": 9.032748, "scale": 0.2},
         {"type": "circle", "title": "Como", "latitude": 45.818056, "longitude": 9.066017, "scale": 0.2},
@@ -235,7 +236,8 @@ title: Contact me
 
       for ( var x in map.dataProvider.images ) {
         var image = map.dataProvider.images[ x ];
-        if (x == 5 || x == 6) {
+        <!--if (x == 5 || x == 6) {-->
+        if (x == 5) {
             if ( 'undefined' == typeof image.externalElement )
             image.externalElement = createCustomMarker( image );
             var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
@@ -295,4 +297,5 @@ title: Contact me
     </script>
 </html>
 
-If you are having any questions or suggestions, feel free to contact [me]({{ site.baseurl }}/menu/rong.html).
+If you are having any questions or suggestions, feel free to contact me.
+<!-- If you are having any questions or suggestions, feel free to contact [me]({{ site.baseurl }}/menu/rong.html). -->
