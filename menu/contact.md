@@ -119,6 +119,7 @@ title: Contact me
         <!-- "getAreasFromMap": true, -->
 
         "lines": [
+            {"latitudes": [ 29.9948936 , 30.341304 ], "longitudes": [ 112.660802 , 112.212773 ]}
         ],
 
         <!--"lines": [
