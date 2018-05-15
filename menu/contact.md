@@ -118,18 +118,14 @@ title: Contact me
         "zoomLatitude": 25.0,
         <!-- "getAreasFromMap": true, -->
 
-        "lines": [
-            {"latitudes": [ 32.110798 , 29.9948936 ], "longitudes": [ 118.9626781 , 112.660802 ]}
-        ],
-
         "images": [
         <!-- resident -->
-        {"type": "circle", "title": "Xinguancun", "latitude": 29.9948936, "longitude": 112.660802, "scale": 0.2},
+        {"svgPath": targetSVG, "title": "Xinguancun", "latitude": 29.9948936, "longitude": 112.660802, "scale": 0.2, "color": "#FF0000"},
         {"type": "circle", "title": "Jingzhou", "latitude": 30.341304, "longitude": 112.212773, "scale": 0.2},
         {"type": "circle", "title": "Wuhan", "latitude": 30.5390822, "longitude": 114.3527662, "scale": 0.2},
         {"type": "circle", "title": "Beijing", "latitude": 39.9869171, "longitude": 116.3036799, "scale": 0.2},
         {"type": "circle", "title": "Hong Kong", "latitude": 22.337857, "longitude": 114.181962, "scale": 0.2},
-        {"svgPath": targetSVG, "title": "Nanjing", "latitude": 32.110798, "longitude": 118.9626781, "scale": 0.3},
+        {"svgPath": targetSVG, "title": "Nanjing", "latitude": 32.110798, "longitude": 118.9626781, "scale": 0.3, "color": "#FF0000"},
         {"type": "circle", "title": "Honolulu", "latitude": 21.2961421, "longitude": -157.8197537, "scale": 0.2},
         {"type": "circle", "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.2},
         {"type": "circle", "title": "Soeul", "latitude": 37.56171, "longitude": 126.969821, "scale": 0.2},
