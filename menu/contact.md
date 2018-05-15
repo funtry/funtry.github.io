@@ -118,6 +118,9 @@ title: Contact me
         "zoomLatitude": 25.0,
         <!-- "getAreasFromMap": true, -->
 
+        "lines": [
+        ]
+
         <!--"lines": [
             {"latitudes": [ 29.9948936 , 30.341304 ], "longitudes": [ 112.660802 , 112.212773 ]},
             {"latitudes": [ 30.341304 , 30.5390822 ], "longitudes": [ 112.212773 , 114.3527662 ]},
