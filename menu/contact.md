@@ -118,6 +118,14 @@ title: Contact me
         "zoomLatitude": 25.0,
         <!-- "getAreasFromMap": true, -->
 
+        "lines": [
+            {"latitudes": [ 29.9948936 , 30.341304 ], "longitudes": [ 112.660802 , 112.212773 ]},
+            {"latitudes": [ 30.341304 , 30.5390822 ], "longitudes": [ 112.212773 , 114.3527662 ]},
+            {"latitudes": [ 30.5390822 , 39.9869171 ], "longitudes": [ 114.3527662 , 116.3036799 ]},
+            {"latitudes": [ 39.9869171 , 22.337857 ], "longitudes": [ 116.3036799 , 114.181962 ]},
+            {"latitudes": [ 32.110798 , 22.337857 ], "longitudes": [ 118.9626781 , 114.181962 ]}
+        ],
+
         "images": [
         <!-- resident -->
         {"type": "circle", "title": "Xinguancun", "latitude": 29.9948936, "longitude": 112.660802, "scale": 0.3, "color": "#FF0000"},
