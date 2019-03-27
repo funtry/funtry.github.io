@@ -10,6 +10,9 @@ image:
   credit: javascript
   creditlink: ""
 ---
+
++ Cheng, L., Yan, Z., Xiao, Y., Chen, Y., __Zhang, F.\*__, & Li, M.\* (2018). Using big data to track marine oil transportation along the 21st-century Maritime Silk Road. _Science China Technological Sciences_, 4, 652. [http://doi.org/10.1007/s11431-018-9335-1](http://doi.org/10.1007/s11431-018-9335-1)
+
 ## The OB & OR Plan on a 3D Globe
 <html>
 <head>

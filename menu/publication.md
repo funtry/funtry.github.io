@@ -1,20 +1,26 @@
 ---
 layout: page
-title: Peer-reviewed Journal Publications
+title: Journal Articles
 ---
-1.  __Zhang, F.__, & Zhou, Q. (2017). Application of Terrain Analysis in Watershed Hydrologic Modeling. _Geography and Geo-Information Science_, (CSCD, In Chinese)
+\* denotes corresponding author
 
-1.  __Zhang, F.__, Zhou, Q., Li, Q., Wu, G., & Liu, J. (2017). An enhanced approach for surface flow routing over drainage-constrained triangulated irregular networks. _Transactions in GIS_, 22(1), 43-57. [http://doi.org/10.1111/tgis.12294](http://doi.org/10.1111/tgis.12294) (SSCI)
+1.  __Zhang, F.__, & Zhou, Q.\* (2019). Parallelization of the flow-path network model using a particle-set strategy. _International Journal of Geographical Information Science_, (under publication).
 
-1.  Du, S., __Zhang, F.__, & Zhang, X. (2015). Semantic classification of urban buildings combining VHR image and GIS data: An improved random forest approach. _ISPRS Journal of Photogrammetry and Remote Sensing_, 105, 107–119. [http://doi.org/10.1016/j.isprsjprs.2015.03.011](http://doi.org/10.1016/j.isprsjprs.2015.03.011)
+1.	Cheng, L., Yan, Z., Xiao, Y., Chen, Y., __Zhang, F.\*__, & Li, M.\* (2018). Using big data to track marine oil transportation along the 21st-century Maritime Silk Road. _Science China Technological Sciences_, 4, 652. [http://doi.org/10.1007/s11431-018-9335-1](http://doi.org/10.1007/s11431-018-9335-1)
 
-1. Guo, Z., Du, S., & __Zhang, F.__ (2013). Extracting Municipal Construction Zones from High-Resolution Remotely Sensed Image. Acta Scientiarum Naturalium Universitatis Pekinensis, 49(4), 635-642. (CSCD, In Chinese)
+1.  __Zhang, F.__, & Zhou, Q.\* (2017). Application of Terrain Analysis in Watershed Hydrologic Modeling [地形分析在流域水文建模中的应用进展]. _Geography and Geo-Information Science_ [地理与地理信息科学], 33(4), 8-15. [http://doi.org/10.1016/j.solener.2013.08.036](http://doi.org/10.1016/j.solener.2013.08.036)
 
-1. Feng, X., Du, S., __Zhang, F.__, & Wang, S. (2013). Urban Land Classification of High Resolution Images Based on Multi-scale Fusion. _Geography and Geo-Information Science_, 29(3), 43-47. (CSCD, In Chinese)
+1.  __Zhang, F.__, Zhou, Q., Li, Q.\*, Wu, G., & Liu, J.\* (2017). An enhanced approach for surface flow routing over drainage-constrained triangulated irregular networks. _Transactions in GIS_, 22(1), 43-57. [http://doi.org/10.1111/tgis.12294](http://doi.org/10.1111/tgis.12294)
 
-1.  __Zhang, F.__, Du, S., & Guo, Z. (2013). Extracting municipal solid waste dumps based on high resolution images. _Spectroscopy and Spectral Analysis_, 33(8), 2024–2030. [http://doi.org/10.3964/j.issn.1000-0593(2013)08-2024-07](http://doi.org/10.3964/j.issn.1000-0593%282013%2908-2024-07) (SCI, In Chinese)
+1.  Du, S.\*, __Zhang, F.__, & Zhang, X. (2015). Semantic classification of urban buildings combining VHR image and GIS data: An improved random forest approach. _ISPRS Journal of Photogrammetry and Remote Sensing_, 105, 107–119. [http://doi.org/10.1016/j.isprsjprs.2015.03.011](http://doi.org/10.1016/j.isprsjprs.2015.03.011)
 
-## Full-paper Conference Publications
+1. Guo, Z., Du, S.\*, & __Zhang, F.__ (2013). Extracting Municipal Construction Zones from High-Resolution Remotely Sensed Image [基于高分辨率遥感影像的城市建设区提取]. _Acta Scientiarum Naturalium Universitatis Pekinensis_ [北京大学学报(自然科学版)], 49(4), 635-642.
+
+1. Feng, X., Du, S.\*, __Zhang, F.__, & Wang, S. (2013). Urban Land Classification of High Resolution Images Based on Multi-scale Fusion [基于多尺度融合的高分辨率影像城市用地分类]. _Geography and Geo-Information Science_ [地理与地理信息科学], 29(3), 43-47.
+
+1.  __Zhang, F.__, Du, S.\*, & Guo, Z. (2013). Extracting municipal solid waste dumps based on high resolution images [应用高分辨率影像的城市固体废弃物提取]. _Spectroscopy and Spectral Analysis_ [光谱学与光谱分析], 33(8), 2024–2030. [http://doi.org/10.3964/j.issn.1000-0593(2013)08-2024-07](http://doi.org/10.3964/j.issn.1000-0593%282013%2908-2024-07)
+
+## Conference Papers
 1. __Zhang, F.__, Liu, J. & Zhou, Q. (2017). Random Particle Beam Model and Its Application in Dynamic Simulation of Watershed Runoff Generation and Flow Concentration. _Proceedings of 6th National Conference on Virtual Geographic Environment_, November 4-5, Chengdu, China.
 
 1.  __Zhang, F.__, Zhou, Q., Li, Q., Wu, G., & Liu, J. (2016). A High-performance method for simulating surface rainfall-runoff dynamics using particle system. _ISPRS Annals of Photogrammetry, Remote Sensing and Spatial Information Sciences_, III-2, 109–112. [http://doi.org/10.5194/isprsannals-III-2-109-2016](http://doi.org/10.5194/isprsannals-III-2-109-2016)

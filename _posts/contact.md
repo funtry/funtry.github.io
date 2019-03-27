@@ -1,76 +1,7 @@
-<!doctype html>
-<html>
-
-<head>
-
-  <title>
-    
-      Contact me | ZHANG Fangli
-    
-  </title>
-
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <link rel="stylesheet" href="/assets/css/main.css">
-  <link rel="stylesheet" href="/assets/css/syntax.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700%7CPT+Sans:400">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Code+Pro">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quattrocento+Sans">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
-
-  <script type="text/javascript" async
-    src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-  </script>
-
-  <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-102082551-2', 'auto');
-  ga('send', 'pageview');
-
-</script>
-
-
-</head>
-
-
-<body>
-
-  <div class="container">
-    <header class="masthead">
-  <h3 class="masthead-title">
-    <a href="/">ZHANG Fangli</a>
-    <small class="masthead-subtitle">☜ 张方利</small>
-    <div class="menu">
-  <nav class="menu-content">
-    
-      <a href="/menu/about.html">About</a>
-    
-      <a href="/menu/cv.html">Vitae</a>
-    
-      <a href="/menu/publication.html">Publication</a>
-    
-      <a href="/menu/blog.html">Blog</a>
-    
-      <a href="/menu/contact.html">Contact</a>
-    
-  </nav>
-  <nav class="social-icons">
-    
-  </nav>
-</div>
-
-  </h3>
-</header>
-
-
-    <div class="post-container">
-      <h1>
-  Contact me
-</h1>
+---
+layout: page
+title: Contact me
+---
 
 <html>
     <head>
@@ -195,7 +126,8 @@
         {"type": "circle", "title": "Wuhan", "latitude": 30.5390822, "longitude": 114.3527662, "scale": 0.2},
         {"type": "circle", "title": "Beijing", "latitude": 39.9869171, "longitude": 116.3036799, "scale": 0.2},
         {"type": "circle", "title": "Hong Kong", "latitude": 22.337857, "longitude": 114.181962, "scale": 0.2},
-        {"svgPath": targetSVG, "title": "Nanjing", "latitude": 32.110798, "longitude": 118.9626781, "scale": 0.3, "color": "#FF0000"},
+        {"type": "circle", "title": "Nanjing", "latitude": 32.110798, "longitude": 118.9626781, "scale": 0.2},
+        {"svgPath": targetSVG, "title": "Yangtze University", "latitude": 30.532630, "longitude": 114.028565, "scale": 0.3, "color": "#FF0000"},
         {"type": "circle", "title": "Honolulu", "latitude": 21.2961421, "longitude": -157.8197537, "scale": 0.2},
         {"type": "circle", "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.2},
         {"type": "circle", "title": "Soeul", "latitude": 37.56171, "longitude": 126.969821, "scale": 0.2},
@@ -298,7 +230,7 @@
       for ( var x in map.dataProvider.images ) {
         var image = map.dataProvider.images[ x ];
         <!--if (x == 5 || x == 6) {-->
-        if (x == 5) {
+        if (x == 6) {
             if ( 'undefined' == typeof image.externalElement )
             image.externalElement = createCustomMarker( image );
             var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
@@ -352,25 +284,11 @@
       .bizmail_loginpanel .bizmail_SubmitArea a{font-size:12px;margin-left:5px;}
       .bizmail_loginpanel select{width:110px;height:20px;margin:0 2px;}
   </style>
-  <script type="text/javascript" src="http://exmail.qq.com/en_US/htmledition/js_biz/outerlogin.js" charset="gb18030"></script>
+  <script type="text/javascript" src="http://exmail.qq.com/en_US/htmledition/js_biz/outerlogin.js"  charset="gb18030"></script>
   <script type="text/javascript">
       writeLoginPanel({domainlist:"zhangfangli.cn", mode:"vertical"});
     </script>
 </html>
 
-<p>If you are having any questions or suggestions, feel free to contact me.
-<!-- If you are having any questions or suggestions, feel free to contact [me](/menu/rong.html). --></p>
-
-
-    </div>
-
-    <footer class="footer">
-  
-  <div class="post-date"><a href="/menu/about.html">ZHANG Fangli | ☜ 张方利 by funtry</a></div>
-</footer>
-
-
-  </div>
-
-</body>
-</html>
+<!--If you are having any questions or suggestions, feel free to contact me.-->
+If you are having any questions or suggestions, feel free to contact [me]({{ site.baseurl }}/menu/about.html).

@@ -10,10 +10,13 @@ image:
   credit: environment configuration
   creditlink: ""
 ---
+
++ __Zhang, F.__, & Zhou, Q.\* (2019). Application of Terrain Analysis in Watershed Hydrologic Modeling. _International Journal of Geographical Information Science_, (under publication).
+
 ## Particle-set: a parallel tool for runoff routing
 {:.no_toc}
-by Fangli ZHANG, Qiming ZHOU and Jun LIU
-<!-- , Qingquan LI, Guofeng WU,  -->
+by Fangli ZHANG and Qiming ZHOU
+<!-- Jun LIU, Qingquan LI, Guofeng WU,  -->
 
 **More information on:**
 [www.zhangfangli.cn](http://www.zhangfangli.cn)
