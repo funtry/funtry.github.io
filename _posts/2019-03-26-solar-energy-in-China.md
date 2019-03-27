@@ -6,7 +6,7 @@ categories: journal
 tags: [software, publication]
 image:
   feature: solar/Solar-energy-Beijing.png
-  teaser: solar/Solar-energy-Nanjing.png
+  teaser: solar/Solar-energy-Beijing.png
   credit: javascript
   creditlink: ""
 ---
@@ -14,6 +14,6 @@ image:
 ## Solar energy potential of urban buildings
 
 + Solar energy potential in Beijing
-
+<!--
 + Solar energy potential in Nanjing
-![](/assets/img/solar/Solar-energy-Nanjing.png)
+![](/assets/img/solar/Solar-energy-Nanjing.png) -->

@@ -230,7 +230,7 @@ title: Contact me
       for ( var x in map.dataProvider.images ) {
         var image = map.dataProvider.images[ x ];
         <!--if (x == 5 || x == 6) {-->
-        if (x == 6) {
+        if (x == 7) {
             if ( 'undefined' == typeof image.externalElement )
             image.externalElement = createCustomMarker( image );
             var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
@@ -291,4 +291,4 @@ title: Contact me
 </html>
 
 <!--If you are having any questions or suggestions, feel free to contact me.-->
-If you are having any questions or suggestions, feel free to contact [me]({{ site.baseurl }}/menu/about.html).
+If you are having any questions or suggestions, feel free to contact [me](http://www.zhangfangli.cn).
