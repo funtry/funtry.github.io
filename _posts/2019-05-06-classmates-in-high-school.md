@@ -148,7 +148,7 @@ image:
             { "latitudes": [ 30.341304, 34.7425316 ], "longitudes": [ 112.212773, 113.5230954 ]},
             { "latitudes": [ 30.341304, 22.7789936 ], "longitudes": [ 112.212773, 115.3473468 ]},
             { "latitudes": [ 30.341304, 23.1253503 ], "longitudes": [ 112.212773, 112.9476635 ]},
-            { "latitudes": [ 30.341304, 28.6609769 ], "longitudes": [ 112.212773, 121.2753227 ]},
+            { "latitudes": [ 30.341304, 36.1587746 ], "longitudes": [ 112.212773, 117.0661911 ]},
             { "latitudes": [ 30.341304, 26.2399582 ], "longitudes": [ 112.212773, 105.9057994 ]},
             ],
 
@@ -173,7 +173,7 @@ image:
             {"type": "circle", "title": "郑州：雷盼盼", "latitude": 34.7425316, "longitude": 113.5230954, "scale": 0.4},
             {"type": "circle", "title": "汕尾：胡玲玲", "latitude": 22.7789936, "longitude": 115.3473468, "scale": 0.4},
             {"type": "circle", "title": "广州：刘畅", "latitude": 23.1253503, "longitude": 112.9476635, "scale": 0.4},
-            {"type": "circle", "title": "泰安：刘迪亚", "latitude": 28.6609769, "longitude": 121.2753227, "scale": 0.4},
+            {"type": "circle", "title": "泰安：刘迪亚", "latitude": 36.1587746, "longitude": 117.0661911, "scale": 0.4},
             {"type": "circle", "title": "贵州：刘柱柱", "latitude": 26.2399582, "longitude": 105.9057994, "scale": 0.4},
             ]
         },
