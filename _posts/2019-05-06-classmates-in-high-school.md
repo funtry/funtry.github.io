@@ -44,9 +44,9 @@ image:
             border-radius: 100px;
             height: 40px;
             width: 40px;
-            -webkit-animation: pulse 0s ease-out;
-            -moz-animation: pulse 0s ease-out;
-            animation: pulse 1s ease-out;
+            -webkit-animation: pulse 0.5s ease-out;
+            -moz-animation: pulse 1s ease-out;
+            animation: pulse 1.5s ease-out;
             -webkit-animation-iteration-count: infinite;
             -moz-animation-iteration-count: infinite;
             animation-iteration-count: infinite;
@@ -157,7 +157,7 @@ image:
             {"type": "circle", "title": "<b>常州</b><br/>江&#12288波", "latitude": 31.8144125, "longitude": 119.8045282, "scale": 0.4},
             {"type": "circle", "title": "<b>成都</b><br/>张锦华<br/>肖&#12288云", "latitude": 30.6584534, "longitude": 103.9354639, "scale": 0.4},
             {"type": "circle", "title": "<b>佛山</b><br/>韩君霞", "latitude": 23.0088158, "longitude": 113.0362683, "scale": 0.4},
-            {"type": "circle", "title": "<b>荆州</b><br/>艾晓莹&#12288蔡&#12288蓉&#12288代元锋<br/>方敏敏&#12288李铃志&#12288梁&#12288鑫<br/>刘&#12288林&#12288彭圣唯&#12288孙&#12288明<br/>卫小龙&#12288谢楷模&#12288熊小伟<br/>许利刚&#12288张&#12288舒&#12288朱继平", "latitude": 30.341304, "longitude": 112.212773, "scale": 1, "color": "#FF0000"},
+            {"svgPath": targetSVG, "title": "<b>荆州</b><br/>艾晓莹&#12288蔡&#12288蓉&#12288代元锋<br/>方敏敏&#12288李铃志&#12288梁&#12288鑫<br/>刘&#12288林&#12288彭圣唯&#12288孙&#12288明<br/>卫小龙&#12288谢楷模&#12288熊小伟<br/>许利刚&#12288张&#12288舒&#12288朱继平", "latitude": 30.341304, "longitude": 112.212773, "scale": 0.5, "color": "#FF0000"},
             {"type": "circle", "title": "<b>新疆</b><br/>朱&#12288雷", "latitude": 41.7549117, "longitude": 85.5770875, "scale": 0.4},
             {"type": "circle", "title": "<b>丽江</b><br/>邓承锦", "latitude": 26.8698524, "longitude": 100.1568586, "scale": 0.4},
             {"type": "circle", "title": "<b>南宁</b><br/>刘幸雨", "latitude": 22.8218028, "longitude": 108.1459736, "scale": 0.4},
@@ -231,6 +231,12 @@ image:
       for ( var x in map.dataProvider.images ) {
         var image = map.dataProvider.images[ x ];
         if (x == 4) {
+            if ( 'undefined' == typeof image.externalElement )
+            image.externalElement = createCustomMarker( image );
+            var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
+            image.externalElement.style.top = xy.y + 'px';
+            image.externalElement.style.left = xy.x + 'px';
+        } else {
             if ( 'undefined' == typeof image.externalElement )
             image.externalElement = createCustomMarker( image );
             var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
