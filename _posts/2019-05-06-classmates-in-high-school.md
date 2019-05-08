@@ -6,7 +6,7 @@ categories: blogs
 tags: [friends, dears]
 image:
   feature: note/Ximen_HighSchool.jpg
-  teaser: note/Ximen_HighSchool_teaser.png
+  teaser: note/Ximen_HighSchool_teaser.jpg
   credit: javascript
   creditlink: ""
 ---
