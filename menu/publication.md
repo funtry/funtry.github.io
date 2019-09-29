@@ -4,7 +4,11 @@ title: Journal Articles
 ---
 \* denotes corresponding author
 
-1.  __Zhang, F.__, & Zhou, Q.\* (2019). Parallelization of the flow-path network model using a particle-set strategy. _International Journal of Geographical Information Science_, (under publication).
+
+1.  __Zhang, F.__, & Zhou, Q.\* (2019). Parallelization of the flow-path network model using a particle-set strategy. _International Journal of Geographical Information Science_, 33(10), 1984–2010. [http://doi.org/10.1080/13658816.2019.1599126](http://doi.org/10.1080/13658816.2019.1599126)
+
+1. Zhou, X., Cheng, L.\*, __Zhang, F.__, Yan, Z., Ruan, X., Min, K., & Li, M.\* (2019). Integrating Island Spatial Information and Integer Optimization for Locating Maritime Search and Rescue Bases: A Case Study in the South China Sea. _ISPRS International Journal of Geo-Information_, 8(2), 88. [http://doi.org/10.3390/ijgi8020088](http://doi.org/10.3390/ijgi8020088)
+
 
 1.	Cheng, L., Yan, Z., Xiao, Y., Chen, Y., __Zhang, F.\*__, & Li, M.\* (2018). Using big data to track marine oil transportation along the 21st-century Maritime Silk Road. _Science China Technological Sciences_, 4, 652. [http://doi.org/10.1007/s11431-018-9335-1](http://doi.org/10.1007/s11431-018-9335-1)
 
@@ -21,6 +25,9 @@ title: Journal Articles
 1.  __Zhang, F.__, Du, S.\*, & Guo, Z. (2013). Extracting municipal solid waste dumps based on high resolution images [应用高分辨率影像的城市固体废弃物提取]. _Spectroscopy and Spectral Analysis_ [光谱学与光谱分析], 33(8), 2024–2030. [http://doi.org/10.3964/j.issn.1000-0593(2013)08-2024-07](http://doi.org/10.3964/j.issn.1000-0593%282013%2908-2024-07)
 
 ## Conference Papers
+1. Zhou, Q., Zhang, F., & Cheng, L. (2018). A Data-driven Method for the Determination of Water-flow Velocity in Watershed Modelling. _Geomorphometry 2018_, 13-17 August 2018, Boulder, CO, USA. [PeerJ Preprints](https://doi.org/10.7287/peerj.preprints.27155v1)
+
+
 1. __Zhang, F.__, Liu, J. & Zhou, Q. (2017). Random Particle Beam Model and Its Application in Dynamic Simulation of Watershed Runoff Generation and Flow Concentration. _Proceedings of 6th National Conference on Virtual Geographic Environment_, November 4-5, Chengdu, China.
 
 1.  __Zhang, F.__, Zhou, Q., Li, Q., Wu, G., & Liu, J. (2016). A High-performance method for simulating surface rainfall-runoff dynamics using particle system. _ISPRS Annals of Photogrammetry, Remote Sensing and Spatial Information Sciences_, III-2, 109–112. [http://doi.org/10.5194/isprsannals-III-2-109-2016](http://doi.org/10.5194/isprsannals-III-2-109-2016)

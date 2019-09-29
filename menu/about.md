@@ -14,6 +14,6 @@ title: About Funny
 + GIS-supported earth process modeling
 
 # Education
-+ Ph.D in Geography, 2018, Hong Kong Baptist University & Shenzhen University
++ Ph.D in Geography, 2018, Hong Kong Baptist University
 + M.S. in Cartography and GIS, 2014, Peking University
 + B.S. in Geographical information system, 2011, Wuhan University
