@@ -2,8 +2,9 @@
 layout: page
 title: Thesis 2019-2020
 ---
-<ul class="posts">
-  {% for post in site.hidedposts %}
+
+<ul class="hidedposts">
+  {% for post in site.posts %}
 
     {% unless post.next %}
       <h3>{{ post.date | date: '%Y' }}</h3>
