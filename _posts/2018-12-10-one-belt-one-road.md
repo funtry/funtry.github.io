@@ -2,8 +2,8 @@
 layout: post
 title: "One Belt One Road"
 author: "Fangli ZHANG"
-categories: journal
-tags: [software, publication, public]
+categories: public
+tags: [software, publication]
 image:
   feature: one-belt-one-road.png
   teaser: one-belt-one-road.png

@@ -3,7 +3,7 @@ show_in_nav: false
 layout: post
 title: "GIS thesis title"
 author: "Fangli ZHANG"
-categories: journal
+categories: thesis
 tags: [thesis, undergraduate]
 image:
   feature: thesis/1-1.png
