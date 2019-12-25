@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Particle-set model"
+title: "Random source sampling"
 author: "Fangli ZHANG"
 categories: archived
 tags: [model, publication]
