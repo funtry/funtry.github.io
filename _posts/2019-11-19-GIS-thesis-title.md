@@ -1,4 +1,5 @@
 ---
+show_in_nav: false
 layout: post
 title: "GIS thesis title"
 author: "Fangli ZHANG"
