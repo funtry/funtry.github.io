@@ -127,8 +127,6 @@ title: Contact me
         {"type": "circle", "title": "Hong Kong", "latitude": 22.337857, "longitude": 114.181962, "scale": 0.2},
         {"type": "circle", "title": "Nanjing", "latitude": 32.110798, "longitude": 118.9626781, "scale": 0.2},
         {"svgPath": targetSVG, "title": "Yangtze University", "latitude": 30.532630, "longitude": 114.028565, "scale": 0.3, "color": "#FF0000"},
-        {"type": "circle", "title": "Honolulu", "latitude": 21.2961421, "longitude": -157.8197537, "scale": 0.2},
-        {"type": "circle", "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.2},
         {"type": "circle", "title": "Soeul", "latitude": 37.56171, "longitude": 126.969821, "scale": 0.2},
         {"type": "circle", "title": "Chiasso", "latitude": 45.833905, "longitude": 9.032748, "scale": 0.2},
         {"type": "circle", "title": "Como", "latitude": 45.818056, "longitude": 9.066017, "scale": 0.2},
@@ -291,3 +289,6 @@ title: Contact me
 
 <!-- If you are having any questions or suggestions, feel free to contact me. -->
 If you are having any questions or suggestions, feel free to contact [me](http://www.zhangfangli.cn).
+
+<!--        {"type": "circle", "title": "Honolulu", "latitude": 21.2961421, "longitude": -157.8197537, "scale": 0.2},
+        {"type": "circle", "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.2},-->
