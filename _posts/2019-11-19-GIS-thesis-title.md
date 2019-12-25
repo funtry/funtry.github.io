@@ -6,8 +6,8 @@ author: "Fangli ZHANG"
 categories: thesis
 tags: [thesis, undergraduate]
 image:
-  feature: thesis/1-1.png
-  teaser: thesis/1-1.png
+  feature: thesis/0-0.png
+  teaser: thesis/0-0.png
   credit: javascript
   creditlink: ""
 ---

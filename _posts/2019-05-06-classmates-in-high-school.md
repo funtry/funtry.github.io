@@ -2,7 +2,7 @@
 layout: post
 title: "Those flowers"
 author: "Fangli ZHANG"
-categories: blogs
+categories: private
 tags: [friends, dears]
 image:
   feature: note/Ximen_HighSchool.jpg

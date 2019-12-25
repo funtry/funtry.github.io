@@ -2,7 +2,7 @@
 layout: post
 title: "Chinese aircraft carrier Liaoning"
 author: "Fangli ZHANG"
-categories: journal
+categories: private
 tags: [life, aircraft carrier]
 image:
   feature: /note/Liaoning.jpg

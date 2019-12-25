@@ -2,7 +2,7 @@
 layout: post
 title: "Particle-set model"
 author: "Fangli ZHANG"
-categories: journal
+categories: archived
 tags: [model, publication]
 image:
   feature: particle-set.png
