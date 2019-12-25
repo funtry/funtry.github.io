@@ -3,7 +3,7 @@ layout: page
 title: Blogs
 ---
 <ul class="posts">
-  {% for post in site.categories。publication %}
+  {% for post in site.categories.public %}
 
     {% unless post.next %}
       <h3>{{ post.date | date: '%Y' }}</h3>

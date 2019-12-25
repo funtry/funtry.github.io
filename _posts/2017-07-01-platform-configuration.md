@@ -3,7 +3,7 @@ layout: post
 title: "Platform configuration"
 author: "Fangli ZHANG"
 categories: journal
-tags: [software, publication]
+tags: [software, publication, public]
 image:
   feature: input-output.png
   teaser: input-output.png
@@ -11,7 +11,7 @@ image:
   creditlink: ""
 ---
 
-+ __Zhang, F.__, & Zhou, Q.\* (2019). Application of Terrain Analysis in Watershed Hydrologic Modeling. _International Journal of Geographical Information Science_, (under publication).
++ __Zhang, F.__, & Zhou, Q.\* (2019). Parallelization of the flow-path network model using a particle-set strategy. _International Journal of Geographical Information Science_, 33(10), 1984–2010. [http://doi.org/10.1080/13658816.2019.1599126](http://doi.org/10.1080/13658816.2019.1599126)
 
 ## Particle-set: a parallel tool for runoff routing
 {:.no_toc}
