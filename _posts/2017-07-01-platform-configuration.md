@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Platform configuration"
+title: "Particle-set model"
 author: "Fangli ZHANG"
 categories: public
 tags: [software, publication]
