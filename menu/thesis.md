@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Blogs
+title: 长江大学本科毕设2019-2020
 ---
 <ul class="posts">
-  {% for post in site.categories。publication %}
+  {% for post in site.categories.thesis %}
 
     {% unless post.next %}
       <h3>{{ post.date | date: '%Y' }}</h3>
