@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 长江大学本科毕设2019-2020
+title: 2019-2020长江大学本科毕业设计
 ---
 <ul class="posts">
   {% for post in site.categories.thesis %}

@@ -2,7 +2,7 @@
 layout: post
 title: "Runoff transportation"
 author: "Fangli ZHANG"
-categories: archived
+categories: public
 tags: [software, publication]
 image:
   feature: platform.gif
