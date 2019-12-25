@@ -3,7 +3,7 @@ layout: page
 title: Thesis 2019-2020
 ---
 
-<ul class="posts">
+<ul class="hidedposts">
   {% for post in site.hidedposts %}
 
     {% unless post.next %}
