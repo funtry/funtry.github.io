@@ -1,9 +1,9 @@
 ---
 layout: page
-title: Projects
+title: Thesis 2019-2020
 ---
 <ul class="posts">
-  {% for post in site.posts %}
+  {% for post in site.hide %}
 
     {% unless post.next %}
       <h3>{{ post.date | date: '%Y' }}</h3>

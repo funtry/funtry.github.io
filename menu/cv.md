@@ -3,7 +3,7 @@ layout: page
 title: Curriculum Vitae
 ---
 
-Fangli ZHANG is currently a full-time teaching-and-research-oriented staff in Geographical Information Science at the School of Geosciences, Yangtze University, working on integrating and applying GIS, remote sensing, digital terrain analysis and high-performance computing techniques to solve earth problems.
+Fangli ZHANG is currently a lecturer in Geographical Information Science at the School of Geosciences, Yangtze University, working on integrating and applying GIS, remote sensing, digital terrain analysis and high-performance computing techniques to solve earth problems.
 
 ## Current
   + Mar. 2019 - present lecturer
