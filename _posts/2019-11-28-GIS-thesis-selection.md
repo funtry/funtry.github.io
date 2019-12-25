@@ -1,7 +1,7 @@
 ---
 show_in_nav: false
 layout: post
-title: "GIS thesis title selection"
+title: "2020届本科毕业设计学生选题"
 author: "Fangli ZHANG"
 categories: thesis
 tags: [thesis, undergraduate]
