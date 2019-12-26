@@ -3,8 +3,9 @@ layout: default
 title: Home
 ---
 
-{% for post in paginator.categories.public %}
+{% for post in paginator.posts %}
 <div class="posts">
+  {% if post in site.categories.public %}
   <h1>
     <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>
   </h1>
@@ -15,6 +16,7 @@ title: Home
     {{ post.content | strip_html | truncate: 350 }} <a href="{{ site.github.url }}{{ post.url }}">Read more</a>
     <span class="post-date" style="margin-top:3px"><i class="fa fa-calendar" aria-hidden="true"></i> {{ post.date | date_to_string }} - <i class="fa fa-clock-o" aria-hidden="true"></i> {% include read-time.html %}</span>
   </p>
+  {% endif %}
 </div>
 {% endfor %}
 
