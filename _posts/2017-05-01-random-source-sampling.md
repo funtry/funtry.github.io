@@ -3,6 +3,7 @@ layout: post
 title: "Random source sampling"
 author: "Fangli ZHANG"
 categories: archived
+published:  false
 tags: [model, publication]
 image:
   feature: particle-set.png

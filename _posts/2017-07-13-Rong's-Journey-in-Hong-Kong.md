@@ -3,6 +3,7 @@ layout: post
 title: "Rong's Journey in Hong Kong"
 author: "Fangli ZHANG"
 categories: private
+published:  false
 tags: [life, summer vacation]
 image:
   feature: /note/Ting_Kau_Bridge.jpg
