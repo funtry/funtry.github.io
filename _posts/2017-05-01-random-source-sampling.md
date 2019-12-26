@@ -4,6 +4,7 @@ title: "Random source sampling"
 author: "Fangli ZHANG"
 categories: archived
 published:  false
+notshow: 1
 tags: [model, publication]
 image:
   feature: particle-set.png

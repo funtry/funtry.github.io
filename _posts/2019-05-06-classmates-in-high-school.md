@@ -4,6 +4,7 @@ title: "Those flowers"
 author: "Fangli ZHANG"
 categories: private
 published:  false
+notshow: 0
 tags: [friends, dears]
 image:
   feature: note/Ximen_HighSchool.jpg

@@ -3,6 +3,7 @@ layout: post
 title: "Solar energy in China"
 author: "Fangli ZHANG"
 categories: public
+notshow: 0
 tags: [software, publication]
 image:
   feature: solar/Solar-energy-Beijing.png

@@ -4,7 +4,7 @@ title: Home
 ---
 
 {% for post in paginator.posts %}
-{% if post.notshow == 1  %}
+{% if post.notshow == 0  %}
 <div class="posts">
   <h1>
     <a href="{{ site.github.url }}{{ post.url }}">{{ post.title }}</a>

@@ -3,6 +3,7 @@ layout: post
 title: "Particle-set model"
 author: "Fangli ZHANG"
 categories: public
+notshow: 0
 tags: [software, publication]
 image:
   feature: input-output.png
