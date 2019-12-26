@@ -4,7 +4,7 @@ layout: post
 title: "2020届本科毕业设计选题申报"
 author: "Fangli ZHANG"
 categories: thesis
-published:  false
+notshow: true
 tags: [thesis, undergraduate]
 image:
   feature: thesis/0-0.png
