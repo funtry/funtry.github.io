@@ -1,21 +1,21 @@
 ---
 show_in_nav: false
 layout: post
-title: "2020届本科毕业设计文献翻译"
+title: "2020届本科毕业设计外文翻译"
 author: "Fangli ZHANG"
 categories: thesis
 notshow: 1
 tags: [thesis, undergraduate]
 image:
-  feature: thesis/proposal-1.png
-  teaser: thesis/proposal-1.png
+  feature: thesis/proposal-2.png
+  teaser: thesis/proposal-2.png
   credit: javascript
   creditlink: ""
 ---
 
 
 
-# 2020届本科毕业设计文献翻译
+# 2020届本科毕业设计外文翻译
 
 长江大学地球科学学院地理信息系
 
@@ -35,18 +35,13 @@ image:
 ```
 
 2020年01月07日
-
-指导老师：张方利 讲师
-选题学生
-1. 选题一：熊琪玲 201600454 地信21602
-2. 选题二：张思琪 201600462 地信（产业）21601
-3. 选题三：严信 201600458 地信21602
-
-## 毕业设计开题之文献翻译
+## 外文翻译
 ```
 选题学生
 
 依据毕业设计选题，选择一篇英文文献进行翻译。翻译稿随开题报告一并提交。
+
+外文翻译：外文翻译要求准确、流畅，内容包括：标题，标题下方正中为外文作者名、译者名（格式：× × ×著，× × ×译），外文翻译成中文的内容。
 ```
 
 ### 熊琪玲的译文
