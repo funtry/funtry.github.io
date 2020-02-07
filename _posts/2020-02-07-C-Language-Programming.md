@@ -144,7 +144,7 @@ image:
             "zoomLatitude": 36.7,
             "zoomLongitude": 104.2,
 
-            "lines": [
+            <!-- "lines": [
             { "latitudes": [ 30.341304, 30.56], "longitudes": [ 112.212773, 113.54], "title": "湖北孝感"},
             { "latitudes": [ 30.341304, 30.44], "longitudes": [ 112.212773, 114.87], "title": "湖北黄冈"},
             { "latitudes": [ 30.341304, 30.16], "longitudes": [ 112.212773, 109.29], "title": "湖北恩施"},
@@ -172,7 +172,7 @@ image:
             { "latitudes": [ 30.341304, 23.02], "longitudes": [ 112.212773, 113.45], "title": "广东东莞"},
             { "latitudes": [ 30.341304, 31.42], "longitudes": [ 112.212773, 113.22], "title": "湖北随州"},
             { "latitudes": [ 30.341304, 35.14], "longitudes": [ 112.212773, 115.26], "title": "山东菏泽"}
-            ],
+            ], -->
 
             "images": [
             {"type": "circle", "title": "<b>湖北孝感 1</b><br/>艾筝", "latitude": 30.56, "longitude": 114.87, "scale": 0.4},
@@ -304,3 +304,10 @@ image:
     </body>
     <div id="chartdiv"></div>
 </html>
+
+
+## C语言程序设计授课日志
+### 2020-02-06 雨课堂开课-长江大学教务处关联课程师生
+地信（测绘）21901和21902两个班共61名同学绑定了课程
+### 2020-02-07 雨课堂测试-Visual Studio 2010安装教程
+27/61名同学参与了测试
