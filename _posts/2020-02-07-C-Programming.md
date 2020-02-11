@@ -198,7 +198,7 @@ image:
             },
 
             "imagesSettings": {
-              "color": "#FF0000",
+              "color": "#0000FF",
               "rollOverColor": "#FFFF00",
               "selectedColor": "#000000"
             },
