@@ -47,21 +47,21 @@ A: Visual Studio 2010程序界面，顶部菜单栏里选择“工具”-->“�
 ### Q: 编写C语言程序源文件.c时，常见的编辑错误有哪些？
 1. 输入法类
    1. 不可以用中文
-    1. 括号 是 ( ) 而不是（ ）
-    1. 分号 是 ; 而不是 ；
-    1. 冒号 是 "" 而不是 “”
-    1. 建议是，尽可能用英文输入法，英文标点符号，毕竟编译环境是人家研发的。
-  1. 除了以下情况，可以用中文
-    1. 注释中的内容（<span style="color:green;">//注释</span> 和 <span style="color:green;">/\*注释\*/</span>）
-    1. 字符串内部（char str[] =<span style="color:brown;">"我是一个字符串"</span>;）
-    1. 格式化输出（printf(<span style="color:brown;">"输出一个字符串"</span>);）
+        1. 括号 是 () 而不是（ ）
+        2. 分号 是 ; 而不是 ；
+        3. 冒号 是 "" 而不是 “”
+        4. 建议是，尽可能用英文输入法，英文标点符号，毕竟编译环境是人家研发的。
+   2. 除了以下情况，可以用中文
+        1. 注释中的内容（<span style="color:green;">//注释</span> 和 <span style="color:green;">/\*注释\*/</span>）
+        2. 字符串内部（char str[] =<span style="color:brown;">"我是一个字符串"</span>;）
+        3. 格式化输出（printf(<span style="color:brown;">"输出一个字符串"</span>);）
 1. 漏写了类
    1. 漏写了头文件 #include <stdio.h>
    2. 漏写了头文件的后缀 #include <stdio<span style="color:red;">.h</span>>
    3. 漏写了主函数 int main() {<span style="color:green;">/\*函数体\*/</span>}
    4. 漏写了主函数后的括号int main<span style="color:red;">( )</span>
    5. 漏写了自定义函数的事先声明 <span style="color:red;">int min(int x, int y);</span>
-   6. 漏写了函数返回值，每个函数都至少有一个返回值，连main函数也有 <span style="color:red;">return 0;</span>
+   6. 漏写了函数返回值，每个函数都至少有一个返回值，main函数也有 <span style="color:red;">return 0;</span>
 1. 编译环境类
    1. 项目文档
       1. C程序的源文件后缀是\*.c，\*.cpp是C++程序的源文件后缀
@@ -71,6 +71,7 @@ A: Visual Studio 2010程序界面，顶部菜单栏里选择“工具”-->“�
       1. 新建项目（解决方案）时选择“Win32控制台应用程序”
       2. 新建文件（源文件）时选择“C++文件（\*.cpp）”，然后手动输入后缀"文件名.c"再保存
       3. C语言程序的主体框架永远是
+              ```C
                # include <stdio.h>
                //在这里添加内容
                int main()
@@ -79,7 +80,8 @@ A: Visual Studio 2010程序界面，顶部菜单栏里选择“工具”-->“�
                  return 0;
                }
                //在这里添加内容
-               
+             ```
+
 ## 方小地和他的小伙伴们
 
 <html>
