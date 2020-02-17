@@ -131,7 +131,7 @@ image:
             "mapURL": "/assets/map/chinaHigh.svg",
 
             "zoomLevel": 3,
-            "zoomLatitude": 29.99,
+            "zoomLatitude": 28.69,
             "zoomLongitude": 112.66,
 
             "lines": [
@@ -142,7 +142,7 @@ image:
 
 
             "images": [
-            {"type": "circle", "title": "<b>湖北荆州</b><br/>方小地", "latitude": 29.99, "longitude": 112.66, "color": "#FFFF00", "scale": 0.5},
+            {"type": "circle", "title": "<b>湖北荆州</b><br/>方小地", "latitude": 29.99, "longitude": 112.66, "color": "#FFFF00", "scale": 0.8},
             {"type": "circle", "title": "<b>湖北宜昌</b><br/>熊小玲", "latitude": 30.45, "longitude": 111.73, "color": "#FF00FF", "scale": 0.5},
             {"type": "circle", "title": "<b>贵州贵阳</b><br/>严小信", "latitude": 26.35, "longitude": 106.42, "color": "#FF00FF", "scale": 0.5},
             {"type": "circle", "title": "<b>湖北武汉</b><br/>张小琪", "latitude": 30.35, "longitude": 114.17, "color": "#FF00FF", "scale": 0.5}
@@ -277,6 +277,7 @@ image:
 4. 结果讨论：城市扩张模式的驱动力简要分析（发展政策）
 5. 展示平台：简易展示城市扩张的动态过程
 
+***
 
 选题二：GIS网络分析
 
@@ -299,6 +300,7 @@ image:
 4. 结果讨论：市际连通图（如果不需要经过第三座城市就可直达，则连通，反之，则不连）
 5. 展示平台：简单展示
 
+***
 选题三：数字地形分析
 基于数字高程模型的江汉平原地形特征分析
 
@@ -324,7 +326,7 @@ image:
 4. 结果讨论：与现有基于行政区划的描述方式对比，本研究的意义
 5. 展示平台：简单展示
 
-
+***
 选题四：历史GIS应用
 
 基于GIS的湖北省行政区划历史沿革研究
@@ -398,7 +400,7 @@ S1 熊小玲
 T1 城市扩张
 ![长江大学武汉校区城市扩张](../assets/img/thesis/1-1.png)
 ![武汉市蔡甸区城区城市扩张](../assets/img/thesis/1-2.png)
-
+***
 S2 张小琪
 基于GIS的市际公路铁路通达性分析 —— 以湖北省为例
 
@@ -410,7 +412,7 @@ T2 空间通达
 ![基于引力模型的城市互联互通分析](../assets/img/thesis/2-1.png)
 ![基于GIS的市际空间通达性分析](../assets/img/thesis/2-2.png)
 
-
+***
 S3 严小信
 基于GIS的湖北省行政区划历史沿革研究
 
