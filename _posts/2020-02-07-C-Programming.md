@@ -65,7 +65,7 @@ A: Visual Studio 2010程序界面，顶部菜单栏里选择“工具”-->“�
 1. 编译环境类
    1. 项目文档
       1. C程序的源文件后缀是\*.c，\*.cpp是C++程序的源文件后缀
-      2. C程序的默认头文件是#include <stdio.h>，C++程序的是#include \<iostream\>
+      2. C程序的默认头文件是#include <stdio.h>，C++程序的是#include <iostream>
       3. C程序的主程序是int main()，如果自定义函数 int func()出现在main()后面要先声明
    2. Visual Studio 2010
       1. 新建项目（解决方案）时选择“Win32控制台应用程序”
@@ -81,6 +81,24 @@ A: Visual Studio 2010程序界面，顶部菜单栏里选择“工具”-->“�
       }
       //在这里添加内容
       ```
+1. 判断条件类
+   1. if...else 判断
+      1. 错把逻辑表达式写成赋值语句
+      ```c
+      if(flag == 1) //当flag值为1时条件成立
+      ```
+      ```c
+      if(flag = 1) //执行命令flag = 1
+      ```
+      2. 条件不互斥
+      ```c
+      if(a < b) {}
+      else if (b < c) {}
+      else {}
+      ```
+   2. for 循环
+   3. while 循环
+   4. do...while 循环
 
 ## 方小地和他的小伙伴们
 
