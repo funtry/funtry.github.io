@@ -56,8 +56,8 @@ A: Visual Studio 2010程序界面，顶部菜单栏里选择“工具”-->“�
         2. 字符串内部（char str[] =<span style="color:brown;">"我是一个字符串"</span>;）
         3. 格式化输出（printf(<span style="color:brown;">"输出一个字符串"</span>);）
 1. 漏写了类
-   1. 漏写了头文件 #include <stdio.h>
-   2. 漏写了头文件的后缀 #include <stdio<span style="color:red;">.h</span>>
+   1. 漏写了头文件 #include \<stdio.h>
+   2. 漏写了头文件的后缀 #include \<stdio<span style="color:red;">.h</span>>
    3. 漏写了主函数 int main() {<span style="color:green;">/\*函数体\*/</span>}
    4. 漏写了主函数后的括号int main<span style="color:red;">( )</span>
    5. 漏写了自定义函数的事先声明 <span style="color:red;">int min(int x, int y);</span>
@@ -65,7 +65,7 @@ A: Visual Studio 2010程序界面，顶部菜单栏里选择“工具”-->“�
 1. 编译环境类
    1. 项目文档
       1. C程序的源文件后缀是\*.c，\*.cpp是C++程序的源文件后缀
-      2. C程序的默认头文件是#include <stdio.h>，C++程序的是#include <iostream>
+      2. C程序的默认头文件是#include \<stdio.h>，C++程序的是#include \<iostream>
       3. C程序的主程序是int main()，如果自定义函数 int func()出现在main()后面要先声明
    2. Visual Studio 2010
       1. 新建项目（解决方案）时选择“Win32控制台应用程序”
