@@ -135,17 +135,17 @@ image:
             "zoomLongitude": 112.66,
 
             "lines": [
-            { "id": "line1", "latitudes": [ 30.45, 29.99], "longitudes": [ 111.73, 112.66]},
-            { "id": "line2", "latitudes": [ 26.35, 29.99], "longitudes": [ 106.42, 112.66]},
-            { "id": "line3", "latitudes": [ 30.35, 29.99], "longitudes": [ 114.17, 112.66]}
+            { "arc": -0.85, "id": "line1", "latitudes": [ 30.45, 29.99], "longitudes": [ 111.73, 112.66]},
+            { "arc": -0.6, "id": "line2", "latitudes": [ 26.35, 29.99], "longitudes": [ 106.42, 112.66]},
+            { "arc": 0.85, "id": "line3", "latitudes": [ 30.35, 29.99], "longitudes": [ 114.17, 112.66]}
             ],
 
 
             "images": [
-            {"type": "circle", "title": "<b>湖北荆州</b><br/>方小地", "latitude": 29.99, "longitude": 112.66, "color": "#FFFF00", "scale": 0.8},
-            {"type": "circle", "title": "<b>湖北宜昌</b><br/>熊小玲", "latitude": 30.45, "longitude": 111.73, "color": "#FF00FF", "scale": 0.5},
-            {"type": "circle", "title": "<b>贵州贵阳</b><br/>严小信", "latitude": 26.35, "longitude": 106.42, "color": "#FF00FF", "scale": 0.5},
-            {"type": "circle", "title": "<b>湖北武汉</b><br/>张小琪", "latitude": 30.35, "longitude": 114.17, "color": "#FF00FF", "scale": 0.5}
+            {"type": "circle", "title": "<b>湖北荆州</b><br/>方小地", "latitude": 29.99, "longitude": 112.66, "color": "#FFFF00", "scale": 1.0},
+            {"type": "circle", "title": "<b>湖北宜昌</b><br/>熊小玲", "latitude": 30.45, "longitude": 111.73, "color": "#FF00FF", "scale": 0.8},
+            {"type": "circle", "title": "<b>贵州贵阳</b><br/>严小信", "latitude": 26.35, "longitude": 106.42, "color": "#FF00FF", "scale": 0.8},
+            {"type": "circle", "title": "<b>湖北武汉</b><br/>张小琪", "latitude": 30.35, "longitude": 114.17, "color": "#FF00FF", "scale": 0.8}
             ]
         },
 
@@ -463,7 +463,7 @@ S3 严小信
 张小琪的译文
 
 严小信的译文
-Chiang, Tao-Chang, 2005. Historical geography in China. *Progress in Human Geography*, 29(2), pp.148–164. https://doi.org/10.1191/0309132505ph537oa
+Chiang, Tao-Chang, 2005. Historical geography in China. *Progress in Human Geography*, 29(2), pp.148–164. [https://doi.org/10.1191/0309132505ph537oa](https://doi.org/10.1191/0309132505ph537oa).
 姜道章，2005. 中国历史地理学. *人文地理学进展*. 第29卷，第2期，页码：148-164.
 ```
 姜道章（1929年- ），中国文化大学地理系教授。
