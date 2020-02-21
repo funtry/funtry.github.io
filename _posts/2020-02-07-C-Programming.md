@@ -177,14 +177,14 @@ int main()
 {
 	char a = '1';
 	int b = 1;
-	printf("sizeof(a) = %d\n", sizeof(a));       //sizeof(a) = 1
-	printf("sizeof(b) = %d\n", sizeof(b));       //sizeof(b) = 4
-	printf("a = %c\t\tb = %c\n", a, b);          //a = 1      b = 
-	printf("a = %d\t\tb = %d\n", a, b);          //a = 49		  b = 1
-	printf("a+a = %c\t\ta+b = %c\n", a+a, a+b);  //a+a = b		a+b = 2
-	printf("a+a = %d\ta+b = %d\n", a+a, a+b);    //a+a = 98	  a+b = 50
-	printf("a-b = %c\t\tb+b = %c\n", a-b, b+b);  //a-b = 0		b+b = 
-	printf("a-b = %d\tb+b = %d\n", a-b, b+b);    //a-b = 48	  b+b = 2
+	printf("sizeof(a) = %d\n", sizeof(a));     //sizeof(a) = 1
+	printf("sizeof(b) = %d\n", sizeof(b));     //sizeof(b) = 4
+	printf("a = %c, b = %c\n", a, b);          //a = 1, b = 
+	printf("a = %d, b = %d\n", a, b);          //a = 49, b = 1
+	printf("a+a = %c, a+b = %c\n", a+a, a+b);  //a+a = b, a+b = 2
+	printf("a+a = %d, a+b = %d\n", a+a, a+b);  //a+a = 98, a+b = 50
+	printf("a-b = %c, b+b = %c\n", a-b, b+b);  //a-b = 0, b+b = 
+	printf("a-b = %d, b+b = %d\n", a-b, b+b);  //a-b = 48, b+b = 2
  	return 0;
 }
 ```
