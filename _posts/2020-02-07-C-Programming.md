@@ -96,6 +96,7 @@ A: 可由传统框线流程图转换而来：
    1. 将带箭头的流程线去除
    2. 将需合并的处理框进行合并
    3. 将需拆解的处理框进行拆解
+   ![A瓶红酒与B瓶白酒互换](../assets/img/course/NSDiagram-1.png)
 2. 框变矩形框
    1. 圆角矩形框可去除
    2. 矩形框继续保持矩形框
@@ -106,13 +107,11 @@ A: 可由传统框线流程图转换而来：
          1. 菱形框变成一个拐弯矩形，与循环结构的处理矩形框组合成一个矩形
             1. 如果是“当型”循环结构，拐弯矩形在上方
             2. 如果是“直到型”循环结构，拐弯矩形在下方
-3. 空白补空白
+3. 空框补空白
    1. 菱形框变身后的左右两个三角形（Y, N），可能接下去没有处理框，需用空白框补齐
    2. 拐弯矩形的弯，要一直拐到循环结构内的所有操作命令处理完，可延伸
-![A瓶红酒与B瓶白酒互换](../assets/img/course/NSDiagram-1.png)
 ![三个整数从小到大排序](../assets/img/course/NSDiagram-2.png)
 ![求两个整数的最大公约数](../assets/img/course/NSDiagram-3.png)
-
 
 ### Q: 如何理解常量、变量和常变量？
 A: 用程序语言解释就是：
@@ -175,17 +174,22 @@ A: char是字符型变量，int是（有符号）基本整型变量：
 #include <stdio.h>
 int main()
 {
-	char a = '1';
-	int b = 1;
-	printf("sizeof(a) = %d\n", sizeof(a));     //sizeof(a) = 1
-	printf("sizeof(b) = %d\n", sizeof(b));     //sizeof(b) = 4
-	printf("a = %c, b = %c\n", a, b);          //a = 1, b = 
-	printf("a = %d, b = %d\n", a, b);          //a = 49, b = 1
-	printf("a+a = %c, a+b = %c\n", a+a, a+b);  //a+a = b, a+b = 2
-	printf("a+a = %d, a+b = %d\n", a+a, a+b);  //a+a = 98, a+b = 50
-	printf("a-b = %c, b+b = %c\n", a-b, b+b);  //a-b = 0, b+b = 
-	printf("a-b = %d, b+b = %d\n", a-b, b+b);  //a-b = 48, b+b = 2
- 	return 0;
+  char a = '1';                              //ASCII('1') = 49
+  int b = 1;                                 //Tested in VS2010
+
+  printf("sizeof(a) = %d\n", sizeof(a));     //sizeof(a) = 1
+  printf("sizeof(b) = %d\n", sizeof(b));     //sizeof(b) = 4
+
+  printf("a = %c, b = %c\n", a, b);          //a = 1, b = 
+  printf("a = %d, b = %d\n", a, b);          //a = 49, b = 1
+
+  printf("a+a = %c, a+b = %c\n", a+a, a+b);  //a+a = b, a+b = 2
+  printf("a+a = %d, a+b = %d\n", a+a, a+b);  //a+a = 98, a+b = 50
+
+  printf("a-b = %c, b+b = %c\n", a-b, b+b);  //a-b = 0, b+b = 
+  printf("a-b = %d, b+b = %d\n", a-b, b+b);  //a-b = 48, b+b = 2
+
+  return 0;
 }
 ```
 
