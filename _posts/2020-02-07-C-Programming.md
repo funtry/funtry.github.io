@@ -198,7 +198,7 @@ int main()
 1. 输入法类
    1. 不可以用中文
         1. 括号 是 \(\) 而不是（ ）
-        2. 分号 是 \; 而不是 ；
+        2. 分号 是 ; 而不是 ；
         3. 冒号 是 \"\" 而不是 “”
         4. 建议是，尽可能用英文输入法，英文标点符号，毕竟编译环境是人家研发的。
    2. 除了以下情况，可以用中文
@@ -374,7 +374,7 @@ int main()
 
             "images": [
             {"type": "circle", "title": "<b>湖北武汉 1</b><br/>孙睿康", "latitude": 30.35, "longitude": 114.17, "scale": 0.3},
-            {"type": "circle", "title": "<b>湖北孝感 2</b><br/>艾&#12288筝<br/>付兴宽", "latitude": 31.92, "longitude": 113.91, "scale": 0.5},
+            {"type": "circle", "title": "<b>湖北孝感 2</b><br/>艾&#12288筝<br/>付兴宽", "latitude": 30.92, "longitude": 113.91, "scale": 0.5},
             {"type": "circle", "title": "<b>湖北黄冈 5</b><br/>陈俊宇<br/>鲁子欣<br/>吴&#12288莹<br/>郭志辉<br/>张明敏", "latitude": 30.44, "longitude": 114.87, "scale": 0.8},
             {"type": "circle", "title": "<b>湖北恩施 3</b><br/>邓铭雪<br/>龙凌霄<br/>王铃淇", "latitude": 30.16, "longitude": 109.29, "scale": 0.5},
             {"type": "circle", "title": "<b>甘肃陇南 1</b><br/>侯莲霞", "latitude": 33.40, "longitude": 104.92, "scale": 0.3},
