@@ -219,7 +219,7 @@ A: <span id="Q1">强制类型转换</span>有两种形式：
     - <span style="color:green;">有效：</span>8%3=2
     - <span style="color:green;">有效：</span>(int)8.0%3=2
     - <span style="color:red;">无效：</span>(int)(8.0%3)=2
-+ 表达式(int)((double)9/2)-(9)%2的值是
++ 表达式<span style="color:blue;">(int)((double)9/2)-(9)%2</span>的值是
   - 首先，(double)9对整型常量9进行了人工干预强制类型转换，变成双精度浮点型9.0L
   - 然后，9.0/2发生了系统自动类型转换，整型常量也被转作浮点型处理，9.0/2=9.0/2.0=4.5
   - 再然后，(int)(4.5)对浮点值4.5进行了人工干预强制类型转换，变成整型常量4
@@ -231,7 +231,7 @@ A: <span id="Q1">强制类型转换</span>有两种形式：
 A: 变量需先定义，后使用。
 + 可以在定义时赋值：int a=3;
 + 可以在定义后赋值：int a; a=3;
-+ 不能未定义就先使用：int a=b=c=3;程序会报错
++ 不能未定义就先使用：<span style="color:red;">int a=b=c=3;</span>程序会报错
   - 上述语句等同于int a; a=b=c=3;但因为b和c没有被定义，故不能使用。
 
 ### Q: C程序常见的错误有哪些？
