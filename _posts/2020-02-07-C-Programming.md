@@ -200,7 +200,7 @@ int main()
 ### Q: 关于自增与自减运算符？
 A：自增运算符（++）和自减运算符（--）都是单目运算符，其功能是让运算对象自增1或自减1，也即：
 + <span style="color:green;">++i</span>和<span style="color:green;">i++</span>，都相当于 i=i+1; 也相当于 i+=1;
-+ <span style="color:green;">--i</span>和<span style="color:green;">i--</span>，都相当于 i=i-1; 也相当于 i-=1;
++ <span style="color:green;">\-\-i</span>和<span style="color:green;">i\-\-</span>，都相当于 i=i-1; 也相当于 i-=1;
 
 出现在运算对象的前后位置，分别意味着：
 + 运算对象（i）在后，运算符号（++）在前，如++i，则先做自增运算，再使用运算对象的值
