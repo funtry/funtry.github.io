@@ -302,26 +302,26 @@ A: 变量需先定义，后使用。
 3. 输入输出类
    1. 格式化输入 scanf
       1. 漏写取地址符号：
-         1. <span style="color:red;">错误：</span>scanf("%f, %f, %f", a, b, c);
-         2. <span style="color:green;">正确：</span>scanf("%f, %f, %f", &a, &b, &c);
-      2. 漏输附加字符：scanf("a=%f, b=%f, c=%f", &a, &b, &c);
+         1. <span style="color:red;">错误：</span>scanf(\"%f, %f, %f\", a, b, c);
+         2. <span style="color:green;">正确：</span>scanf(\"%f, %f, %f\", &a, &b, &c);
+      2. 漏输附加字符：scanf(\"a=%f, b=%f, c=%f\", &a, &b, &c);
          1. <span style="color:red;">错误：</span>1 2 3回车
          2. <span style="color:red;">错误：</span>1,2,3回车
          3. <span style="color:red;">错误：</span>a=1 b=2 c=3回车
          4. <span style="color:green;">正确：</span>a=1,b=2,c=3回车
-      3. 多输附加字符：scanf("%c%c%c", &c1, &c2, &c3);
+      3. 多输附加字符：scanf(\"%c%c%c\", &c1, &c2, &c3);
          1. <span style="color:red;">错误：</span>a b c回车（多输了空格）
          2. <span style="color:red;">错误：</span>a,b,c回车（多输了逗号）
          4. <span style="color:green;">正确：</span>abc回车
    2. 格式化输出 printf
       1. 漏写输出列表
-         1. <span style="color:red;">错误：</span>printf("%d%d", (int)a);
+         1. <span style="color:red;">错误：</span>printf(\"%d%d\", (int)a);
       2. 多写输出列表
-         1. <span style="color:red;">错误：</span>printf("%d", (int)a, (int)b);
+         1. <span style="color:red;">错误：</span>printf(\"%d\", (int)a, (int)b);
       2. 格式控制与变量类型不一致
-         1. <span style="color:red;">错误：</span>printf("%d", (float)a);
-         2. <span style="color:red;">错误：</span>printf("%f", (int)a);
-         3. <span style="color:red;">错误：</span>printf("%c", 129);
+         1. <span style="color:red;">错误：</span>printf(\"%d\", (float)a);
+         2. <span style="color:red;">错误：</span>printf(\"%f\", (int)a);
+         3. <span style="color:red;">错误：</span>printf(\"%c\", 129);
    3. 单个字符输入 getchar
       1. getchar()函数不含输入参数，只有返回值，为char型，故赋值方式是 char a=getchar();而不能写成 getchar(&a);
    4. 单个字符输出 putchar
