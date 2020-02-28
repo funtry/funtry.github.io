@@ -135,16 +135,16 @@ image:
             "zoomLongitude": 112.66,
 
             "lines": [
-            { "arc": -0.85, "id": "line1", "latitudes": [ 30.45, 29.99], "longitudes": [ 111.73, 112.66]},
-            { "arc": -0.6, "id": "line2", "latitudes": [ 26.35, 29.99], "longitudes": [ 106.42, 112.66]},
-            { "arc": 0.85, "id": "line3", "latitudes": [ 30.35, 29.99], "longitudes": [ 114.17, 112.66]}
+            { "arc": 0.85, "id": "line1", "latitudes": [ 30.45, 29.99], "longitudes": [ 111.73, 112.66]},
+            { "arc": 0.85, "id": "line2", "latitudes": [ 27.18, 29.99], "longitudes": [ 105.18, 112.66]},
+            { "arc": -0.85, "id": "line3", "latitudes": [ 30.35, 29.99], "longitudes": [ 114.17, 112.66]}
             ],
 
 
             "images": [
             {"type": "circle", "title": "<b>湖北荆州</b><br/>方小地", "latitude": 29.99, "longitude": 112.66, "color": "#FFFF00", "scale": 1.0},
             {"type": "circle", "title": "<b>湖北宜昌</b><br/>熊小玲", "latitude": 30.45, "longitude": 111.73, "color": "#FF00FF", "scale": 0.8},
-            {"type": "circle", "title": "<b>贵州贵阳</b><br/>严小信", "latitude": 26.35, "longitude": 106.42, "color": "#FF00FF", "scale": 0.8},
+            {"type": "circle", "title": "<b>贵州毕节</b><br/>严小信", "latitude": 27.18, "longitude": 105.18, "color": "#FF00FF", "scale": 0.8},
             {"type": "circle", "title": "<b>湖北武汉</b><br/>张小琪", "latitude": 30.35, "longitude": 114.17, "color": "#FF00FF", "scale": 0.8}
             ]
         },
@@ -468,3 +468,17 @@ Chiang, Tao-Chang, 2005. Historical geography in China. *Progress in Human Geogr
 ```
 姜道章（1929年- ），中国文化大学地理系教授。
 ```
+
+## 20200228 开题预答辩
+是日19:00-21:00，大家在腾讯会议app上通过屏幕分享，进行了开题预答辩，听之，问之，建议之，讨论之。
+
+关于大家的研究内容，作为指导老师的建议是，从数据处理与分析的角度理解：
++ 熊小玲
+  - 数据处理：从高分遥感影像上获取城市建筑物信息
+  - 数据分析：基于城市建筑物分析城市的动态扩展变化
++ 张小琪
+  - 数据处理：构建湖北省地级县市之间的空间邻接矩阵
+  - 数据分析：分析各地市的交通通达能力及其关系
++ 严小信
+  - 数据处理：历史地图数字化管理
+  - 数据分析：行政区划历史沿革分析

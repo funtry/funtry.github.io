@@ -7,8 +7,8 @@ categories: course
 notshow: 1
 tags: [course, undergraduate]
 image:
-  feature: course/teachingCalendar.png
-  teaser: course/teachingCalendar.png
+  feature: course/teachingCalendar3.png
+  teaser: course/teachingCalendar3.png
   credit: javascript
   creditlink: ""
 ---
@@ -299,6 +299,33 @@ A: 变量需先定义，后使用。
       3. int x, y; x=x+y=x; 取值运算符的左侧必须是可修改值的变量
          1. 可写成：x=x+(y=x);
          2. 相当于：y=x; x=x+y;
+3. 输入输出类
+   1. 格式化输入 scanf
+      1. 漏写取地址符号：
+         1. <span style="color:red;">错误：</span>scanf("%f, %f, %f", a, b, c);
+         2. <span style="color:green;">正确：</span>scanf("%f, %f, %f", &a, &b, &c);
+      2. 漏输附加字符：scanf("a=%f, b=%f, c=%f", &a, &b, &c);
+         1. <span style="color:red;">错误：</span>1 2 3回车
+         2. <span style="color:red;">错误：</span>1,2,3回车
+         3. <span style="color:red;">错误：</span>a=1 b=2 c=3回车
+         4. <span style="color:green;">正确：</span>a=1,b=2,c=3回车
+      3. 多输附加字符：scanf("%c%c%c", &c1, &c2, &c3);
+         1. <span style="color:red;">错误：</span>a b c回车（多输了空格）
+         2. <span style="color:red;">错误：</span>a,b,c回车（多输了逗号）
+         4. <span style="color:green;">正确：</span>abc回车
+   2. 格式化输出 printf
+      1. 漏写输出列表
+         1. <span style="color:red;">错误：</span>printf("%d%d", (int)a);
+      2. 多写输出列表
+         1. <span style="color:red;">错误：</span>printf("%d", (int)a, (int)b);
+      2. 格式控制与变量类型不一致
+         1. <span style="color:red;">错误：</span>printf("%d", (float)a);
+         2. <span style="color:red;">错误：</span>printf("%f", (int)a);
+         3. <span style="color:red;">错误：</span>printf("%c", 129);
+   3. 单个字符输入 getchar
+      1. getchar()函数不含输入参数，只有返回值，为char型，故赋值方式是 char a=getchar();而不能写成 getchar(&a);
+   4. 单个字符输出 putchar
+      1. putchar()函数有且只有一个输入参数，为char型，故调用方式为putchar(\'a\');
 2. 判断条件类
    1. if...else 判断
       1. 错把逻辑表达式写成赋值语句
@@ -651,3 +678,9 @@ A: 变量需先定义，后使用。
 
 全程雨课堂授课，统计弹幕72条，PPT中包含8次练习题互动，本次课程仅测试6次，其余，留待下次课程修改答案后练习。
 ![C语言程序设计-第三章顺序（2/3）](../assets/img/course/teachingCalendar2.png)
+
+### 2020-02-28 雨课堂上课-C语言程序设计第三章顺序（3/3）
+59/61名同学签到了课程，1名同学因为全程网络故障，另1名同学不知是何缘故。14:00-15:35，课程2节共90分钟，中途休息5分钟。
+
+全程雨课堂授课，稳定无故障，统计弹幕158条，PPT中包含9次练习题互动，本次课程全部完成且进行了讲解，同学们参与度高，理解能力强，只是暂时对于C语言测试题的出题套路还没完全摸清，有待课后自行多加练习。
+![C语言程序设计-第三章顺序（3/3）](../assets/img/course/teachingCalendar3.png)
