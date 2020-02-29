@@ -334,17 +334,3 @@ title: Contact me
 
 <!-- If you are having any questions or suggestions, feel free to contact me. -->
 If you are having any questions or suggestions, feel free to contact [me](http://www.zhangfangli.cn).
-
-
-        <!-- {"type": "circle", "title": "Jianshui", "latitude": 23.633042, "longitude": 102.82543, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Mojiang", "latitude": 23.427488, "longitude": 101.686784, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Pu'er", "latitude": 22.782715, "longitude": 100.967927, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Xishuangbanna", "latitude": 22.006043, "longitude": 100.802042, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Dali", "latitude": 25.61027, "longitude": 100.270071, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Lijiang", "latitude": 26.853597, "longitude": 100.227114, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Puzhehei", "latitude": 24.131957, "longitude": 104.119156, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Gejiu", "latitude": 23.357424, "longitude": 103.155472, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Mengzi", "latitude": 23.363066, "longitude": 103.398048, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Soeul", "latitude": 37.56171, "longitude": 126.969821, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Honolulu", "latitude": 21.2961421, "longitude": -157.8197537, "scale": 0.2}, -->
-        <!-- {"type": "circle", "title": "Corvallis", "latitude": 44.5637844, "longitude": -123.2816383, "scale": 0.2}, -->
