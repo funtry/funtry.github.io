@@ -250,6 +250,8 @@ A：scanf(\"<格式化字符串>\", <地址列表>);printf(\"<格式化字符串
   - %p 输出地址符
   - %lu 32位无符号整数
   - %llu 64位无符号整数
+
+
 ```c
 #include <stdio.h>
 int main()
