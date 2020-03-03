@@ -7,8 +7,8 @@ categories: course
 notshow: 1
 tags: [course, undergraduate]
 image:
-  feature: course/teachingCalendar3.png
-  teaser: course/teachingCalendar3.png
+  feature: course/teachingCalendar4.png
+  teaser: course/teachingCalendar4.png
   credit: javascript
   creditlink: ""
 ---
@@ -233,6 +233,54 @@ A: 变量需先定义，后使用。
 + 可以在定义后赋值：<span style="color:green;">int a; a=3;</span>
 + 不能未定义就先使用：<span style="color:red;">int a=b=c=3;</span>程序会报错
   - 上述语句等同于int a; a=b=c=3;但因为b和c没有被定义，故不能使用。
+
+### Q: scanf函数和printf函数？
+A：scanf(\"<格式化字符串>\", <地址列表>);printf(\"<格式化字符串>\", <参量表>);
+- 格式化字符串
+  - %d 十进制有符号整数
+  - %u 十进制无符号整数
+  - %f 浮点数
+  - %s 字符串
+  - %c 单个字符
+  - %p 指针的值
+  - %e 指数形式的浮点数
+  - %x, %X 无符号以十六进制表示的整数
+  - %o 无符号以八进制表示的整数
+  - %g 把输出的值按照 %e 或者 %f 类型中输出长度较小的方式输出
+  - %p 输出地址符
+  - %lu 32位无符号整数
+  - %llu 64位无符号整数
+```c
+#include <stdio.h>
+int main()
+{
+   char ch = 'A';
+   char str[20] = "www.runoob.com";
+   float flt = 10.234;
+   int no = 150;
+   double dbl = 20.123456;
+   printf("字符为 %c \n", ch);
+   printf("字符串为 %s \n" , str);
+   printf("浮点数为 %f \n", flt);
+   printf("整数为 %d\n" , no);
+   printf("双精度值为 %lf \n", dbl);
+   printf("八进制值为 %o \n", no);
+   printf("十六进制值为 %x \n", no);
+
+   int a,b,c;
+   printf("请输入三个数字：");
+   scanf("%d%d%d",&a,&b,&c);
+   printf("%d,%d,%d\n",a,b,c);
+
+   return 0;
+}
+```
+
+### Q: 关系表达式的值？
+A: 关系表达式，是用关系运算符将两个数值或数值表达式连接起来的式子，关系表达式的值是一个逻辑值，即“真”或“假”，在C的逻辑运算中，以“１”代表“真”，以“０”代表“假”。例如，若a=3，b=2，c=1，则：
++ d=a>b，由于a>b为真，因此关系表达式a>b的值为1，所以d=1。
++ f=a>b>c，则f的值为0。因为“>”运算符是自左至右的结合方向，先执行“a>b”得值为1， 再执行关系运算“1>c”，得值0，赋给f，所以f的值为0。
+
 
 ### Q: C程序常见的错误有哪些？
 1. 输入法类
@@ -684,3 +732,18 @@ A: 变量需先定义，后使用。
 
 全程雨课堂授课，稳定无故障，统计弹幕158条，PPT中包含9次练习题互动，本次课程全部完成且进行了讲解，同学们参与度高，理解能力强，只是暂时对于C语言测试题的出题套路还没完全摸清，有待课后自行多加练习。
 ![C语言程序设计-第三章顺序（3/3）](../assets/img/course/teachingCalendar3.png)
+
+### 2020-03-03 雨课堂上课-C语言程序设计第四章选择（1/3）
+59/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
+
+X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授课、三次重新开启授课，方才信号稳定，隐约发现，应该是账号登录的问题，建议多尝试退出登录后再重新登入。
+
+全程雨课堂授课，稳定。
+
+课间休息5分钟，计划利用雨课堂的屏幕分享功能为同学们演示Visual Studio 2010的基本操作，同学反映视频卡顿，课后另行录制屏幕视频，发送到课程群。
+
+上次课后作业，出现了作业门事件，一时间没兜住，向学生表达了愤慨，事后冷静下来，甚是不安，所幸几位同学及时承认错误，主动前来沟通，顿时老泪纵横，热血盈眶，且看这新入职教师的热情，能保持到几时吧。
+
+今次课堂，明显感受到同学们的参与度在提高，对于课件上不懂的或者有疑义的，及时通过弹幕发送，即时通过语音讲解，自觉效果不错。
+
+![C语言程序设计-第四章选择（1/3）](../assets/img/course/teachingCalendar4.png)
