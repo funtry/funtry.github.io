@@ -4,6 +4,7 @@ title: Journal Articles
 ---
 \* denotes corresponding author
 
+1. Cheng, L.\*, __Zhang, F.__, Li, S., Mao, J., Xu, H., Ju, W., et al. (2020). Solar energy potential of urban buildings in 10 cities of China. _Energy_, 196, 117038. http://doi.org/10.1016/j.energy.2020.117038
 
 1.  __Zhang, F.__, & Zhou, Q.\* (2019). Parallelization of the flow-path network model using a particle-set strategy. _International Journal of Geographical Information Science_, 33(10), 1984–2010. [http://doi.org/10.1080/13658816.2019.1599126](http://doi.org/10.1080/13658816.2019.1599126)
 

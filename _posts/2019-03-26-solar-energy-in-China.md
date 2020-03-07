@@ -12,13 +12,14 @@ image:
   creditlink: ""
 ---
 
++ Cheng, L.\*, __Zhang, F.__, Li, S., Mao, J., Xu, H., Ju, W., et al. (2020). Solar energy potential of urban buildings in 10 cities of China. _Energy_, 196, 117038. [http://doi.org/10.1016/j.energy.2020.117038](http://doi.org/10.1016/j.energy.2020.117038)
+
+
 ## Solar energy potential of urban buildings
 
 + Solar energy potential in Beijing
 
   Hourly solar irradiance on roofs and facades have been calculated for buildings in Beijing.
 
-<!--
 + Solar energy potential in Nanjing
-![](/assets/img/solar/Solar-energy-Nanjing.png)
--->
+![南京市建筑物光能利用潜力](/assets/img/solar/Solar-energy-Nanjing.png)

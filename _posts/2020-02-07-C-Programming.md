@@ -392,22 +392,25 @@ A: <span id="Q2">课后作业HW4.2</span>中布置了三道作业题，包括2�
       ```
       2. 条件不互斥
       ```c
-      if(a < b) {}
-      else if (b < c) {}
-      else {}
+      if(a < b)
+          {}
+      else if (b < c) 
+          {}
+      else
+          {}
       ```
       3. if与else不配套
       ```c
         if(a < b)
-          a++;
-          b++;
+            a++;
+            b++;
         else
-          a--;
+            a--;
       ```
       4. if(表达式)后加分号
       ```c
       if(a < b);
-        a++;
+          a++;
       ```
    2. for 循环
    3. while 循环
