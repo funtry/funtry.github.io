@@ -322,7 +322,7 @@ image:
 ## 新观张氏
 
 ### 百十年来家世
-![Alt text](https://g.gravizo.com/svg?
+![新观张氏家谱](https://g.gravizo.com/svg?
   digraph gFamilyTreeZhang {
     rankdir = LR
     node [shape = box]
