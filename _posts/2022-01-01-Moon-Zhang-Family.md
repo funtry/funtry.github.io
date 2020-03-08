@@ -204,19 +204,23 @@ image:
         "dataProvider": {
             "mapURL": "/assets/map/chinaHigh.svg",
 
-            "zoomLevel": 3,
-            "zoomLatitude": 35.00,
-            "zoomLongitude": 113.50,
+            "zoomLevel": 2,
+            "zoomLatitude": 32.21,
+            "zoomLongitude": 108.47,
 
             "lines": [
+            { "arc": 0.85, "latitudes": [ 40.48, 28.68 ], "longitudes": [ 114.53, 115.90 ], "title": "两晋唐宋之间，战乱频仍，张世先祖被迫南迁。"},
+            { "arc": 0.85, "latitudes": [ 28.68, 31.02 ], "longitudes": [ 115.90, 112.12 ], "title": "大明建文二年（1400年），文軏、文昌二公，自江西承宣布政使司南昌府南昌县棋盘乡隔豆腐街清水河，溯江而上入楚地，侨居荆门府。"},
+            { "arc": -0.85, "latitudes": [ 31.02, 29.97 ], "longitudes": [ 112.12, 112.64 ], "title": "文軏、文昌二公辗转荆州府江陵县西城清水门抚塔坊未久，一同迁往江监两县交界处、丰洛河多渡湾南岸高埠之地而居。"},
+            { "arc": 0.6, "latitudes": [ 29.97, 30.00 ], "longitudes": [ 112.64, 112.66 ], "title": "咸丰二年（1852年），翼王石达开火烧荆江，劫掠粮草，张套大火三月，我世佐先祖移居张家台，两百年间，已然八世。"}
             ],
 
             "images": [
-            {"type": "circle", "title": "<b>清河古青阳</b><br/>张挥始祖", "latitude": 40.48, "longitude": 114.53, "scale": 0.8},
-            {"type": "circle", "title": "<b>江西南昌府</b><br/>衣冠南渡", "latitude": 28.68, "longitude": 115.90, "scale": 0.5},
-            {"type": "circle", "title": "<b>湖北荆门府</b><br/>溯江而上", "latitude": 31.02, "longitude": 112.12, "scale": 0.5},
-            {"type": "circle", "title": "<b>江陵抚塔坊</b><br/>定居江监", "latitude": 29.97, "longitude": 112.64, "scale": 0.5},
-            {"type": "circle", "title": "<b>监利张家台</b><br/>世佐迁居", "latitude": 30.00, "longitude": 112.66, "scale": 0.8}
+            {"type": "circle", "title": "<b>清河古青阳</b><br/>张挥始祖", "latitude": 40.48, "longitude": 114.53, "color": "#FFFF00", "scale": 0.8},
+            {"type": "circle", "title": "<b>江西南昌府</b><br/>衣冠南渡", "latitude": 28.68, "longitude": 115.90, "color": "#0000FF", "scale": 0.5},
+            {"type": "circle", "title": "<b>湖北荆门府</b><br/>溯江而上", "latitude": 31.02, "longitude": 112.12, "color": "#FFFF00", "scale": 0.5},
+            {"type": "circle", "title": "<b>江陵抚塔坊</b><br/>定居江监", "latitude": 29.97, "longitude": 112.64, "color": "#FFFF00", "scale": 0.5},
+            {"type": "circle", "title": "<b>监利张家台</b><br/>世佐迁居", "latitude": 30.00, "longitude": 112.66, "color": "#00FF00", "scale": 1.0}
             ]
         },
 
@@ -315,14 +319,3 @@ image:
 ## 新观张氏
 
 ### 百十年来家世
-
-```flow
-st=>start: Start
-op=>operation: Your Operation
-cond=>condition: Yes or No?
-e=>end
-
-st->op->cond
-cond(yes)->e
-cond(no)->op
-```
