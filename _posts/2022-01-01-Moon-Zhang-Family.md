@@ -207,10 +207,10 @@ image:
             "zoomLongitude": 113.50,
 
             "lines": [
-            { "latitudes": [ 40.48, 28.68 ], "longitudes": [ 114.53, 115.90 ], "title": "<b>两晋唐宋之间，战乱频仍，张世先祖被迫南迁。</b>"},
-            { "latitudes": [ 28.68, 31.02 ], "longitudes": [ 115.90, 112.12 ], "title": "<b>大明建文二年（1400年），文軏、文昌二公，自江西承宣布政使司南昌府南昌县棋盘乡隔豆腐街清水河，溯江而上入楚地，侨居荆门府。</b>"},
-            { "latitudes": [ 31.02, 29.97 ], "longitudes": [ 112.12, 112.64 ], "title": "<b>文軏、文昌二公辗转荆州府江陵县西城清水门抚塔坊未久，一同迁往江监两县交界处、丰洛河多渡湾南岸高埠之地而居。</b>"},
-            { "latitudes": [ 29.97, 30.00 ], "longitudes": [ 112.64, 112.66 ], "title": "<b>咸丰二年（1852年），翼王石达开火烧荆江，劫掠粮草，张套大火三月，我世佐先祖移居张家台，两百年间，已然八世。</b>"}
+            { "arc": 0.85, "latitudes": [ 40.48, 28.68 ], "longitudes": [ 114.53, 115.90 ], "title": "<b>两晋唐宋之间，战乱频仍，张世先祖被迫南迁。</b>"},
+            { "arc": 0.85, "latitudes": [ 28.68, 31.02 ], "longitudes": [ 115.90, 112.12 ], "title": "<b>大明建文二年（1400年），文軏、文昌二公，自江西承宣布政使司南昌府南昌县棋盘乡隔豆腐街清水河，溯江而上入楚地，侨居荆门府。</b>"},
+            { "arc": -0.85, "latitudes": [ 31.02, 29.97 ], "longitudes": [ 112.12, 112.64 ], "title": "<b>文軏、文昌二公辗转荆州府江陵县西城清水门抚塔坊未久，一同迁往江监两县交界处、丰洛河多渡湾南岸高埠之地而居。</b>"},
+            { "arc": 0.6, "latitudes": [ 29.97, 30.00 ], "longitudes": [ 112.64, 112.66 ], "title": "<b>咸丰二年（1852年），翼王石达开火烧荆江，劫掠粮草，张套大火三月，我世佐先祖移居张家台，两百年间，已然八世。</b>"}
             ],
 
             "images": [
@@ -274,19 +274,11 @@ image:
 
       for ( var x in map.dataProvider.images ) {
         var image = map.dataProvider.images[ x ];
-        if (x == 4) {
-            if ( 'undefined' == typeof image.externalElement )
-            image.externalElement = createCustomMarker( image );
-            var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
-            image.externalElement.style.top = xy.y + 'px';
-            image.externalElement.style.left = xy.x + 'px';
-        } else {
-            if ( 'undefined' == typeof image.externalElement )
-            image.externalElement = createCustomMarker( image );
-            var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
-            image.externalElement.style.top = xy.y + 'px';
-            image.externalElement.style.left = xy.x + 'px';
-        }
+        if ( 'undefined' == typeof image.externalElement )
+        image.externalElement = createCustomMarker( image );
+        var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
+        image.externalElement.style.top = xy.y + 'px';
+        image.externalElement.style.left = xy.x + 'px';
       }
     }
 
@@ -316,7 +308,6 @@ image:
       return holder;
     }
 
-
     </script>
     </body>
     <div id="chartdiv"></div>
@@ -325,12 +316,13 @@ image:
 
 ## 百十年来家世
 
-digraph G {
-    张世佐->张昌德->{张绪鼎, 张绪金, 张绪银, 张绪模}
-    张世佐[fontcolor=blue]
-    张昌德[fontcolor=blue]
-    张绪鼎[fontcolor=blue]
-    张绪金[fontcolor=blue]
-    张绪银[fontcolor=blue]
-    张绪模[fontcolor=blue]
-}
+```flow
+st=>start: Start
+op=>operation: Your Operation
+cond=>condition: Yes or No?
+e=>end
+
+st->op->cond
+cond(yes)->e
+cond(no)->op
+```
