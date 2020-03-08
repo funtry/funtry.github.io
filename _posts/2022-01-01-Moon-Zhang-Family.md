@@ -320,7 +320,7 @@ image:
 ## 新观张氏
 
 ### 百十年来家世
-<img src='https://g.gravizo.com/svg?
+![Alt text](https://g.gravizo.com/svg?
 digraph gFamilyTreeZhang {
     张世佐->张昌德->{张绪鼎, 张绪金, 张绪银, 张绪模}
     张世佐[fontcolor=blue]
@@ -330,4 +330,4 @@ digraph gFamilyTreeZhang {
     张绪银[fontcolor=blue]
     张绪模[fontcolor=blue]
 }
-'/>
+)
