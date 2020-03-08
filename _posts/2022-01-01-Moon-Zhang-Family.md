@@ -213,9 +213,9 @@ image:
 
             "images": [
             {"type": "circle", "title": "<b>清河古青阳</b><br/>张挥始祖", "latitude": 40.48, "longitude": 114.53, "scale": 0.8},
-            {"type": "square", "title": "<b>江西南昌府</b><br/>衣冠南渡", "latitude": 28.68, "longitude": 115.90, "scale": 0.5},
-            {"type": "square", "title": "<b>湖北荆门府</b><br/>溯江而上", "latitude": 31.02, "longitude": 112.12, "scale": 0.5},
-            {"type": "square", "title": "<b>江陵抚塔坊</b><br/>定居江监", "latitude": 29.97, "longitude": 112.64, "scale": 0.5},
+            {"type": "circle", "title": "<b>江西南昌府</b><br/>衣冠南渡", "latitude": 28.68, "longitude": 115.90, "scale": 0.5},
+            {"type": "circle", "title": "<b>湖北荆门府</b><br/>溯江而上", "latitude": 31.02, "longitude": 112.12, "scale": 0.5},
+            {"type": "circle", "title": "<b>江陵抚塔坊</b><br/>定居江监", "latitude": 29.97, "longitude": 112.64, "scale": 0.5},
             {"type": "circle", "title": "<b>监利张家台</b><br/>世佐迁居", "latitude": 30.00, "longitude": 112.66, "scale": 0.8}
             ]
         },
