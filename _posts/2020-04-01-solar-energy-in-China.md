@@ -20,6 +20,3 @@ image:
 + Solar energy potential in Beijing
 
   Hourly solar irradiance on roofs and facades have been calculated for buildings in Beijing.
-
-+ Solar energy potential in Nanjing
-![南京市建筑物光能利用潜力](/assets/img/solar/Solar-energy-Nanjing.png)
