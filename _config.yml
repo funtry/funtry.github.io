@@ -8,3 +8,10 @@ disqus:              #"your-disqus"
 highlighter:         rouge
 permalink:           none
 plugins:                [jekyll-paginate]
+
+# This will require each of these plugins automatically.
+plugins:
+  - jekyll-mermaid
+
+mermaid:
+src: /assets/js/mermaid.js
