@@ -394,7 +394,7 @@ A: <span id="Q2">课后作业HW4.2</span>中布置了三道作业题，包括2�
       ```c
       if(a < b)
           {}
-      else if (b < c) 
+      else if (b < c)
           {}
       else
           {}
