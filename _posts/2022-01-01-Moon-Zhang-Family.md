@@ -322,14 +322,6 @@ image:
 ## 新观张氏
 
 ### 百十年来家世
-{% mermaid %}
-graph TD
-    B["fa:fa-twitter for peace"]
-    B-->C[fa:fa-ban forbidden]
-    B-->D(fa:fa-spinner);
-    B-->E(A fa:fa-camera-retro perhaps?);
-{% endmermaid %}
-
 [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcbkFbQ2hyaXN0bWFzXSAtLT58R2V0IG1vbmV5fCBCKEdvIHNob3BwaW5nKVxuQiAtLT4gQ3tMZXQgbWUgdGhpbmt9XG5DIC0tPnxPbmV8IERbTGFwdG9wXVxuQyAtLT58VHdvfCBFW2lQaG9uZV1cbkMgLS0-fFRocmVlfCBGW2ZhOmZhLWNhciBDYXJdXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcbkFbQ2hyaXN0bWFzXSAtLT58R2V0IG1vbmV5fCBCKEdvIHNob3BwaW5nKVxuQiAtLT4gQ3tMZXQgbWUgdGhpbmt9XG5DIC0tPnxPbmV8IERbTGFwdG9wXVxuQyAtLT58VHdvfCBFW2lQaG9uZV1cbkMgLS0-fFRocmVlfCBGW2ZhOmZhLWNhciBDYXJdXG4iLCJtZXJtYWlkIjp7InRoZW1lIjoiZGVmYXVsdCJ9fQ)
 
 [![](https://mermaid.ink/img/eyJjb2RlIjoiZ3JhcGggVERcblx0QVvlvKDkuJbkvZBdIC0tPnwxODMwcyAtIDE4OTBzfCBCW-W8oOaYjOW-t11cblx0QiAtLT4gQ3tMZXQgbWUgdGhpbmt9XG5cdEMgLS0-fE9uZXwgRFtMYXB0b3BdXG5cdEMgLS0-fFR3b3wgRVtpUGhvbmVdXG5cdEMgLS0-fFRocmVlfCBGW2ZhOmZhLWNhciBDYXJdXG5cdFx0XHRcdFx0IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)](https://mermaid-js.github.io/mermaid-live-editor/#/edit/eyJjb2RlIjoiZ3JhcGggVERcblx0QVvlvKDkuJbkvZBdIC0tPnwxODMwcyAtIDE4OTBzfCBCW-W8oOaYjOW-t11cblx0QiAtLT4gQ3tMZXQgbWUgdGhpbmt9XG5cdEMgLS0-fE9uZXwgRFtMYXB0b3BdXG5cdEMgLS0-fFR3b3wgRVtpUGhvbmVdXG5cdEMgLS0-fFRocmVlfCBGW2ZhOmZhLWNhciBDYXJdXG5cdFx0XHRcdFx0IiwibWVybWFpZCI6eyJ0aGVtZSI6ImRlZmF1bHQifSwidXBkYXRlRWRpdG9yIjpmYWxzZX0)
