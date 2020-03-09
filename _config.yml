@@ -7,11 +7,6 @@ disqus:              #"your-disqus"
 # markdown:            kramdown
 highlighter:         rouge
 permalink:           none
-plugins:                [jekyll-paginate]
-
-# This will require each of these plugins automatically.
-plugins:
-  - jekyll-mermaid
-
+plugins:             [jekyll-paginate]
 mermaid:
-src: ./assets/js/mermaid.js
+  src: ./assets/js/mermaid.js
