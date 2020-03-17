@@ -7,8 +7,8 @@ categories: course
 notshow: 1
 tags: [course, undergraduate]
 image:
-  feature: course/teachingCalendar10.png
-  teaser: course/teachingCalendar10.png
+  feature: course/teachingCalendar11.png
+  teaser: course/teachingCalendar11.png
   credit: javascript
   creditlink: ""
 ---
@@ -844,3 +844,15 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 教学督导建议在课前增加预习、课上增进互动、课后增强复习，一言以遵照之，自认授课过程中有随堂测试题互动，课下有课后作业督促，目前，自觉的同学不用要求预习，就能对课程内容保持良好的学习热情，余心甚慰。
 
 ![C语言程序设计-第五章循环（1/2））](../assets/img/course/teachingCalendar10.png)
+
+
+### 2020-03-17 雨课堂上课-C语言程序设计第五章循环（2/2）
+60/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
+
+全程雨课堂授课，起初桌面屏幕分享直播，部分同学反映画面卡顿，切换成音频直，直至结束。
+
+全程弹幕134条，随堂小测试题9次。
+
+课前声明，为了督促大家学习投入，请有在听课的同学如果对测试题答案感到为难，可选择E选项：我只是来看看。由此观之，长期有10名左右的同学，未能保持全程注意力的投入。
+
+![C语言程序设计-第五章循环（2/2）](../assets/img/course/teachingCalendar11.png)
