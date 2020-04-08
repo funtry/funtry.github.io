@@ -7,8 +7,8 @@ categories: course
 notshow: 1
 tags: [course, undergraduate]
 image:
-  feature: course/teachingCalendar11.png
-  teaser: course/teachingCalendar11.png
+  feature: course/teachingCalendar17.png
+  teaser: course/teachingCalendar17.png
   credit: javascript
   creditlink: ""
 ---
@@ -859,6 +859,7 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 ### 2020-03-20 雨课堂上课-C语言程序设计第一二三四五章复习课
 60/61名同学签到了课程，14:00-15:40，课程2节共90分钟，中途休息5分钟。
+
 全程雨课堂授课，稳定。
 
 集成第一二三四五章PPT上的练习题，课上测验，题后讲解，课后作业，都围绕练习题展开。
@@ -867,29 +868,36 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 ### 2020-03-24 雨课堂上课-C语言程序设计第六章数组（1/3）
 61/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
+
 全程雨课堂授课，稳定。
 ![C语言程序设计-第六章数组（1/3）](../assets/img/course/teachingCalendar13.png)
 
 
 ### 2020-03-27 雨课堂上课-C语言程序设计第六章数组（2/3）
 60/61名同学签到了课程，14:00-15:40，课程2节共90分钟，中途休息5分钟。
+
 全程雨课堂授课，稳定。
 
 ![C语言程序设计-第六章数组（2/3））](../assets/img/course/teachingCalendar14.png)
 
 ### 2020-03-31 雨课堂上课-C语言程序设计第六章数组（3/3）
 61/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
+
 全程雨课堂授课，稳定。
+
 ![C语言程序设计-第六章数组（3/3）](../assets/img/course/teachingCalendar15.png)
 
 
 ### 2020-04-03 雨课堂上课-C语言程序设计第七章函数（1/4）
 60/61名同学签到了课程，14:00-15:40，课程2节共90分钟，中途休息5分钟。
+
 全程雨课堂授课，稳定。
 
 ![C语言程序设计-第七章函数（1/4））](../assets/img/course/teachingCalendar16.png)
 
 ### 2020-04-07 雨课堂上课-C语言程序设计第七章函数（2/4）
 61/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
+
 全程雨课堂授课，稳定。
+
 ![C语言程序设计-第七章函数（2/4）](../assets/img/course/teachingCalendar17.png)
