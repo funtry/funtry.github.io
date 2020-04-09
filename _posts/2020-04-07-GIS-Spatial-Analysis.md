@@ -352,3 +352,11 @@ A: 计算地理学 Geocomputational Geography。20世纪90年代中期，英国�
 全程雨课堂授课，稳定。
 
 ![GIS空间分析-第一章地理空间数据分析与GIS](../assets/img/course/GIS-SA-2020/GIS-SA-1.png)
+
+
+### 2020-04-07 雨课堂上课-GIS空间分析第二章GIS空间分析基础
+71/72名同学签到了课程，08:00-09:35，课程2节共90分钟，中途休息5分钟。
+
+全程雨课堂授课，稳定。
+
+![GIS空间分析-第二章GIS空间分析基础](../assets/img/course/GIS-SA-2020/GIS-SA-2.png)
