@@ -190,7 +190,7 @@ A: 计算地理学 Geocomputational Geography。20世纪90年代中期，英国�
             {"type": "circle", "title": "<b>吉林长春</b><br/>何辉羽","latitude":43.86,"longitude":125.27, "color": "#FFFF00", "scale": 0.3},
             {"type": "circle", "title": "<b>青海海东</b><br/>蓟元俊","latitude":36.29,"longitude":102.64, "color": "#FFFF00", "scale": 0.3},
             {"type": "circle", "title": "<b>甘肃白银</b><br/>赵彦雄","latitude":36.55,"longitude":104.17, "color": "#FFFF00", "scale": 0.3},
-            {"type": "circle", "title": "<b>湖北十堰</b><br/>夏小田","latitude":32.33,"longitude":109.70, "color": "#FFFF00", "scale": 0.3},
+            {"type": "circle", "title": "<b>湖北十堰</b><br/>夏天","latitude":32.33,"longitude":109.70, "color": "#FFFF00", "scale": 0.3},
             {"type": "circle", "title": "<b>湖北天门</b><br/>王赛","latitude":30.61,"longitude":113.03, "color": "#FFFF00", "scale": 0.3},
             {"type": "circle", "title": "<b>湖北武汉</b><br/>赵曦","latitude":30.50,"longitude":114.37, "color": "#FFFF00", "scale": 0.3},
             {"type": "circle", "title": "<b>湖北武汉</b><br/>方慧","latitude":30.00,"longitude":114.21, "color": "#FFFF00", "scale": 0.3},
@@ -238,7 +238,7 @@ A: 计算地理学 Geocomputational Geography。20世纪90年代中期，英国�
             {"type": "circle", "title": "<b>青海西宁</b><br/>王新艳", "latitude": 31.42, "longitude": 109.37, "scale": 0.3},
             {"type": "circle", "title": "<b>湖北咸宁</b><br/>陈哲", "latitude": 29.6, "longitude": 114.48, "scale": 0.3},
             {"type": "circle", "title": "<b>湖北随州</b><br/>谢济阳", "latitude": 32, "longitude": 112.88, "scale": 0.3},
-            {"type": "circle", "title": "<b>湖北黄冈</b><br/>张天怡", "latitude": 30.44, "longitude": 114.87, "color": "#0000FF", "scale": 0.3}
+            {"type": "circle", "title": "<b>湖北黄冈</b><br/>张天怡", "latitude": 30.44, "longitude": 114.87, "color": "#FF0000", "scale": 0.3}
             ]
         },
 
