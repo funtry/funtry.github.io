@@ -32,6 +32,9 @@ image:
 + 慕课资源：地理信息系统（GIS）实验，汤国安等，南京师范大学
 + 选课学生：地信21701班（35人）、地信21702班（34人）、其他（3人）
 
+## 思维导图
+TBD.
+
 ## 课程Q&A
 ### Q: 计量地理学 Quantitative Geography
 A: 又称计量地理学或地理数量方法，应用数学思想方法和计算机技术进行地理学研究的科学，与定性研究方法结合共同构筑了地理学研究方法的科学体系：
@@ -238,6 +241,7 @@ A: 计算地理学 Geocomputational Geography。20世纪90年代中期，英国�
             {"type": "circle", "title": "<b>青海西宁</b><br/>王新艳", "latitude": 31.42, "longitude": 109.37, "scale": 0.3},
             {"type": "circle", "title": "<b>湖北咸宁</b><br/>陈哲", "latitude": 29.6, "longitude": 114.48, "scale": 0.3},
             {"type": "circle", "title": "<b>湖北随州</b><br/>谢济阳", "latitude": 32, "longitude": 112.88, "scale": 0.3},
+            {"type": "circle", "title": "<b>不知何处</b><br/>盛士尧", "latitude": 25.66, "longitude": 123.50, "color": "#FF0000", "scale": 0.3},
             {"type": "circle", "title": "<b>湖北黄冈</b><br/>张天怡", "latitude": 30.44, "longitude": 114.87, "color": "#FF0000", "scale": 0.3}
             ]
         },
@@ -361,3 +365,18 @@ A: 计算地理学 Geocomputational Geography。20世纪90年代中期，英国�
 全程雨课堂授课，稳定。
 
 ![GIS空间分析-第二章GIS空间分析基础](../assets/img/course/GIS-SA-2020/GIS-SA-2.png)
+
+### 2020-04-14 雨课堂上课-GIS空间分析第三章空间量测与计算
+71/72名同学签到了课程，10:05-11:40，课程2节共90分钟，中途休息5分钟。
+
+全程雨课堂授课，稳定。
+
+![GIS空间分析-第三章空间量测与计算](../assets/img/course/GIS-SA-2020/GIS-SA-3.png)
+
+
+### 2020-04-16 雨课堂上课-GIS空间分析第四章空间表达变换分析
+70/72名同学签到了课程，08:00-09:35，课程2节共90分钟，中途休息5分钟。
+
+全程雨课堂授课，稳定。
+
+![GIS空间分析-第四章空间表达变换分析](../assets/img/course/GIS-SA-2020/GIS-SA-4.png)
