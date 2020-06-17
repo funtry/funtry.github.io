@@ -555,6 +555,7 @@ A：通常，在if(条件)的条件或表达式中，会出现只有一个等号
 
     <!-- var targetSVG = "{{site.baseurl}}/assets/svg/taxi.svg"; -->
 
+    var colorSet = new am4core.ColorSet();
     var map = AmCharts.makeChart( "chartdiv", {
         "type": "map",
         "theme": "light",
@@ -767,7 +768,7 @@ A：通常，在if(条件)的条件或表达式中，会出现只有一个等号
 
 课下，针对有同学表示没跟上课程内容，但又不知具体是哪里耽误了理解，特绘制如下图所示的知识点索引图，一来帮助同学加深理解，二来与同学们建立共同话语，方便问题索引，就地讨论，三来也可以帮助同学们预习复习，把所学内容串起来。
 
-/*![C语言程序设计-第三章顺序（1/3）](../assets/img/course/teachingCalendar4.png)*/
+<!--![C语言程序设计-第三章顺序（1/3）](../assets/img/course/teachingCalendar4.png)-->
 
 ### 2020-02-25 雨课堂上课-C语言程序设计第三章顺序（2/3）
 59/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
