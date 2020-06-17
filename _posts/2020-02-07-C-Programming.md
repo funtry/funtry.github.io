@@ -24,6 +24,276 @@ image:
 1. TOC
 {:toc}
 
+
+
+## 方小地和他的小伙伴们
+
+
+<html>
+    <head>
+    <style>
+        #chartdiv {
+            width: 100%;
+            height: 480px;
+        }
+        .map-marker {
+            margin-left: -5px;
+            margin-top: -5px;
+        }
+        .map-marker.map-clickable {
+            cursor: pointer;
+        }
+        .pulse {
+            width: 0px;
+            height: 0px;
+            border: 0px solid #f7f14c;
+            -webkit-border-radius: 30px;
+            -moz-border-radius: 30px;
+            border-radius: 30px;
+            background-color: #716f42;
+            z-index: 10;
+            position: absolute;
+      }
+      .map-marker .dot {
+            border: 10px solid #FFFFFF;
+            background: transparent;
+            -webkit-border-radius: 100px;
+            -moz-border-radius: 100px;
+            border-radius: 100px;
+            height: 40px;
+            width: 40px;
+            -webkit-animation: pulse 0.5s ease-out;
+            -moz-animation: pulse 1s ease-out;
+            animation: pulse 1.5s ease-out;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            position: absolute;
+            top: -25px;
+            left: -25px;
+            z-index: 1;
+            opacity: 0;
+    }
+    @-moz-keyframes pulse {
+           0% {
+              -moz-transform: scale(0);
+              opacity: 0.0;
+           }
+           25% {
+              -moz-transform: scale(0);
+              opacity: 0.1;
+           }
+           50% {
+              -moz-transform: scale(0.1);
+              opacity: 0.3;
+           }
+           75% {
+              -moz-transform: scale(0.5);
+              opacity: 0.5;
+           }
+           100% {
+              -moz-transform: scale(1);
+              opacity: 0.0;
+           }
+    }
+    @-webkit-keyframes "pulse" {
+           0% {
+              -webkit-transform: scale(0);
+              opacity: 0.0;
+           }
+           25% {
+              -webkit-transform: scale(0);
+              opacity: 0.1;
+           }
+           50% {
+              -webkit-transform: scale(0.1);
+              opacity: 0.3;
+           }
+           75% {
+              -webkit-transform: scale(0.5);
+              opacity: 0.5;
+           }
+           100% {
+              -webkit-transform: scale(1);
+              opacity: 0.0;
+           }
+       }
+    </style>
+    </head>
+    <body>
+    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
+    <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
+    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script>
+    var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
+
+    <!-- var targetSVG = "{{site.baseurl}}/assets/svg/taxi.svg"; -->
+
+    var map = AmCharts.makeChart( "chartdiv", {
+        "type": "map",
+        "theme": "light",
+        "dragMap": true,
+        "projection": "miller",
+        "mouseWheelZoomEnabled": true,
+        "showBalloonOnSelectedObject": true,
+        "backgroundAlpha": 1,
+        "backgroundColor": "#000",
+
+        "dataProvider": {
+            "mapURL": "/assets/map/chinaHigh.svg",
+
+            "zoomLevel": 1,
+            "zoomLatitude": 36.7,
+            "zoomLongitude": 104.2,
+
+            "lines": [
+            ],
+
+            "images": [
+            {"type": "circle", "title": "<b>湖北武汉 1</b><br/>孙睿康", "latitude": 30.35, "longitude": 114.17, "scale": 0.3},
+            {"type": "circle", "title": "<b>湖北孝感 2</b><br/>艾&#12288筝<br/>付兴宽", "latitude": 30.92, "longitude": 113.91, "scale": 0.5},
+            {"type": "circle", "title": "<b>湖北黄冈 5</b><br/>陈俊宇<br/>鲁子欣<br/>吴&#12288莹<br/>郭志辉<br/>张明敏", "latitude": 30.44, "longitude": 114.87, "scale": 0.8},
+            {"type": "circle", "title": "<b>湖北恩施 3</b><br/>邓铭雪<br/>龙凌霄<br/>王铃淇", "latitude": 30.16, "longitude": 109.29, "scale": 0.5},
+            {"type": "circle", "title": "<b>甘肃陇南 1</b><br/>侯莲霞", "latitude": 33.40, "longitude": 104.92, "scale": 0.3},
+            {"type": "circle", "title": "<b>克拉玛依 1</b><br/>贾俊红", "latitude": 45.36, "longitude": 84.51, "scale": 0.3},
+            {"type": "circle", "title": "<b>石河子 1</b><br/>林佳伟", "latitude": 44.18, "longitude": 86.00, "scale": 0.3},
+            {"type": "circle", "title": "<b>库尔勒 1</b><br/>刘甜甜", "latitude": 41.46, "longitude": 86.07, "scale": 0.3},
+            {"type": "circle", "title": "<b>河北邯郸 2</b><br/>蒋晓洁<br/>张子微", "latitude": 36.36, "longitude": 114.28, "scale": 0.4},
+            {"type": "circle", "title": "<b>湖北黄石 1</b><br/>柯思琪", "latitude": 30.12, "longitude": 115.06, "scale": 0.3},
+            {"type": "circle", "title": "<b>甘肃白银 1</b><br/>兰志玺", "latitude": 36.33, "longitude": 104.12, "scale": 0.3},
+            {"type": "circle", "title": "<b>甘肃武威 1</b><br/>李奥杰", "latitude": 37.56, "longitude": 102.39, "scale": 0.3},
+            {"type": "circle", "title": "<b>甘肃定西 1</b><br/>张金平", "latitude": 35.57, "longitude": 104.57, "scale": 0.3},
+            {"type": "circle", "title": "<b>甘肃天水 1</b><br/>张婧怡", "latitude": 34.37, "longitude": 105.42, "scale": 0.3},
+            {"type": "circle", "title": "<b>湖北十堰 5</b><br/>李启意<br/>叶&#12288青<br/>陆翔宇<br/>汤文惠<br/>周庆尧", "latitude": 32.40, "longitude": 110.47, "scale": 0.8},
+            {"type": "circle", "title": "<b>河南洛阳 1</b><br/>李&#12288桥", "latitude": 34.41, "longitude": 112.27, "scale": 0.3},
+            {"type": "circle", "title": "<b>河北保定 1</b><br/>梁亚琦", "latitude": 38.51, "longitude": 115.30, "scale": 0.3},
+            {"type": "circle", "title": "<b>河北唐山 1</b><br/>朱&#12288浩", "latitude": 39.36, "longitude": 118.11, "scale": 0.3},
+            {"type": "circle", "title": "<b>天津 3</b><br/>林&#12288权<br/>王辰宇<br/>张富铭", "latitude": 39.02, "longitude": 117.12, "scale": 0.5},
+            {"type": "circle", "title": "<b>湖北宜昌 2</b><br/>林思奇<br/>张彦光", "latitude": 30.45, "longitude": 111.73, "scale": 0.4},
+            {"type": "circle", "title": "<b>新疆博乐 1</b><br/>刘景洁", "latitude": 44.93, "longitude": 82.10, "scale": 0.3},
+            {"type": "circle", "title": "<b>山东威海 1</b><br/>刘&#12288洋", "latitude": 37.50, "longitude": 122.10, "scale": 0.3},
+            {"type": "circle", "title": "<b>辽宁抚顺 1</b><br/>娄兰贝宁", "latitude": 41.97, "longitude": 123.97, "scale": 0.3},
+            {"type": "circle", "title": "<b>广西桂林 2</b><br/>陆鸿彬<br/>罗覃林", "latitude": 25.29, "longitude": 110.28, "scale": 0.4},
+            {"type": "circle", "title": "<b>重庆 2</b><br/>彭&#12288真<br/>胡苛榆", "latitude": 29.35, "longitude": 106.33, "scale": 0.4},
+            {"type": "circle", "title": "<b>山东临沂 3</b><br/>任友志<br/>陈馨媛<br/>文中冠", "latitude": 35.05, "longitude": 118.35, "scale": 0.5},
+            {"type": "circle", "title": "<b>湖北钟祥 1</b><br/>王高寒", "latitude": 31.17, "longitude": 112.58, "scale": 0.3},
+            {"type": "circle", "title": "<b>湖北咸宁 1</b><br/>黎博文", "latitude": 29.53, "longitude": 114.17, "scale": 0.3},
+            {"type": "circle", "title": "<b>湖北荆州 3</b><br/>王倩莉<br/>陈筱颖<br/>王&#12288诚", "latitude": 30.33, "longitude": 112.23, "scale": 0.5},
+            {"type": "circle", "title": "<b>江苏南京 1</b><br/>魏圆圆", "latitude": 32.05, "longitude": 118.78, "scale": 0.3},
+            {"type": "circle", "title": "<b>河南南阳 2</b><br/>辛&#12288果<br/>张祯志", "latitude": 33.00, "longitude": 112.32, "scale": 0.4},
+            {"type": "circle", "title": "<b>河南新乡 1</b><br/>荆怡迈", "latitude": 35.18, "longitude": 113.52, "scale": 0.3},
+            {"type": "circle", "title": "<b>石家庄 1</b><br/>邢佳腾", "latitude": 38.02, "longitude": 114.3, "scale": 0.3},
+            {"type": "circle", "title": "<b>广东东莞 1</b><br/>徐苑珊", "latitude": 23.02, "longitude": 113.45, "scale": 0.3},
+            {"type": "circle", "title": "<b>广东茂名 1</b><br/>梁春辉", "latitude": 21.40, "longitude": 110.53, "scale": 0.3},
+            {"type": "circle", "title": "<b>湖北随州 1</b><br/>杨可扬", "latitude": 31.42, "longitude": 113.22, "scale": 0.3},
+            {"type": "circle", "title": "<b>云南德宏 1</b><br/>余章欧", "latitude": 24.50, "longitude": 97.80, "scale": 0.3},
+            {"type": "circle", "title": "<b>山东菏泽 1</b><br/>张&#12288琼", "latitude": 35.14, "longitude": 115.26, "scale": 0.3},
+            {"type": "circle", "title": "<b>湖北襄阳 1</b><br/>常&#12288帅", "latitude": 32.02, "longitude": 112.08, "scale": 0.3}
+            ]
+        },
+
+            "areasSettings": {
+                "color": "#FFCC00",
+                "outlineThickness": 0.3,
+                "unlistedAreasColor": "#FFFFFF",
+                "unlistedAreasAlpha": 0.6
+            },
+
+            "imagesSettings": {
+              "color": "#00FF00",
+              "rollOverColor": "#FFFF00",
+              "selectedColor": "#000000"
+            },
+
+            "linesSettings": {
+              "arc": -0.75,
+              "arrow": "middle",
+              "color": "#FFFF00",
+              "alpha": 1,
+              "arrowAlpha": 1,
+              "arrowSize": 3,
+              "thickness": 1
+            },
+
+            "balloon": {
+                "drop": false,
+                "fixedPosition": false
+            },
+
+            "zoomControl": {
+              "homeButtonEnabled": false,
+              "zoomControlEnabled": false,
+              "buttonSize": 10,
+              "gridHeight": 0,
+              "draggerAlpha": 0,
+              "gridAlpha": 0
+            },
+
+            "backgroundZoomsToTop": true,
+            "linesAboveImages": false,
+
+           "export": {
+             "enabled": false
+           }
+    } );
+
+    map.addListener( "positionChanged", updateCustomMarkers );
+
+    function updateCustomMarkers( event ) {
+      var map = event.chart;
+
+      for ( var x in map.dataProvider.images ) {
+        var image = map.dataProvider.images[ x ];
+        if (x == 4) {
+            if ( 'undefined' == typeof image.externalElement )
+            image.externalElement = createCustomMarker( image );
+            var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
+            image.externalElement.style.top = xy.y + 'px';
+            image.externalElement.style.left = xy.x + 'px';
+        } else {
+            if ( 'undefined' == typeof image.externalElement )
+            image.externalElement = createCustomMarker( image );
+            var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
+            image.externalElement.style.top = xy.y + 'px';
+            image.externalElement.style.left = xy.x + 'px';
+        }
+      }
+    }
+
+    function createCustomMarker( image ) {
+      var holder = document.createElement( 'div' );
+      holder.className = 'map-marker';
+      holder.title = image.title;
+      holder.style.position = 'absolute';
+
+      if ( undefined != image.url ) {
+        holder.onclick = function() {
+          window.location.href = image.url;
+        };
+        holder.className += ' map-clickable';
+      }
+
+      var dot = document.createElement( 'div' );
+      dot.className = 'dot';
+      holder.appendChild( dot );
+
+      var pulse = document.createElement( 'div' );
+      pulse.className = 'pulse';
+      holder.appendChild( pulse );
+
+      image.chart.chartDiv.appendChild( holder );
+
+      return holder;
+    }
+
+
+    </script>
+    </body>
+    <div id="chartdiv"></div>
+</html>
+
+
+
 ## 课程Q&A
 ### Q: 什么是计算机？
 A: 计算机是人类发明的一种<span style="color:blue;">自动</span>机器，计算机的最基本功能是可以执行一组基本操作，每个操作完成一件很简单的计算工作，例如整数的加减乘除运算等等。为使计算机能按人的指挥工作，每种计算机都提供了一套指令，其中的每一种指令对应着计算机能执行的一个基本动作。
@@ -453,274 +723,6 @@ A：通常，在if(条件)的条件或表达式中，会出现只有一个等号
 
 
 
-## 方小地和他的小伙伴们
-
-<html>
-    <head>
-    <style>
-        #chartdiv {
-            width: 100%;
-            height: 480px;
-        }
-        .map-marker {
-            margin-left: -5px;
-            margin-top: -5px;
-        }
-        .map-marker.map-clickable {
-            cursor: pointer;
-        }
-        .pulse {
-            width: 0px;
-            height: 0px;
-            border: 0px solid #f7f14c;
-            -webkit-border-radius: 30px;
-            -moz-border-radius: 30px;
-            border-radius: 30px;
-            background-color: #716f42;
-            z-index: 10;
-            position: absolute;
-      }
-      .map-marker .dot {
-            border: 10px solid #FFFFFF;
-            background: transparent;
-            -webkit-border-radius: 100px;
-            -moz-border-radius: 100px;
-            border-radius: 100px;
-            height: 40px;
-            width: 40px;
-            -webkit-animation: pulse 0.5s ease-out;
-            -moz-animation: pulse 1s ease-out;
-            animation: pulse 1.5s ease-out;
-            -webkit-animation-iteration-count: infinite;
-            -moz-animation-iteration-count: infinite;
-            animation-iteration-count: infinite;
-            position: absolute;
-            top: -25px;
-            left: -25px;
-            z-index: 1;
-            opacity: 0;
-    }
-    @-moz-keyframes pulse {
-           0% {
-              -moz-transform: scale(0);
-              opacity: 0.0;
-           }
-           25% {
-              -moz-transform: scale(0);
-              opacity: 0.1;
-           }
-           50% {
-              -moz-transform: scale(0.1);
-              opacity: 0.3;
-           }
-           75% {
-              -moz-transform: scale(0.5);
-              opacity: 0.5;
-           }
-           100% {
-              -moz-transform: scale(1);
-              opacity: 0.0;
-           }
-    }
-    @-webkit-keyframes "pulse" {
-           0% {
-              -webkit-transform: scale(0);
-              opacity: 0.0;
-           }
-           25% {
-              -webkit-transform: scale(0);
-              opacity: 0.1;
-           }
-           50% {
-              -webkit-transform: scale(0.1);
-              opacity: 0.3;
-           }
-           75% {
-              -webkit-transform: scale(0.5);
-              opacity: 0.5;
-           }
-           100% {
-              -webkit-transform: scale(1);
-              opacity: 0.0;
-           }
-       }
-    </style>
-    </head>
-    <body>
-    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-    <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-    <script>
-    var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
-
-    <!-- var targetSVG = "{{site.baseurl}}/assets/svg/taxi.svg"; -->
-
-    var colorSet = new am4core.ColorSet();
-    var map = AmCharts.makeChart( "chartdiv", {
-        "type": "map",
-        "theme": "light",
-        "dragMap": true,
-        "projection": "miller",
-        "mouseWheelZoomEnabled": true,
-        "showBalloonOnSelectedObject": true,
-        "backgroundAlpha": 1,
-        "backgroundColor": "#000",
-
-        "dataProvider": {
-            "mapURL": "/assets/map/chinaHigh.svg",
-
-            "zoomLevel": 1,
-            "zoomLatitude": 36.7,
-            "zoomLongitude": 104.2,
-
-            "lines": [
-            ],
-
-            "images": [
-            {"type": "circle", "title": "<b>湖北武汉 1</b><br/>孙睿康", "latitude": 30.35, "longitude": 114.17, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北孝感 2</b><br/>艾&#12288筝<br/>付兴宽", "latitude": 30.92, "longitude": 113.91, "scale": 0.5, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北黄冈 5</b><br/>陈俊宇<br/>鲁子欣<br/>吴&#12288莹<br/>郭志辉<br/>张明敏", "latitude": 30.44, "longitude": 114.87, "scale": 0.8, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北恩施 3</b><br/>邓铭雪<br/>龙凌霄<br/>王铃淇", "latitude": 30.16, "longitude": 109.29, "scale": 0.5, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>甘肃陇南 1</b><br/>侯莲霞", "latitude": 33.40, "longitude": 104.92, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>克拉玛依 1</b><br/>贾俊红", "latitude": 45.36, "longitude": 84.51, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>石河子 1</b><br/>林佳伟", "latitude": 44.18, "longitude": 86.00, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>库尔勒 1</b><br/>刘甜甜", "latitude": 41.46, "longitude": 86.07, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>河北邯郸 2</b><br/>蒋晓洁<br/>张子微", "latitude": 36.36, "longitude": 114.28, "scale": 0.4, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北黄石 1</b><br/>柯思琪", "latitude": 30.12, "longitude": 115.06, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>甘肃白银 1</b><br/>兰志玺", "latitude": 36.33, "longitude": 104.12, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>甘肃武威 1</b><br/>李奥杰", "latitude": 37.56, "longitude": 102.39, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>甘肃定西 1</b><br/>张金平", "latitude": 35.57, "longitude": 104.57, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>甘肃天水 1</b><br/>张婧怡", "latitude": 34.37, "longitude": 105.42, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北十堰 5</b><br/>李启意<br/>叶&#12288青<br/>陆翔宇<br/>汤文惠<br/>周庆尧", "latitude": 32.40, "longitude": 110.47, "scale": 0.8, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>河南洛阳 1</b><br/>李&#12288桥", "latitude": 34.41, "longitude": 112.27, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>河北保定 1</b><br/>梁亚琦", "latitude": 38.51, "longitude": 115.30, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>河北唐山 1</b><br/>朱&#12288浩", "latitude": 39.36, "longitude": 118.11, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>天津 3</b><br/>林&#12288权<br/>王辰宇<br/>张富铭", "latitude": 39.02, "longitude": 117.12, "scale": 0.5, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北宜昌 2</b><br/>林思奇<br/>张彦光", "latitude": 30.45, "longitude": 111.73, "scale": 0.4, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>新疆博乐 1</b><br/>刘景洁", "latitude": 44.93, "longitude": 82.10, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>山东威海 1</b><br/>刘&#12288洋", "latitude": 37.50, "longitude": 122.10, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>辽宁抚顺 1</b><br/>娄兰贝宁", "latitude": 41.97, "longitude": 123.97, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>广西桂林 2</b><br/>陆鸿彬<br/>罗覃林", "latitude": 25.29, "longitude": 110.28, "scale": 0.4, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>重庆 2</b><br/>彭&#12288真<br/>胡苛榆", "latitude": 29.35, "longitude": 106.33, "scale": 0.4, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>山东临沂 3</b><br/>任友志<br/>陈馨媛<br/>文中冠", "latitude": 35.05, "longitude": 118.35, "scale": 0.5, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北钟祥 1</b><br/>王高寒", "latitude": 31.17, "longitude": 112.58, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北咸宁 1</b><br/>黎博文", "latitude": 29.53, "longitude": 114.17, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北荆州 3</b><br/>王倩莉<br/>陈筱颖<br/>王&#12288诚", "latitude": 30.33, "longitude": 112.23, "scale": 0.5, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>江苏南京 1</b><br/>魏圆圆", "latitude": 32.05, "longitude": 118.78, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>河南南阳 2</b><br/>辛&#12288果<br/>张祯志", "latitude": 33.00, "longitude": 112.32, "scale": 0.4, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>河南新乡 1</b><br/>荆怡迈", "latitude": 35.18, "longitude": 113.52, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>石家庄 1</b><br/>邢佳腾", "latitude": 38.02, "longitude": 114.3, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>广东东莞 1</b><br/>徐苑珊", "latitude": 23.02, "longitude": 113.45, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>广东茂名 1</b><br/>梁春辉", "latitude": 21.40, "longitude": 110.53, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北随州 1</b><br/>杨可扬", "latitude": 31.42, "longitude": 113.22, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>云南德宏 1</b><br/>余章欧", "latitude": 24.50, "longitude": 97.80, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>山东菏泽 1</b><br/>张&#12288琼", "latitude": 35.14, "longitude": 115.26, "scale": 0.3, "color": colorSet.next()},
-            {"type": "circle", "title": "<b>湖北襄阳 1</b><br/>常&#12288帅", "latitude": 32.02, "longitude": 112.08, "scale": 0.3, "color": colorSet.next()}
-            ]
-        },
-
-            "areasSettings": {
-                "color": "#FFCC00",
-                "outlineThickness": 0.3,
-                "unlistedAreasColor": "#FFFFFF",
-                "unlistedAreasAlpha": 0.6
-            },
-
-            "imagesSettings": {
-              "color": "#00FF00",
-              "rollOverColor": "#FFFF00",
-              "selectedColor": "#000000"
-            },
-
-            "linesSettings": {
-              "arc": -0.75,
-              "arrow": "middle",
-              "color": "#FFFF00",
-              "alpha": 1,
-              "arrowAlpha": 1,
-              "arrowSize": 3,
-              "thickness": 1
-            },
-
-            "balloon": {
-                "drop": false,
-                "fixedPosition": false
-            },
-
-            "zoomControl": {
-              "homeButtonEnabled": false,
-              "zoomControlEnabled": false,
-              "buttonSize": 10,
-              "gridHeight": 0,
-              "draggerAlpha": 0,
-              "gridAlpha": 0
-            },
-
-            "backgroundZoomsToTop": true,
-            "linesAboveImages": false,
-
-           "export": {
-             "enabled": false
-           }
-    } );
-
-    map.addListener( "positionChanged", updateCustomMarkers );
-
-    function updateCustomMarkers( event ) {
-      var map = event.chart;
-
-      for ( var x in map.dataProvider.images ) {
-        var image = map.dataProvider.images[ x ];
-        if (x == 4) {
-            if ( 'undefined' == typeof image.externalElement )
-            image.externalElement = createCustomMarker( image );
-            var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
-            image.externalElement.style.top = xy.y + 'px';
-            image.externalElement.style.left = xy.x + 'px';
-        } else {
-            if ( 'undefined' == typeof image.externalElement )
-            image.externalElement = createCustomMarker( image );
-            var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
-            image.externalElement.style.top = xy.y + 'px';
-            image.externalElement.style.left = xy.x + 'px';
-        }
-      }
-    }
-
-    function createCustomMarker( image ) {
-      var holder = document.createElement( 'div' );
-      holder.className = 'map-marker';
-      holder.title = image.title;
-      holder.style.position = 'absolute';
-
-      if ( undefined != image.url ) {
-        holder.onclick = function() {
-          window.location.href = image.url;
-        };
-        holder.className += ' map-clickable';
-      }
-
-      var dot = document.createElement( 'div' );
-      dot.className = 'dot';
-      holder.appendChild( dot );
-
-      var pulse = document.createElement( 'div' );
-      pulse.className = 'pulse';
-      holder.appendChild( pulse );
-
-      image.chart.chartDiv.appendChild( holder );
-
-      return holder;
-    }
-
-
-    </script>
-    </body>
-    <div id="chartdiv"></div>
-</html>
-
-
-
 
 ## 授课日志
 ### 2020-02-06 雨课堂开课-长江大学教务处关联课程师生
@@ -787,13 +789,13 @@ A：通常，在if(条件)的条件或表达式中，会出现只有一个等号
 课下，同学们学习热情见长，对着PPT中的例题和知识点很关注，提问很积极。
 
 全程雨课堂授课，统计弹幕72条，PPT中包含8次练习题互动，本次课程仅测试6次，其余，留待下次课程修改答案后练习。
-![C语言程序设计-第三章顺序（2/3）](../assets/img/course/teachingCalendar5.png)
+<!--![C语言程序设计-第三章顺序（2/3）](../assets/img/course/teachingCalendar5.png)-->
 
 ### 2020-02-28 雨课堂上课-C语言程序设计第三章顺序（3/3）
 59/61名同学签到了课程，1名同学因为全程网络故障，另1名同学不知是何缘故。14:00-15:35，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定无故障，统计弹幕158条，PPT中包含9次练习题互动，本次课程全部完成且进行了讲解，同学们参与度高，理解能力强，只是暂时对于C语言测试题的出题套路还没完全摸清，有待课后自行多加练习。
-![C语言程序设计-第三章顺序（3/3）](../assets/img/course/teachingCalendar6.png)
+<!--![C语言程序设计-第三章顺序（3/3）](../assets/img/course/teachingCalendar6.png)-->
 
 ### 2020-03-03 雨课堂上课-C语言程序设计第四章选择（1/3）
 59/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
@@ -808,7 +810,7 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 今次课堂，明显感受到同学们的参与度在提高，对于课件上不懂的或者有疑义的，及时通过弹幕发送，即时通过语音讲解，自觉效果不错。
 
-![C语言程序设计-第四章选择（1/3）](../assets/img/course/teachingCalendar7.png)
+<!--![C语言程序设计-第四章选择（1/3）](../assets/img/course/teachingCalendar7.png)-->
 
 ### 2020-03-06 雨课堂上课-C语言程序设计第四章选择（2/3）
 58/61名同学签到了课程，14:00-15:40，课程2节共90分钟，中途休息5分钟。
@@ -824,7 +826,7 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 课堂上，着重讲解课后作业，主要是考虑到大家花了较多的精力在作业上，不趁热加固，划不太来，索性直接把知识点揉进课后作业，在作业讲解的过程中复习知识点，例如[上次作业](#Q2)。
 
-![C语言程序设计-第四章选择（2/3）](../assets/img/course/teachingCalendar8.png)
+<!--![C语言程序设计-第四章选择（2/3）](../assets/img/course/teachingCalendar8.png)-->
 
 ### 2020-03-10 雨课堂上课-C语言程序设计第四章选择（3/3）
 61/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
@@ -835,7 +837,7 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 今日次课程，所有的课堂测试题，增加一个E选项：我只是来看看，以搜集整理部分不知该如何作答的反馈，一来判断同学们的注意力是否在课堂上，二来也可以针对部分问题进行有针对性的讲解。
 
-![C语言程序设计-第四章选择（3/3）](../assets/img/course/teachingCalendar9.png)
+<!--![C语言程序设计-第四章选择（3/3）](../assets/img/course/teachingCalendar9.png)-->
 
 
 ### 2020-03-13 雨课堂上课-C语言程序设计第五章循环（1/2）
@@ -845,7 +847,7 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 教学督导建议在课前增加预习、课上增进互动、课后增强复习，一言以遵照之，自认授课过程中有随堂测试题互动，课下有课后作业督促，目前，自觉的同学不用要求预习，就能对课程内容保持良好的学习热情，余心甚慰。
 
-![C语言程序设计-第五章循环（1/2））](../assets/img/course/teachingCalendar10.png)
+<!--![C语言程序设计-第五章循环（1/2））](../assets/img/course/teachingCalendar10.png)-->
 
 
 ### 2020-03-17 雨课堂上课-C语言程序设计第五章循环（2/2）
@@ -857,7 +859,7 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 课前声明，为了督促大家学习投入，请有在听课的同学如果对测试题答案感到为难，可选择E选项：我只是来看看。由此观之，长期有10名左右的同学，未能保持全程注意力的投入。
 
-![C语言程序设计-第五章循环（2/2）](../assets/img/course/teachingCalendar11.png)
+<!--![C语言程序设计-第五章循环（2/2）](../assets/img/course/teachingCalendar11.png)-->
 
 ### 2020-03-20 雨课堂上课-C语言程序设计第一二三四五章复习课
 60/61名同学签到了课程，14:00-15:40，课程2节共90分钟，中途休息5分钟。
@@ -865,14 +867,14 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 全程雨课堂授课，稳定。
 
 集成第一二三四五章PPT上的练习题，课上测验，题后讲解，课后作业，都围绕练习题展开。
-![C语言程序设计-第一二三四五章复习课](../assets/img/course/teachingCalendar12.png)
+<!--![C语言程序设计-第一二三四五章复习课](../assets/img/course/teachingCalendar12.png)-->
 
 
 ### 2020-03-24 雨课堂上课-C语言程序设计第六章数组（1/3）
 61/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
-![C语言程序设计-第六章数组（1/3）](../assets/img/course/teachingCalendar13.png)
+<!--![C语言程序设计-第六章数组（1/3）](../assets/img/course/teachingCalendar13.png)-->
 
 
 ### 2020-03-27 雨课堂上课-C语言程序设计第六章数组（2/3）
@@ -880,14 +882,14 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第六章数组（2/3））](../assets/img/course/teachingCalendar14.png)
+<!--![C语言程序设计-第六章数组（2/3））](../assets/img/course/teachingCalendar14.png)-->
 
 ### 2020-03-31 雨课堂上课-C语言程序设计第六章数组（3/3）
 61/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第六章数组（3/3）](../assets/img/course/teachingCalendar15.png)
+<!--![C语言程序设计-第六章数组（3/3）](../assets/img/course/teachingCalendar15.png)-->
 
 
 ### 2020-04-03 雨课堂上课-C语言程序设计第七章函数（1/4）
@@ -895,53 +897,53 @@ X1 Carbon的音频和屏幕贡献功能仍然时不时故障，三次结束授�
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第七章函数（1/4））](../assets/img/course/teachingCalendar16.png)
+<!--![C语言程序设计-第七章函数（1/4））](../assets/img/course/teachingCalendar16.png)-->
 
 ### 2020-04-07 雨课堂上课-C语言程序设计第七章函数（2/4）
 61/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第七章函数（2/4）](../assets/img/course/teachingCalendar17.png)
+<!--![C语言程序设计-第七章函数（2/4）](../assets/img/course/teachingCalendar17.png)-->
 
 ### 2020-04-10 雨课堂上课-C语言程序设计第七章函数（3/4）
 61/61名同学签到了课程，14:00-15:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第七章函数（3/4））](../assets/img/course/teachingCalendar18.png)
+<!--![C语言程序设计-第七章函数（3/4））](../assets/img/course/teachingCalendar18.png)-->
 
 ### 2020-04-14 雨课堂上课-C语言程序设计第七章函数（4/4）
 61/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第七章函数（4/4）](../assets/img/course/teachingCalendar19.png)
+<!--![C语言程序设计-第七章函数（4/4）](../assets/img/course/teachingCalendar19.png)-->
 
 ### 2020-04-17 雨课堂上课-C语言程序设计第八章指针（1/4）
 60/61名同学签到了课程，14:00-15:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第八章指针（1/4））](../assets/img/course/teachingCalendar20.png)
+<!--![C语言程序设计-第八章指针（1/4））](../assets/img/course/teachingCalendar20.png)-->
 
 ### 2020-04-21 雨课堂上课-C语言程序设计第八章指针（2/4）
 60/61名同学签到了课程，16:05-17:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第八章指针（2/4）](../assets/img/course/teachingCalendar21.png)
+<!--![C语言程序设计-第八章指针（2/4）](../assets/img/course/teachingCalendar21.png)-->
 
 ### 2020-04-24 雨课堂上课-C语言程序设计第八章指针（3/4）
 59/61名同学签到了课程，14:00-15:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第八章指针（3/4））](../assets/img/course/teachingCalendar22.png)
+<!--![C语言程序设计-第八章指针（3/4））](../assets/img/course/teachingCalendar22.png)-->
 
 ### 2020-04-28 雨课堂上课-C语言程序设计第八章指针（4/4）
 57/61名同学签到了课程，付兴宽同学科目二请假，16:05-17:40，课程2节共90分钟，中途休息5分钟。
 
 全程雨课堂授课，稳定。
 
-![C语言程序设计-第八章指针（4/4）](../assets/img/course/teachingCalendar23.png)
+<!--![C语言程序设计-第八章指针（4/4）](../assets/img/course/teachingCalendar23.png)-->
