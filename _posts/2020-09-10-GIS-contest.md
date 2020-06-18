@@ -30,6 +30,12 @@ creditlink: ""
 2020级硕士 宋卓敏
 
 <html>
+  require.config({
+    paths: {
+      echarts: '../echarts'
+    }
+  });
+
   <head>
     <meta charset="utf-8">
       <title>ECharts</title>
