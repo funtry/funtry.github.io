@@ -141,7 +141,7 @@ image:
         "backgroundColor": "#000",
 
         "dataProvider": {
-            "mapURL": "/assets/map/chinaHigh.svg",
+            "mapURL": "/assets/map/China.svg",
 
             "zoomLevel": 1,
             "zoomLatitude": 36.7,
