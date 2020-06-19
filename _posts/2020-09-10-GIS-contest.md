@@ -33,7 +33,7 @@ creditlink: ""
 <head>
     <meta charset="utf-8">
     <title>ECharts</title>
-    <script src="../echarts/echarts-master/dist/echarts.js"></script>
+    <script src="../apache-echarts/echarts.all.js"></script>
 </head>
 <body>
     <div id="main" style="width: 100%; height: 500px;"></div>
