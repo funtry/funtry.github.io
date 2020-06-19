@@ -23,11 +23,6 @@ creditlink: ""
 {:toc}
 
 ## 2020526 组建参赛队伍
-地信21701 陈冬如
-
-地信21702 李晓文
-
-2020级硕士 宋卓敏
 
 <html>
 <head>
@@ -40,6 +35,8 @@ creditlink: ""
 <body>
     <div id="main" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
+    var myMap = echarts.init(document.getElementById('main'));
+
     var data = [
         {name: '陈冬如', value: 1},
         {name: '李晓文', value: 1},
@@ -54,7 +51,21 @@ creditlink: ""
         '方小地':[114.035351,30.538824]
     };
 
-    echarts.init(document.getElementById('main')).setOption({
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value)
+                });
+            }
+        }
+        return res;
+    };
+
+    var option = {
         backgroundColor: 'transparent',
         title: {
             text: '',
@@ -231,7 +242,9 @@ creditlink: ""
                 zlevel: 1
             }
         ]
-    });
+    };
+
+    myMap.setOption(option);
     </script>
 </body>
 </html>
