@@ -61,71 +61,128 @@ map.centerAndZoom(point, 15);
     <meta charset="utf-8">
     <title>ECharts</title>
     <script src="../echarts/echarts-master/dist/echarts.js"></script>
-    <script src="../echarts/echarts-gl-master/dist/echarts-gl.js"></script>
+    <script src="../echarts/echarts-master/dist/extension/bmap.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
     <div id="main" style="width: 100%; height: 500px;"></div>
-        <script>
+        <script type="text/javascript">
             echarts.init(document.getElementById('main')).setOption({
                 backgroundColor: '#000',
-                globe: {
-                    baseTexture: '../echarts/echarts-gl-master/test/asset/earth.jpg',
-                    heightTexture: '../echarts/echarts-gl-master/test/asset/elev_bump_4k.jpg',
-
-                    displacementScale: 0.1,
-
-                    shading: 'realistic',
-                    //shading: 'lambert',
-                    displacementQuality: 'ultra',
-
-                    environment: '../echarts/echarts-gl-master/test/asset/background.jpg',
-
-                    light: {
-                        ambient: {
-                            intensity: 0.1
-                        },
-
-                        main: {
-                            intensity: 1.5
-                        },
-
-                        ambientCubemap: {
-                              texture: '../echarts/echarts-gl-master/test/asset/pisa.hdr',
-                              exposure: 2,
-                              diffuseIntensity: 0.1,
-                              specularIntensity: 1
+                title: {
+                        text: '全国主要城市空气质量 - 百度地图',
+                        subtext: 'data from PM25.in',
+                        sublink: 'http://www.pm25.in',
+                        left: 'center'
+                    },
+                    tooltip : {
+                        trigger: 'item'
+                    },
+                    bmap: {
+                        center: [104.114129, 37.550339],
+                        zoom: 5,
+                        roam: true,
+                        mapStyle: {
+                            styleJson: [{
+                                'featureType': 'water',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'color': '#d1d1d1'
+                                }
+                            }, {
+                                'featureType': 'land',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'color': '#f3f3f3'
+                                }
+                            }, {
+                                'featureType': 'railway',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'visibility': 'off'
+                                }
+                            }, {
+                                'featureType': 'highway',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'color': '#fdfdfd'
+                                }
+                            }, {
+                                'featureType': 'highway',
+                                'elementType': 'labels',
+                                'stylers': {
+                                    'visibility': 'off'
+                                }
+                            }, {
+                                'featureType': 'arterial',
+                                'elementType': 'geometry',
+                                'stylers': {
+                                    'color': '#fefefe'
+                                }
+                            }, {
+                                'featureType': 'arterial',
+                                'elementType': 'geometry.fill',
+                                'stylers': {
+                                    'color': '#fefefe'
+                                }
+                            }, {
+                                'featureType': 'poi',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'visibility': 'off'
+                                }
+                            }, {
+                                'featureType': 'green',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'visibility': 'off'
+                                }
+                            }, {
+                                'featureType': 'subway',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'visibility': 'off'
+                                }
+                            }, {
+                                'featureType': 'manmade',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'color': '#d1d1d1'
+                                }
+                            }, {
+                                'featureType': 'local',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'color': '#d1d1d1'
+                                }
+                            }, {
+                                'featureType': 'arterial',
+                                'elementType': 'labels',
+                                'stylers': {
+                                    'visibility': 'off'
+                                }
+                            }, {
+                                'featureType': 'boundary',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'color': '#fefefe'
+                                }
+                            }, {
+                                'featureType': 'building',
+                                'elementType': 'all',
+                                'stylers': {
+                                    'color': '#d1d1d1'
+                                }
+                            }, {
+                                'featureType': 'label',
+                                'elementType': 'labels.text.fill',
+                                'stylers': {
+                                    'color': '#999999'
+                                }
+                            }]
                         }
                     },
-
-                    viewControl: {
-                        autoRotate: true,
-                        autoRotateSpeed: 1,
-                        autoRotateAfterStill: 10,
-                        targetCoord: [118.9616, 32.1124]
-                    },
-
-                    postEffect: {
-                        enable: true,
-                        SSAO: {
-                              enable: true,
-                              radius: 100
-                        }
-                    },
-
-                    layers: [{
-                        type: 'blend',
-                        blendTo: 'emission',
-                        texture: '../echarts/echarts-gl-master/test/asset/night.jpg'
-                    }]
-                    //
-                    // , {
-                    //     type: 'overlay',
-                    //     texture: '../echarts/echarts-gl-master/test/asset/clouds.png',
-                    //     shading: 'realistic',
-                    //     distance: 6
-                    // }
-              },
-              series: []
+                    series : []
             });
     </script>
 </body>
