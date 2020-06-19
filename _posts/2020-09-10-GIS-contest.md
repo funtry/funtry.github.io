@@ -40,7 +40,6 @@ creditlink: ""
 <body>
     <div id="main" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-    var map = new BMap.Map("main");
     var data = [
         {name: '陈冬如', value: 1},
         {name: '李晓文', value: 1},
@@ -55,22 +54,7 @@ creditlink: ""
         '方小地':[114.035351,30.538824]
     };
 
-    var convertData = function (data) {
-        var res = [];
-        for (var i = 0; i < data.length; i++) {
-            var geoCoord = geoCoordMap[data[i].name];
-            if (geoCoord) {
-                res.push({
-                    name: data[i].name,
-                    value: geoCoord.concat(data[i].value)
-                });
-            }
-        }
-        return res;
-    };
-
-
-    option = {
+    echarts.init(document.getElementById('main')).setOption({
         backgroundColor: 'transparent',
         title: {
             text: '',
@@ -88,7 +72,7 @@ creditlink: ""
             }
         },
         bmap: {
-            center: [104.114129, 37.550339],
+            center: [104, 35],
             zoom: 5,
             roam: true,
             mapStyle: {
@@ -242,13 +226,12 @@ creditlink: ""
                     color: '#ff00ff',
                     shadowBlur: 10,
                     shadowColor: '#333',
-
                     opacity: 0.85
                 },
                 zlevel: 1
             }
         ]
-    };
+    });
     </script>
 </body>
 </html>
