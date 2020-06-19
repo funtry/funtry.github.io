@@ -38,7 +38,7 @@ creditlink: ""
         <script src="../echarts/apache-echarts/lib/jquery.min.js"></script>
         <script src="../echarts/apache-echarts/lib/facePrint.js"></script>
         <script src="../echarts/apache-echarts/lib/testHelper.js"></script>
-        <link rel="stylesheet" href="lib/reset.css">
+        <link rel="stylesheet" href="../echarts/apache-echarts/lib/reset.css">
     </head>
     <body>
         <style>
@@ -53,7 +53,7 @@ creditlink: ""
             var chart;
 
             require([
-                '../echarts/apache-echarts', '../echarts/apache-echarts/map/js/china'
+                '../echarts/apache-echarts'
             ], function (echarts) {
 
 
