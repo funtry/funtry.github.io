@@ -32,10 +32,10 @@ creditlink: ""
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <script src="lib/esl.js"></script>
-        <script src="lib/config.js"></script>
-        <script src="lib/jquery.min.js"></script>
-        <script src="lib/facePrint.js"></script>
+        <script src="../echarts/echarts-master/test/lib/esl.js"></script>
+        <script src="../echarts/echarts-master/test/lib/config.js"></script>
+        <script src="../echarts/echarts-master/test/lib/jquery.min.js"></script>
+        <script src="../echarts/echarts-master/test/lib/facePrint.js"></script>
     </head>
     <body>
         <style>
@@ -49,10 +49,10 @@ creditlink: ""
         <script>
 
             require([
-                'echarts'
+                '../echarts/echarts-master/src'
             ], function (echarts) {
 
-                require(['map/js/china'], function () {
+                require(['../echarts/echarts-master/map/js/china'], function () {
                     var chart = echarts.init(document.getElementById('main'));
 
                     var itemStyle = {
