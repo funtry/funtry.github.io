@@ -38,7 +38,7 @@ creditlink: ""
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
-    <div id="main" style="width: 100%; height: 640px;"></div>
+    <div id="main" style="width: 100%; height: 960px;"></div>
     <script type="text/javascript">
     var myMap = echarts.init(document.getElementById('main'));
 
@@ -71,14 +71,14 @@ creditlink: ""
     };
 
     var option = {
-        backgroundColor: 'transparent',
+        backgroundColor: '#ffffff',
         title: {
             text: '',
             subtext: '',
             sublink: '',
             left: 'center',
             textStyle: {
-                color: '#fff'
+                color: '#ffffff'
             }
         },
         tooltip : {
@@ -248,7 +248,7 @@ creditlink: ""
                 itemStyle: {
                     color: 'magenta',
                     shadowBlur: 10,
-                    shadowColor: '#333'
+                    shadowColor: '#333333'
                 },
                 zlevel: 1
             },
