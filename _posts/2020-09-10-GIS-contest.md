@@ -33,7 +33,7 @@ creditlink: ""
 <head>
     <meta charset="utf-8">
     <title>ECharts</title>
-    <script src="http://api.map.baidu.com/api?v=2.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=53oVIOgmSIejwV7EfphPgTynOZbIiVYu"></script>
     <script src="../echarts/echarts-master/dist/echarts.js"></script>
     <script src="../echarts/echarts-master/dist/extension/js/bmap.min.js"></script>
 </head>
