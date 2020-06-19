@@ -43,9 +43,9 @@ creditlink: ""
     echarts.init(document.getElementById('main')).setOption({
         backgroundColor: 'transparent',
         title: {
-            text: '全国主要城市空气质量',
-            subtext: 'data from PM25.in',
-            sublink: 'http://www.pm25.in',
+            text: '',
+            subtext: '',
+            sublink: '',
             left: 'center',
             textStyle: {
                 color: '#fff'
@@ -64,14 +64,14 @@ creditlink: ""
                         "featureType": "water",
                         "elementType": "all",
                         "stylers": {
-                            "color": "#044161"
+                            "color": "#000000"
                         }
                     },
                     {
                         "featureType": "land",
                         "elementType": "all",
                         "stylers": {
-                            "color": "#004981"
+                            "color": "#646464"
                         }
                     },
                     {
