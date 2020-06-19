@@ -38,22 +38,25 @@ creditlink: ""
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
-    <div id="main" style="width: 100%; height: 500px;"></div>
+    <div id="main" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
     echarts.init(document.getElementById('main')).setOption({
-        backgroundColor: '#000',
+        backgroundColor: 'transparent',
         title: {
-            text: '全国主要城市空气质量 - 百度地图',
+            text: '全国主要城市空气质量',
             subtext: 'data from PM25.in',
             sublink: 'http://www.pm25.in',
-            left: 'center'
+            left: 'center',
+            textStyle: {
+                color: '#fff'
+            }
         },
         tooltip : {
             trigger: 'item'
         },
         bmap: {
             center: [104.114129, 37.550339],
-            zoom: 4,
+            zoom: 5,
             roam: true,
             mapStyle: {
                 styleJson: [
