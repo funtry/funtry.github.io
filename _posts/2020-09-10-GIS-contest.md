@@ -30,213 +30,138 @@ creditlink: ""
 2020级硕士 宋卓敏
 
 <html>
-<head>
-    <meta charset="utf-8">
-    <title>ECharts</title>
-    <script src="http://api.map.baidu.com/api?v=2.0&ak=53oVIOgmSIejwV7EfphPgTynOZbIiVYu"></script>
-    <script src="../echarts/echarts-master/dist/echarts.js"></script>
-    <script src="../echarts/echarts-master/dist/extension/js/bmap.min.js"></script>
-</head>
-<body>
-    <div id="main" style="width: 100%; height: 500px;"></div>
-        <script type="text/javascript">
-            var myChart = echarts.init(document.getElementById('main'));
-
-            var data = [
-];
-var geoCoordMap = {
-};
-
-var convertData = function (data) {
-    var res = [];
-    for (var i = 0; i < data.length; i++) {
-        var geoCoord = geoCoordMap[data[i].name];
-        if (geoCoord) {
-            res.push({
-                name: data[i].name,
-                value: geoCoord.concat(data[i].value)
-            });
-        }
-    }
-    return res;
-};
-
-option = {
-    title: {
-        text: 'GIS大赛-2020',
-        subtext: 'data from PM25.in',
-        sublink: 'http://www.pm25.in',
-        left: 'center'
-    },
-    tooltip : {
-        trigger: 'item'
-    },
-    bmap: {
-        center: [104.114129, 37.550339],
-        zoom: 5,
-        roam: true,
-        mapStyle: {
-            styleJson: [{
-                'featureType': 'water',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#d1d1d1'
-                }
-            }, {
-                'featureType': 'land',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#f3f3f3'
-                }
-            }, {
-                'featureType': 'railway',
-                'elementType': 'all',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'highway',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#fdfdfd'
-                }
-            }, {
-                'featureType': 'highway',
-                'elementType': 'labels',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'arterial',
-                'elementType': 'geometry',
-                'stylers': {
-                    'color': '#fefefe'
-                }
-            }, {
-                'featureType': 'arterial',
-                'elementType': 'geometry.fill',
-                'stylers': {
-                    'color': '#fefefe'
-                }
-            }, {
-                'featureType': 'poi',
-                'elementType': 'all',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'green',
-                'elementType': 'all',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'subway',
-                'elementType': 'all',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'manmade',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#d1d1d1'
-                }
-            }, {
-                'featureType': 'local',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#d1d1d1'
-                }
-            }, {
-                'featureType': 'arterial',
-                'elementType': 'labels',
-                'stylers': {
-                    'visibility': 'off'
-                }
-            }, {
-                'featureType': 'boundary',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#fefefe'
-                }
-            }, {
-                'featureType': 'building',
-                'elementType': 'all',
-                'stylers': {
-                    'color': '#d1d1d1'
-                }
-            }, {
-                'featureType': 'label',
-                'elementType': 'labels.text.fill',
-                'stylers': {
-                    'color': '#999999'
-                }
-            }]
-        }
-    },
-    series : [
-        {
-            name: 'pm2.5',
-            type: 'scatter',
-            coordinateSystem: 'bmap',
-            data: convertData(data),
-            symbolSize: function (val) {
-                return val[2] / 10;
-            },
-            encode: {
-                value: 2
-            },
-            label: {
-                formatter: '{b}',
-                position: 'right',
-                show: false
-            },
-            itemStyle: {
-                color: 'purple'
-            },
-            emphasis: {
-                label: {
-                    show: true
-                }
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <script src="../echarts/apache-echarts/lib/esl.js"></script>
+        <script src="../echarts/apache-echarts/lib/config.js"></script>
+        <script src="../echarts/apache-echarts/lib/jquery.min.js"></script>
+        <script src="../echarts/apache-echarts/lib/facePrint.js"></script>
+        <script src="../echarts/apache-echarts/lib/testHelper.js"></script>
+        <link rel="stylesheet" href="lib/reset.css">
+    </head>
+    <body>
+        <style>
+            .test-title {
+                background: #146402;
+                color: #fff;
             }
-        },
-        {
-            name: 'Top 5',
-            type: 'effectScatter',
-            coordinateSystem: 'bmap',
-            data: convertData(data.sort(function (a, b) {
-                return b.value - a.value;
-            }).slice(0, 6)),
-            symbolSize: function (val) {
-                return val[2] / 10;
-            },
-            encode: {
-                value: 2
-            },
-            showEffectOn: 'render',
-            rippleEffect: {
-                brushType: 'stroke'
-            },
-            hoverAnimation: true,
-            label: {
-                formatter: '{b}',
-                position: 'right',
-                show: true
-            },
-            itemStyle: {
-                color: 'purple',
-                shadowBlur: 10,
-                shadowColor: '#333'
-            },
-            zlevel: 1
-        }
-    ]
-};
+        </style>
+        <div id="main0"></div>
+        <script>
 
-            myChart.setOption(option);
+            var chart;
+
+            require([
+                '../echarts/apache-echarts', '../echarts/apache-echarts/map/js/china'
+            ], function (echarts) {
+
+
+                var provinces = ['shanghai', 'hebei','shanxi','neimenggu','liaoning','jilin','heilongjiang','jiangsu','zhejiang','anhui','fujian','jiangxi','shandong','henan','hubei','hunan','guangdong','guangxi','hainan','sichuan','guizhou','yunnan','xizang','shanxi1','gansu','qinghai','ningxia','xinjiang', 'beijing', 'tianjin', 'chongqing', 'xianggang', 'aomen'];
+                var provincesText = ['上海', '河北', '山西', '内蒙古', '辽宁', '吉林','黑龙江',  '江苏', '浙江', '安徽', '福建', '江西', '山东','河南', '湖北', '湖南', '广东', '广西', '海南', '四川', '贵州', '云南', '西藏', '陕西', '甘肃', '青海', '宁夏', '新疆', '北京', '天津', '重庆', '香港', '澳门'];
+
+                function showProvince() {
+                    var name = provinces[currentIdx];
+
+                    myChart.showLoading();
+
+                    $.get('../echarts/apache-echarts/map/json/province/' + name + '.json', function (geoJson) {
+
+                        myChart.hideLoading();
+
+                        echarts.registerMap(name, geoJson);
+
+                        chart.setOption({
+                            backgroundColor: '#404a59',
+                            title: {
+                                text: provincesText[currentIdx],
+                                left: 'center',
+                                textStyle: {
+                                    color: '#fff'
+                                }
+                            },
+                            series: [
+                                {
+                                    type: 'map',
+                                    mapType: name,
+                                    label: {
+                                        emphasis: {
+                                            textStyle: {
+                                                color: '#fff'
+                                            }
+                                        }
+                                    },
+                                    itemStyle: {
+                                        normal: {
+                                            borderColor: '#389BB7',
+                                            areaColor: '#fff',
+                                        },
+                                        emphasis: {
+                                            areaColor: '#389BB7',
+                                            borderWidth: 0
+                                        }
+                                    },
+                                    animation: false
+                                    animationDurationUpdate: 1000,
+                                    animationEasingUpdate: 'quinticInOut'
+                                }
+                            ]
+                        });
+
+                    });
+                }
+
+                var currentIdx = 0;
+
+                var option = {
+                    graphic: [{
+                        id: 'left-btn',
+                        type: 'circle',
+                        shape: { r: 20 },
+                        style: {
+                            text: '<',
+                            fill: '#eee'
+                        },
+                        left: 10,
+                        top: 'middle',
+                        onclick: function () {
+                            currentIdx -= 1;
+                            if (currentIdx < 0) {
+                                currentIdx += provinces.length;
+                            }
+                            showProvince();
+                        }
+                    }, {
+                        id: 'right-btn',
+                        type: 'circle',
+                        shape: { r: 20 },
+                        style: {
+                            text: '>',
+                            fill: '#eee'
+                        },
+                        top: 'middle',
+                        right: 10,
+                        onclick: function () {
+                            currentIdx = (currentIdx + 1) % provinces.length;
+                            showProvince();
+                        }
+                    }],
+
+                    series: []
+                };
+
+                chart = testHelper.create(echarts, 'main0', {
+                    option: option
+                });
+
+                showProvince();
+
+
+
+            });
+
         </script>
-</body>
+    </body>
 </html>
 
 ## 2020614 确定参赛主题
