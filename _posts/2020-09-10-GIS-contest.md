@@ -55,3 +55,78 @@ map.centerAndZoom(point, 15);
 
 ## 2020614 确定参赛主题
 武汉人物
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script src="../echarts/echarts-master/dist/echarts.js"></script>
+    <script src="../echarts/echarts-gl-master/dist/echarts-gl.js"></script>
+</head>
+<body>
+    <div id="main" style="width: 100%; height: 500px;"></div>
+        <script>
+            echarts.init(document.getElementById('main')).setOption({
+                backgroundColor: '#000',
+                globe: {
+                    baseTexture: '../echarts/echarts-gl-master/test/asset/earth.jpg',
+                    heightTexture: '../echarts/echarts-gl-master/test/asset/elev_bump_4k.jpg',
+
+                    displacementScale: 0.1,
+
+                    shading: 'realistic',
+                    //shading: 'lambert',
+                    displacementQuality: 'ultra',
+
+                    environment: '../echarts/echarts-gl-master/test/asset/background.jpg',
+
+                    light: {
+                        ambient: {
+                            intensity: 0.1
+                        },
+
+                        main: {
+                            intensity: 1.5
+                        },
+
+                        ambientCubemap: {
+                              texture: '../echarts/echarts-gl-master/test/asset/pisa.hdr',
+                              exposure: 2,
+                              diffuseIntensity: 0.1,
+                              specularIntensity: 1
+                        }
+                    },
+
+                    viewControl: {
+                        autoRotate: true,
+                        autoRotateSpeed: 1,
+                        autoRotateAfterStill: 10,
+                        targetCoord: [118.9616, 32.1124]
+                    },
+
+                    postEffect: {
+                        enable: true,
+                        SSAO: {
+                              enable: true,
+                              radius: 100
+                        }
+                    },
+
+                    layers: [{
+                        type: 'blend',
+                        blendTo: 'emission',
+                        texture: '../echarts/echarts-gl-master/test/asset/night.jpg'
+                    }]
+                    //
+                    // , {
+                    //     type: 'overlay',
+                    //     texture: '../echarts/echarts-gl-master/test/asset/clouds.png',
+                    //     shading: 'realistic',
+                    //     distance: 6
+                    // }
+              },
+              series: []
+            });
+    </script>
+</body>
+</html>
