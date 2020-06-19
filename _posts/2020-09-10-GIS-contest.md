@@ -25,6 +25,11 @@ creditlink: ""
 ## 2020526 组建参赛队伍
 
 <html>
+<style type="text/css">
+    .anchorBL{
+        display:none
+    }
+</style>
 <head>
     <meta charset="utf-8">
     <title>方小地</title>
