@@ -33,14 +33,44 @@ creditlink: ""
 <head>
     <meta charset="utf-8">
     <title>ECharts</title>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
     <script src="../echarts/echarts-master/dist/echarts.js"></script>
     <script src="../echarts/echarts-master/dist/extension/bmap.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
     <div id="main" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-    echarts.init(document.getElementById('main')).setOption({
+    var map = new BMap.Map("main");
+    var data = [
+        {name: '陈冬如', value: 1},
+        {name: '李晓文', value: 1},
+        {name: '宋卓敏', value: 1},
+        {name: '方小地', value: 1}
+    ];
+
+    var geoCoordMap = {
+        '陈冬如':[125.19, 43.48],
+        '李晓文':[116.87,38.3],
+        '宋卓敏':[111.14125,37.525415],
+        '方小地':[114.035351,30.538824]
+    };
+
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value)
+                });
+            }
+        }
+        return res;
+    };
+
+
+    option = {
         backgroundColor: 'transparent',
         title: {
             text: '',
@@ -52,11 +82,14 @@ creditlink: ""
             }
         },
         tooltip : {
-            trigger: 'item'
+            trigger: 'item',
+            formatter: function(data) {
+                return data.name;
+            }
         },
         bmap: {
             center: [104.114129, 37.550339],
-            zoom: 4.5,
+            zoom: 5,
             roam: true,
             mapStyle: {
                 styleJson: [
@@ -64,21 +97,21 @@ creditlink: ""
                         "featureType": "water",
                         "elementType": "all",
                         "stylers": {
-                            "color": "#000000"
+                            "color": "#b8cefa"
                         }
                     },
                     {
                         "featureType": "land",
                         "elementType": "all",
                         "stylers": {
-                            "color": "#646464"
+                            "color": "#f3f3f3"
                         }
                     },
                     {
                         "featureType": "boundary",
                         "elementType": "geometry",
                         "stylers": {
-                            "color": "#064f85"
+                            "color": "#7f7f7f"
                         }
                     },
                     {
@@ -92,7 +125,8 @@ creditlink: ""
                         "featureType": "highway",
                         "elementType": "geometry",
                         "stylers": {
-                            "color": "#004981"
+                            "color": "#004981",
+                            "visibility": "off"
                         }
                     },
                     {
@@ -100,7 +134,8 @@ creditlink: ""
                         "elementType": "geometry.fill",
                         "stylers": {
                             "color": "#005b96",
-                            "lightness": 1
+                            "lightness": 1,
+                            "visibility": "off"
                         }
                     },
                     {
@@ -114,14 +149,16 @@ creditlink: ""
                         "featureType": "arterial",
                         "elementType": "geometry",
                         "stylers": {
-                            "color": "#004981"
+                            "color": "#004981",
+                            "visibility": "off"
                         }
                     },
                     {
                         "featureType": "arterial",
                         "elementType": "geometry.fill",
                         "stylers": {
-                            "color": "#00508b"
+                            "color": "#00508b",
+                            "visibility": "off"
                         }
                     },
                     {
@@ -168,17 +205,11 @@ creditlink: ""
                         }
                     },
                     {
-                        "featureType": "boundary",
-                        "elementType": "geometry.fill",
-                        "stylers": {
-                            "color": "#029fd4"
-                        }
-                    },
-                    {
                         "featureType": "building",
                         "elementType": "all",
                         "stylers": {
-                            "color": "#1a5787"
+                            "color": "#1a5787",
+                            "visibility": "off"
                         }
                     },
                     {
@@ -191,8 +222,33 @@ creditlink: ""
                 ]
             }
         },
-        series : []
-    });
+        series : [
+            {
+                type: 'effectScatter',
+                coordinateSystem: 'bmap',
+                data: convertData(data),
+                encode: {
+                    value: 2
+                },
+                symbolSize: function (val) {
+                    return val[2]*15;
+                },
+                showEffectOn: 'emphasis',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                itemStyle: {
+                    color: '#ff00ff',
+                    shadowBlur: 10,
+                    shadowColor: '#333',
+
+                    opacity: 0.85
+                },
+                zlevel: 1
+            }
+        ]
+    };
     </script>
 </body>
 </html>
