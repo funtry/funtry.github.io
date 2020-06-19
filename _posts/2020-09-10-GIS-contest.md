@@ -38,27 +38,6 @@ creditlink: ""
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
-    <div id="main1" style="width: 100%; height: 500px;"></div>
-    <script type="text/javascript">
-        var map = new BMap.Map("main1");
-        var point = new BMap.Point(116.404, 39.915);
-        map.centerAndZoom(point, 15);
-    </script>
-</body>
-</html>
-
-## 2020614 确定参赛主题
-武汉人物
-
-<html>
-<head>
-    <meta charset="utf-8">
-    <title>ECharts</title>
-    <script src="../echarts/echarts-master/dist/echarts.js"></script>
-    <script src="../echarts/echarts-master/dist/extension/bmap.js"></script>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
-</head>
-<body>
     <div id="main" style="width: 100%; height: 500px;"></div>
     <script type="text/javascript">
             echarts.init(document.getElementById('main')).setOption({
@@ -74,110 +53,144 @@ creditlink: ""
                     },
                     bmap: {
                         center: [104.114129, 37.550339],
-                        zoom: 5,
+                        zoom: 4,
                         roam: true,
                         mapStyle: {
-                            styleJson: [{
-                                'featureType': 'water',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'color': '#d1d1d1'
-                                }
-                            }, {
-                                'featureType': 'land',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'color': '#f3f3f3'
-                                }
-                            }, {
-                                'featureType': 'railway',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'visibility': 'off'
-                                }
-                            }, {
-                                'featureType': 'highway',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'color': '#fdfdfd'
-                                }
-                            }, {
-                                'featureType': 'highway',
-                                'elementType': 'labels',
-                                'stylers': {
-                                    'visibility': 'off'
-                                }
-                            }, {
-                                'featureType': 'arterial',
-                                'elementType': 'geometry',
-                                'stylers': {
-                                    'color': '#fefefe'
-                                }
-                            }, {
-                                'featureType': 'arterial',
-                                'elementType': 'geometry.fill',
-                                'stylers': {
-                                    'color': '#fefefe'
-                                }
-                            }, {
-                                'featureType': 'poi',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'visibility': 'off'
-                                }
-                            }, {
-                                'featureType': 'green',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'visibility': 'off'
-                                }
-                            }, {
-                                'featureType': 'subway',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'visibility': 'off'
-                                }
-                            }, {
-                                'featureType': 'manmade',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'color': '#d1d1d1'
-                                }
-                            }, {
-                                'featureType': 'local',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'color': '#d1d1d1'
-                                }
-                            }, {
-                                'featureType': 'arterial',
-                                'elementType': 'labels',
-                                'stylers': {
-                                    'visibility': 'off'
-                                }
-                            }, {
-                                'featureType': 'boundary',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'color': '#fefefe'
-                                }
-                            }, {
-                                'featureType': 'building',
-                                'elementType': 'all',
-                                'stylers': {
-                                    'color': '#d1d1d1'
-                                }
-                            }, {
-                                'featureType': 'label',
-                                'elementType': 'labels.text.fill',
-                                'stylers': {
-                                    'color': '#999999'
-                                }
-                            }]
-                        }
-                    },
+           styleJson: [
+                   {
+                       "featureType": "water",
+                       "elementType": "all",
+                       "stylers": {
+                           "color": "#044161"
+                       }
+                   },
+                   {
+                       "featureType": "land",
+                       "elementType": "all",
+                       "stylers": {
+                           "color": "#004981"
+                       }
+                   },
+                   {
+                       "featureType": "boundary",
+                       "elementType": "geometry",
+                       "stylers": {
+                           "color": "#064f85"
+                       }
+                   },
+                   {
+                       "featureType": "railway",
+                       "elementType": "all",
+                       "stylers": {
+                           "visibility": "off"
+                       }
+                   },
+                   {
+                       "featureType": "highway",
+                       "elementType": "geometry",
+                       "stylers": {
+                           "color": "#004981"
+                       }
+                   },
+                   {
+                       "featureType": "highway",
+                       "elementType": "geometry.fill",
+                       "stylers": {
+                           "color": "#005b96",
+                           "lightness": 1
+                       }
+                   },
+                   {
+                       "featureType": "highway",
+                       "elementType": "labels",
+                       "stylers": {
+                           "visibility": "off"
+                       }
+                   },
+                   {
+                       "featureType": "arterial",
+                       "elementType": "geometry",
+                       "stylers": {
+                           "color": "#004981"
+                       }
+                   },
+                   {
+                       "featureType": "arterial",
+                       "elementType": "geometry.fill",
+                       "stylers": {
+                           "color": "#00508b"
+                       }
+                   },
+                   {
+                       "featureType": "poi",
+                       "elementType": "all",
+                       "stylers": {
+                           "visibility": "off"
+                       }
+                   },
+                   {
+                       "featureType": "green",
+                       "elementType": "all",
+                       "stylers": {
+                           "color": "#056197",
+                           "visibility": "off"
+                       }
+                   },
+                   {
+                       "featureType": "subway",
+                       "elementType": "all",
+                       "stylers": {
+                           "visibility": "off"
+                       }
+                   },
+                   {
+                       "featureType": "manmade",
+                       "elementType": "all",
+                       "stylers": {
+                           "visibility": "off"
+                       }
+                   },
+                   {
+                       "featureType": "local",
+                       "elementType": "all",
+                       "stylers": {
+                           "visibility": "off"
+                       }
+                   },
+                   {
+                       "featureType": "arterial",
+                       "elementType": "labels",
+                       "stylers": {
+                           "visibility": "off"
+                       }
+                   },
+                   {
+                       "featureType": "boundary",
+                       "elementType": "geometry.fill",
+                       "stylers": {
+                           "color": "#029fd4"
+                       }
+                   },
+                   {
+                       "featureType": "building",
+                       "elementType": "all",
+                       "stylers": {
+                           "color": "#1a5787"
+                       }
+                   },
+                   {
+                       "featureType": "label",
+                       "elementType": "all",
+                       "stylers": {
+                           "visibility": "off"
+                       }
+                   },
                     series : []
             });
     </script>
 </body>
 </html>
+
+
+## 2020614 确定参赛主题
+武汉人物
