@@ -27,10 +27,10 @@ creditlink: ""
 <html>
 <head>
     <meta charset="utf-8">
-    <title>ECharts</title>
-    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
+    <title>方小地</title>
     <script src="../echarts/echarts-master/dist/echarts.js"></script>
     <script src="../echarts/echarts-master/dist/extension/bmap.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
     <div id="main" style="width: 100%; height: 640px;"></div>
@@ -83,7 +83,7 @@ creditlink: ""
             }
         },
         bmap: {
-            center: [104, 35],
+            center: [114, 35],
             zoom: 5,
             roam: true,
             mapStyle: {
@@ -219,25 +219,60 @@ creditlink: ""
         },
         series : [
             {
+                name: '队员',
                 type: 'effectScatter',
                 coordinateSystem: 'bmap',
-                data: convertData(data),
+                data: convertData(data.slice(0, 3)),
+                symbolSize: function (val) {
+                    return val[2] *20;
+                },
                 encode: {
                     value: 2
                 },
-                symbolSize: function (val) {
-                    return val[2]*15;
-                },
-                showEffectOn: 'emphasis',
+                showEffectOn: 'render',
                 rippleEffect: {
                     brushType: 'stroke'
                 },
                 hoverAnimation: true,
+                label: {
+                    color: 'black',
+                    formatter: '{b}',
+                    position: 'top',
+                    show: true
+                },
                 itemStyle: {
-                    color: '#ff00ff',
+                    color: 'magenta',
                     shadowBlur: 10,
-                    shadowColor: '#333',
-                    opacity: 0.85
+                    shadowColor: '#333'
+                },
+                zlevel: 1
+            },
+            {
+                name: '指导',
+                type: 'effectScatter',
+                coordinateSystem: 'bmap',
+                data: convertData(data.slice(3, 4)),
+                symbolSize: function (val) {
+                    return val[2] *12;
+                },
+                encode: {
+                    value: 2
+                },
+                showEffectOn: 'render',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                label: {
+                    color: 'black',
+                    formatter: '{b}',
+                    position: 'bottom',
+                    show: true
+                },
+                itemStyle: {
+                    color: 'blue',
+                    shadowBlur: 10,
+                    shadowColor: '#333'
                 },
                 zlevel: 1
             }
