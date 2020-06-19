@@ -31,25 +31,19 @@ creditlink: ""
 
 <html>
 <head>
-<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Hello, World</title>
-<style type="text/css">
-html{height:100%}
-body{height:100%;margin:0px;padding:0px}
-#container{height:100%}
-</style>
-<script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f">
-</script>
+    <meta charset="utf-8">
+    <title>ECharts</title>
+    <script src="../echarts/echarts-master/dist/echarts.js"></script>
+    <script src="../echarts/echarts-master/dist/extension/bmap.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
-
 <body>
-<div id="container"></div>
-<script type="text/javascript">
-var map = new BMap.Map("container");
-var point = new BMap.Point(116.404, 39.915);
-map.centerAndZoom(point, 15);
-</script>
+    <div id="main" style="width: 100%; height: 500px;"></div>
+    <script type="text/javascript">
+        var map = new BMap.Map("main");
+        var point = new BMap.Point(116.404, 39.915);
+        map.centerAndZoom(point, 15);
+    </script>
 </body>
 </html>
 
@@ -66,7 +60,7 @@ map.centerAndZoom(point, 15);
 </head>
 <body>
     <div id="main" style="width: 100%; height: 500px;"></div>
-        <script type="text/javascript">
+    <script type="text/javascript">
             echarts.init(document.getElementById('main')).setOption({
                 backgroundColor: '#000',
                 title: {
