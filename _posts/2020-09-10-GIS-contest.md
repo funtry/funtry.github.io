@@ -38,9 +38,9 @@ creditlink: ""
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
-    <div id="main" style="width: 100%; height: 500px;"></div>
+    <div id="main1" style="width: 100%; height: 500px;"></div>
     <script type="text/javascript">
-        var map = new BMap.Map("main");
+        var map = new BMap.Map("main1");
         var point = new BMap.Point(116.404, 39.915);
         map.centerAndZoom(point, 15);
     </script>
