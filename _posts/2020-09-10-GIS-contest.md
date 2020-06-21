@@ -88,7 +88,7 @@ image:
             }
         },
         bmap: {
-            center: [114, 28],
+            center: [114, 30],
             zoom: 5,
             roam: true,
             mapStyle: {

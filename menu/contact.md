@@ -206,7 +206,7 @@ title: Contact me
             }
         },
         bmap: {
-            center: [114, 29],
+            center: [114, 30],
             zoom: 5,
             roam: true,
             mapStyle: {
@@ -342,7 +342,7 @@ title: Contact me
         },
         series : [
             {
-                name: '队员',
+                name: '',
                 type: 'effectScatter',
                 coordinateSystem: 'bmap',
                 data: convertData(data),
@@ -358,7 +358,7 @@ title: Contact me
                 },
                 hoverAnimation: true,
                 label: {
-                    color: 'black',
+                    color: '#0f0',
                     formatter: '{b}',
                     position: 'top',
                     show: true
@@ -371,7 +371,7 @@ title: Contact me
                 zlevel: 1
             },
             {
-                name: '指导',
+                name: '',
                 type: 'effectScatter',
                 coordinateSystem: 'bmap',
                 data: convertData(data.slice(6, 7)),
@@ -393,7 +393,7 @@ title: Contact me
                     show: true
                 },
                 itemStyle: {
-                    color: 'blue',
+                    color: '#00f',
                     shadowBlur: 10,
                     shadowColor: '#333'
                 },
