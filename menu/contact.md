@@ -206,7 +206,7 @@ title: Contact me
             }
         },
         bmap: {
-            center: [114, 28],
+            center: [114, 29],
             zoom: 5,
             roam: true,
             mapStyle: {
@@ -347,7 +347,7 @@ title: Contact me
                 coordinateSystem: 'bmap',
                 data: convertData(data),
                 symbolSize: function (val) {
-                    return val[2] *5;
+                    return val[2] *4;
                 },
                 encode: {
                     value: 2
@@ -364,7 +364,7 @@ title: Contact me
                     show: true
                 },
                 itemStyle: {
-                    color: 'green',
+                    color: '#0f0',
                     shadowBlur: 10,
                     shadowColor: '#333'
                 },
@@ -376,7 +376,7 @@ title: Contact me
                 coordinateSystem: 'bmap',
                 data: convertData(data.slice(6, 7)),
                 symbolSize: function (val) {
-                    return val[2] *12;
+                    return val[2] *10;
                 },
                 encode: {
                     value: 2
@@ -387,7 +387,7 @@ title: Contact me
                 },
                 hoverAnimation: true,
                 label: {
-                    color: 'blue',
+                    color: '#00f',
                     formatter: '{b}',
                     position: 'bottom',
                     show: true
