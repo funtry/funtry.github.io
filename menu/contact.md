@@ -206,7 +206,7 @@ title: Contact me
             }
         },
         bmap: {
-            center: [114, 23.5],
+            center: [114, 28],
             zoom: 5,
             roam: true,
             mapStyle: {
