@@ -1,16 +1,16 @@
 ---
 show_in_nav: false
 layout: post
-title: "GIS大赛"
+title: "2020年第十二届全国高校GIS技能大赛"
 author: "Fangli ZHANG"
 categories: thesis
 notshow: 1
 tags: [contest, undergraduate]
 image:
-feature: contest/0-0.png
-teaser: contest/0-0.png
-credit: javascript
-creditlink: ""
+    feature: contest/GIS_contest_2020.png
+    teaser: contest/GIS_contest_2020.png
+    credit: javascript
+    creditlink: ""
 ---
 
 # 2020年第十二届全国高校GIS技能大赛
@@ -26,9 +26,9 @@ creditlink: ""
 
 <html>
 <style type="text/css">
-    .anchorBL{
-        display:none
-    }
+.anchorBL{
+    display:none
+}
 </style>
 <head>
     <meta charset="utf-8">
@@ -88,7 +88,7 @@ creditlink: ""
             }
         },
         bmap: {
-            center: [114, 35],
+            center: [114, 23.5],
             zoom: 5,
             roam: true,
             mapStyle: {
@@ -248,7 +248,7 @@ creditlink: ""
                 itemStyle: {
                     color: 'magenta',
                     shadowBlur: 10,
-                    shadowColor: '#333333'
+                    shadowColor: '#333'
                 },
                 zlevel: 1
             },

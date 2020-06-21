@@ -2,335 +2,432 @@
 layout: page
 title: Contact me
 ---
+
+
 <html>
-    <head>
-        <style>
-            #chartdiv {
-                width: 100%;
-                height: 320px;
+<style type="text/css">
+.anchorBL{
+    display:none
+}
+</style>
+<head>
+    <meta charset="utf-8">
+    <title>方小地</title>
+    <script src="../echarts/echarts-master/dist/echarts.js"></script>
+    <script src="../echarts/echarts-master/dist/extension/bmap.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
+</head>
+<body>
+    <div id="main" style="width: 100%; height: 960px;"></div>
+    <script type="text/javascript">
+    var myMap = echarts.init(document.getElementById('main'));
+
+    var data = [
+        {name: '月堤凹', value: 1},
+        {name: '荆州', value: 1},
+        {name: '武汉', value: 1},
+        {name: '北京', value: 1},
+        {name: '香港', value: 1},
+        {name: '南京', value: 1},
+        {name: '长江大学', value: 2},
+        {name: 'Chiasso', value: 1},
+        {name: 'Como', value: 1},
+        {name: 'Venice', value: 1},
+        {name: 'Florence', value: 1},
+        {name: 'Milan', value: 1},
+        {name: 'Prague', value: 1},
+        {name: 'Karlovy Vary', value: 1},
+        {name: 'Český Krumlov', value: 1},
+        {name: 'Ceske Budejovice', value: 1},
+        {name: '宜昌', value: 1},
+        {name: '襄阳', value: 1},
+        {name: '成都', value: 1},
+        {name: '沈阳', value: 1},
+        {name: '崇明岛', value: 1},
+        {name: '上海', value: 1},
+        {name: '天池', value: 1},
+        {name: '长春', value: 1},
+        {name: '安图', value: 1},
+        {name: '绍兴', value: 1},
+        {name: '杭州', value: 1},
+        {name: '湘潭', value: 1},
+        {name: '岳阳', value: 1},
+        {name: '长沙', value: 1},
+        {name: '常州', value: 1},
+        {name: '襄阳', value: 1},
+        {name: '随州', value: 1},
+        {name: '孝感', value: 1},
+        {name: '广水', value: 1},
+        {name: '宣化店', value: 1},
+        {name: '仙桃', value: 1},
+        {name: '项城', value: 1},
+        {name: '周口', value: 1},
+        {name: '开封', value: 1},
+        {name: '郑州', value: 1},
+        {name: '洛阳', value: 1},
+        {name: '南阳', value: 1},
+        {name: '枣庄', value: 1},
+        {name: '临沂', value: 1},
+        {name: '青岛', value: 1},
+        {name: '济南', value: 1},
+        {name: '大连', value: 1},
+        {name: '兰州', value: 1},
+        {name: '镇江', value: 1},
+        {name: '扬州', value: 1},
+        {name: '无锡', value: 1},
+        {name: '江阴', value: 1},
+        {name: '井冈山', value: 1},
+        {name: '庐山', value: 1},
+        {name: '南昌', value: 1},
+        {name: '怀化', value: 1},
+        {name: '凤凰', value: 1},
+        {name: '郴州', value: 1},
+        {name: '平谭', value: 1},
+        {name: '福州', value: 1},
+        {name: '海口', value: 1},
+        {name: '三亚', value: 1},
+        {name: '潭门', value: 1},
+        {name: '渚碧', value: 1},
+        {name: '永暑', value: 1},
+        {name: '九章', value: 1},
+        {name: '西沙', value: 1},
+        {name: '深圳', value: 1},
+        {name: '珠海', value: 1},
+        {name: '澳门', value: 1},
+        {name: '东莞', value: 1},
+        {name: '广州', value: 1}
+    ];
+
+    var geoCoordMap = {
+        '月堤凹': [112.660802, 29.9948936],
+        '荆州': [112.212773, 30.341304],
+        '武汉': [114.3527662, 30.5390822],
+        '北京': [116.3036799, 39.9869171],
+        '香港': [114.181962, 22.337857],
+        '南京': [118.9626781, 32.110798],
+        '长江大学': [114.028565, 30.53263],
+        'Chiasso': [9.032748, 45.833905],
+        'Como': [9.066017, 45.818056],
+        'Venice': [12.334162, 45.43086],
+        'Florence': [11.25357, 43.768844],
+        'Milan': [9.186216, 45.462403],
+        'Prague': [14.3251976, 50.0598054],
+        'Karlovy Vary': [12.867841, 50.23022],
+        'Český Krumlov': [14.472547, 48.973443],
+        'Ceske Budejovice': [14.314063, 48.809801],
+        '宜昌': [111.267151, 30.685358],
+        '襄阳': [112.929498, 31.931969],
+        '成都': [104.056221, 30.584186],
+        '沈阳': [123.429275, 41.795374],
+        '崇明岛': [121.396618, 31.623527],
+        '上海': [121.459633, 31.227287],
+        '天池': [128.060149, 42.021411],
+        '长春': [125.324109, 43.822262],
+        '安图': [128.865288, 43.10331],
+        '绍兴': [120.58591, 29.996625],
+        '杭州': [120.153467, 30.268311],
+        '湘潭': [112.940775, 27.827308],
+        '岳阳': [113.114635, 29.363103],
+        '长沙': [112.940859, 28.216436],
+        '常州': [119.974338, 31.808967],
+        '襄阳': [112.08, 32.02],
+        '随州': [113.22, 31.42],
+        '孝感': [113.54, 30.56],
+        '广水': [113.83, 31.62],
+        '宣化店': [114.5, 31.68],
+        '仙桃': [113.27, 30.22],
+        '项城': [114.9, 33.45],
+        '周口': [114.38, 33.37],
+        '开封': [114.21, 34.47],
+        '郑州': [113.65, 34.77],
+        '洛阳': [112.27, 34.42],
+        '南阳': [112.32, 33],
+        '枣庄': [117.33, 34.52],
+        '临沂': [121.36, 38.55],
+        '青岛': [120.36, 36.06],
+        '济南': [117.12, 36.64],
+        '大连': [121.36, 38.55],
+        '兰州': [103.51, 36.04],
+        '镇江': [119.27, 32.11],
+        '扬州': [119.26, 32.23],
+        '无锡': [120.18, 31.34],
+        '江阴': [120.43, 31.83],
+        '井冈山': [121.36, 38.55],
+        '庐山': [116.01, 29.56],
+        '南昌': [115.86, 28.68],
+        '怀化': [109.58, 27.33],
+        '凤凰': [110, 28],
+        '郴州': [113.02, 25.46],
+        '平谭': [119.72, 27.33],
+        '福州': [119.18, 26.05],
+        '海口': [110.2, 20.02],
+        '三亚': [109.31, 18.14],
+        '潭门': [110.28, 19.14],
+        '渚碧': [114.08, 10.92],
+        '永暑': [112.88, 9.55],
+        '九章': [114.28, 9.72],
+        '西沙': [111.67, 16.5],
+        '深圳': [113.917776, 22.532757],
+        '珠海': [113.570599, 22.2778],
+        '澳门': [113.548058, 22.189968],
+        '东莞': [113.756288, 23.037614],
+        '广州': [113.248428, 23.116626]
+    };
+
+    var convertData = function (data) {
+        var res = [];
+        for (var i = 0; i < data.length; i++) {
+            var geoCoord = geoCoordMap[data[i].name];
+            if (geoCoord) {
+                res.push({
+                    name: data[i].name,
+                    value: geoCoord.concat(data[i].value)
+                });
             }
-            .map-marker {
-                margin-left: -5px;
-                margin-top: -5px;
+        }
+        return res;
+    };
+
+    var option = {
+        backgroundColor: '#ffffff',
+        title: {
+            text: '',
+            subtext: '',
+            sublink: '',
+            left: 'center',
+            textStyle: {
+                color: '#ffffff'
             }
-            .map-marker.map-clickable {
-                cursor: pointer;
+        },
+        tooltip : {
+            trigger: 'item',
+            formatter: function(data) {
+                return data.name;
             }
-            .pulse {
-                width: 0px;
-                height: 0px;
-                border: 0px solid #f7f14c;
-                -webkit-border-radius: 30px;
-                -moz-border-radius: 30px;
-                border-radius: 30px;
-                background-color: #716f42;
-                z-index: 10;
-                position: absolute;
-          }
-          .map-marker .dot {
-                border: 10px solid #FFFFFF;
-                background: transparent;
-                -webkit-border-radius: 100px;
-                -moz-border-radius: 100px;
-                border-radius: 100px;
-                height: 40px;
-                width: 40px;
-                -webkit-animation: pulse 0s ease-out;
-                -moz-animation: pulse 0s ease-out;
-                animation: pulse 1s ease-out;
-                -webkit-animation-iteration-count: infinite;
-                -moz-animation-iteration-count: infinite;
-                animation-iteration-count: infinite;
-                position: absolute;
-                top: -25px;
-                left: -25px;
-                z-index: 1;
-                opacity: 0;
-        }
-        @-moz-keyframes pulse {
-               0% {
-                  -moz-transform: scale(0);
-                  opacity: 0.0;
-               }
-               25% {
-                  -moz-transform: scale(0);
-                  opacity: 0.1;
-               }
-               50% {
-                  -moz-transform: scale(0.1);
-                  opacity: 0.3;
-               }
-               75% {
-                  -moz-transform: scale(0.5);
-                  opacity: 0.5;
-               }
-               100% {
-                  -moz-transform: scale(1);
-                  opacity: 0.0;
-               }
-        }
-        @-webkit-keyframes "pulse" {
-               0% {
-                  -webkit-transform: scale(0);
-                  opacity: 0.0;
-               }
-               25% {
-                  -webkit-transform: scale(0);
-                  opacity: 0.1;
-               }
-               50% {
-                  -webkit-transform: scale(0.1);
-                  opacity: 0.3;
-               }
-               75% {
-                  -webkit-transform: scale(0.5);
-                  opacity: 0.5;
-               }
-               100% {
-                  -webkit-transform: scale(1);
-                  opacity: 0.0;
-               }
-        }
-        </style>
-    </head>
-    <body>
-    <script src="https://www.amcharts.com/lib/3/ammap.js"></script>
-    <script src="https://www.amcharts.com/lib/3/maps/js/worldLow.js"></script>
-    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
-    <script>
-    // svg path for target icon
-    var targetSVG = "M9,0C4.029,0,0,4.029,0,9s4.029,9,9,9s9-4.029,9-9S13.971,0,9,0z M9,15.93 c-3.83,0-6.93-3.1-6.93-6.93S5.17,2.07,9,2.07s6.93,3.1,6.93,6.93S12.83,15.93,9,15.93 M12.5,9c0,1.933-1.567,3.5-3.5,3.5S5.5,10.933,5.5,9S7.067,5.5,9,5.5 S12.5,7.067,12.5,9z";
-
-    var map = AmCharts.makeChart( "chartdiv", {
-      "type": "map",
-      "theme": "light",
-      "dragMap": true,
-      "projection": "miller",
-      "mouseWheelZoomEnabled": true,
-      "showBalloonOnSelectedObject": true,
-      "backgroundAlpha": 1,
-      "backgroundColor": "#000",
-
-      "dataProvider": {
-        "map": "worldLow",
-        "zoomLevel": 1,
-        "zoomLongitude": 10.685223,
-        "zoomLatitude": 25.0,
-        <!-- "getAreasFromMap": true, -->
-
-        "images": [
-        <!-- resident -->
-        {"svgPath": targetSVG, "title": "Xinguancun", "latitude": 29.9948936, "longitude": 112.660802, "scale": 0.2, "color": "#FF0000"},
-        {"type": "circle", "title": "Jingzhou", "latitude": 30.341304, "longitude": 112.212773, "scale": 0.2},
-        {"type": "circle", "title": "Wuhan", "latitude": 30.5390822, "longitude": 114.3527662, "scale": 0.2},
-        {"type": "circle", "title": "Beijing", "latitude": 39.9869171, "longitude": 116.3036799, "scale": 0.2},
-        {"type": "circle", "title": "Hong Kong", "latitude": 22.337857, "longitude": 114.181962, "scale": 0.2},
-        {"type": "circle", "title": "Nanjing", "latitude": 32.110798, "longitude": 118.9626781, "scale": 0.2},
-        {"svgPath": targetSVG, "title": "Yangtze University", "latitude": 30.532630, "longitude": 114.028565, "scale": 0.3, "color": "#FF0000"},
-        {"type": "circle", "title": "Chiasso", "latitude": 45.833905, "longitude": 9.032748, "scale": 0.2},
-        {"type": "circle", "title": "Como", "latitude": 45.818056, "longitude": 9.066017, "scale": 0.2},
-        {"type": "circle", "title": "Venice", "latitude": 45.43086, "longitude": 12.334162, "scale": 0.2},
-        {"type": "circle", "title": "Florence", "latitude": 43.768844, "longitude": 11.25357, "scale": 0.2},
-        {"type": "circle", "title": "Milan", "latitude": 45.462403, "longitude": 9.186216, "scale": 0.2},
-        {"type": "circle", "title": "Prague", "latitude": 50.0598054, "longitude": 14.3251976, "scale": 0.2},
-        {"type": "circle", "title": "Karlovy Vary", "latitude": 50.23022, "longitude": 12.867841, "scale": 0.2},
-        {"type": "circle", "title": "Český Krumlov", "latitude": 48.973443, "longitude": 14.472547, "scale": 0.2},
-        {"type": "circle", "title": "Ceske Budejovice", "latitude": 48.809801, "longitude": 14.314063, "scale": 0.2},
-        {"type": "circle", "title": "Yichang", "latitude": 30.685358, "longitude": 111.267151, "scale": 0.2},
-        {"type": "circle", "title": "Xiangyang", "latitude": 31.931969, "longitude": 112.929498, "scale": 0.2},
-        {"type": "circle", "title": "Chengdu", "latitude": 30.584186, "longitude": 104.056221, "scale": 0.2},
-        {"type": "circle", "title": "Shenyang", "latitude": 41.795374, "longitude": 123.429275, "scale": 0.2},
-        {"type": "circle", "title": "Chongming Island", "latitude": 31.623527, "longitude": 121.396618, "scale": 0.2},
-        {"type": "circle", "title": "Shanghai", "latitude": 31.227287, "longitude": 121.459633, "scale": 0.2},
-        {"type": "circle", "title": "Heaven Lake", "latitude": 42.021411, "longitude": 128.060149, "scale": 0.2},
-        {"type": "circle", "title": "Changchun", "latitude": 43.822262, "longitude": 125.324109, "scale": 0.2},
-        {"type": "circle", "title": "Yanbian Antu", "latitude": 43.10331, "longitude": 128.865288, "scale": 0.2},
-        {"type": "circle", "title": "Shaoxing", "latitude": 29.996625, "longitude": 120.58591, "scale": 0.2},
-        {"type": "circle", "title": "Hangzhou", "latitude": 30.268311, "longitude": 120.153467, "scale": 0.2},
-        {"type": "circle", "title": "Xiangtan", "latitude": 27.827308, "longitude": 112.940775, "scale": 0.2},
-        {"type": "circle", "title": "Yueyang", "latitude": 29.363103, "longitude": 113.114635, "scale": 0.2},
-        {"type": "circle", "title": "Changsha", "latitude": 28.216436, "longitude": 112.940859, "scale": 0.2},
-        {"type": "circle", "title": "Changzhou", "latitude": 31.808967, "longitude": 119.974338, "scale": 0.2},
-
-        <!--湖北-->
-        {"type": "circle", "title": "襄阳", "latitude": 32.02, "longitude": 112.08, "scale": 0.2},
-        {"type": "circle", "title": "随州", "latitude": 31.42, "longitude": 113.22, "scale": 0.2},
-        {"type": "circle", "title": "孝感", "latitude": 30.56, "longitude": 113.54, "scale": 0.2},
-        {"type": "circle", "title": "广水", "latitude": 31.62, "longitude": 113.83, "scale": 0.2},
-        {"type": "circle", "title": "宣化店", "latitude": 31.68, "longitude": 114.50, "scale": 0.2},
-        {"type": "circle", "title": "仙桃", "latitude": 30.22, "longitude": 113.27, "scale": 0.2},
-
-        <!--河南-->
-        {"type": "circle", "title": "项城", "latitude": 33.45, "longitude": 114.90, "scale": 0.2},
-        {"type": "circle", "title": "周口", "latitude": 33.37, "longitude": 114.38, "scale": 0.2},
-        {"type": "circle", "title": "开封", "latitude": 34.47, "longitude": 114.21, "scale": 0.2},
-        {"type": "circle", "title": "郑州", "latitude": 34.77, "longitude": 113.65, "scale": 0.2},
-        {"type": "circle", "title": "洛阳", "latitude": 34.42, "longitude": 112.27, "scale": 0.2},
-        {"type": "circle", "title": "南阳", "latitude": 33.00, "longitude": 112.32, "scale": 0.2},
-
-        <!--山东-->
-        {"type": "circle", "title": "枣庄", "latitude": 34.52, "longitude": 117.33, "scale": 0.2},
-        {"type": "circle", "title": "临沂", "latitude": 38.55, "longitude": 121.36, "scale": 0.2},
-        {"type": "circle", "title": "青岛", "latitude": 36.06, "longitude": 120.36, "scale": 0.2},
-        {"type": "circle", "title": "济南", "latitude": 36.64, "longitude": 117.12, "scale": 0.2},
-
-        <!--辽宁-->
-        {"type": "circle", "title": "大连", "latitude": 38.55, "longitude": 121.36, "scale": 0.2},
-
-        <!--甘肃-->
-        {"type": "circle", "title": "兰州", "latitude": 36.04, "longitude": 103.51, "scale": 0.2},
-
-        <!--江苏-->
-        {"type": "circle", "title": "镇江", "latitude": 32.11, "longitude": 119.27, "scale": 0.2},
-        {"type": "circle", "title": "扬州", "latitude": 32.23, "longitude": 119.26, "scale": 0.2},
-        {"type": "circle", "title": "无锡", "latitude": 31.34, "longitude": 120.18, "scale": 0.2},
-        {"type": "circle", "title": "江阴", "latitude": 31.83, "longitude": 120.43, "scale": 0.2},
-
-        <!--江西-->
-        {"type": "circle", "title": "井冈山", "latitude": 38.55, "longitude": 121.36, "scale": 0.2},
-        {"type": "circle", "title": "庐山", "latitude": 29.56, "longitude": 116.01, "scale": 0.2},
-        {"type": "circle", "title": "南昌", "latitude": 28.68, "longitude": 115.86, "scale": 0.2},
-
-        <!--湖南-->
-        {"type": "circle", "title": "怀化", "latitude": 27.33, "longitude": 109.58, "scale": 0.2},
-        {"type": "circle", "title": "凤凰", "latitude": 28.00, "longitude": 110.00, "scale": 0.2},
-        {"type": "circle", "title": "郴州", "latitude": 25.46, "longitude": 113.02, "scale": 0.2},
-
-        <!--福建-->
-        {"type": "circle", "title": "平谭", "latitude": 27.33, "longitude": 119.72, "scale": 0.2},
-        {"type": "circle", "title": "福州", "latitude": 26.05, "longitude": 119.18, "scale": 0.2},
-
-
-        <!--海南-->
-        {"type": "circle", "title": "海口", "latitude": 20.02, "longitude": 110.20, "scale": 0.2},
-        {"type": "circle", "title": "三亚", "latitude": 18.14, "longitude": 109.31, "scale": 0.2},
-        {"type": "circle", "title": "潭门", "latitude": 19.14, "longitude": 110.28, "scale": 0.2},
-        {"type": "circle", "title": "渚碧", "latitude": 10.92, "longitude": 114.08, "scale": 0.2},
-        {"type": "circle", "title": "永暑", "latitude": 9.55, "longitude": 112.88, "scale": 0.2},
-        {"type": "circle", "title": "九章", "latitude": 9.72, "longitude": 114.28, "scale": 0.2},
-        {"type": "circle", "title": "西沙", "latitude": 16.50, "longitude": 111.67, "scale": 0.2},
-
-        {"type": "circle", "title": "Shenzhen", "latitude": 22.532757, "longitude": 113.917776, "scale": 0.2},
-        {"type": "circle", "title": "Zhuhai", "latitude": 22.2778, "longitude": 113.570599, "scale": 0.2},
-        {"type": "circle", "title": "Macau", "latitude": 22.189968, "longitude": 113.548058, "scale": 0.2},
-        {"type": "circle", "title": "Dongguan", "latitude": 23.037614, "longitude": 113.756288, "scale": 0.2},
-        {"type": "circle", "title": "Guangzhou", "latitude": 23.116626, "longitude": 113.248428, "scale": 0.2}
+        },
+        bmap: {
+            center: [114, 23.5],
+            zoom: 5,
+            roam: true,
+            mapStyle: {
+                styleJson: [
+                    {
+                        "featureType": "water",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#b8cefa"
+                        }
+                    },
+                    {
+                        "featureType": "land",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#f3f3f3"
+                        }
+                    },
+                    {
+                        "featureType": "boundary",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#7f7f7f"
+                        }
+                    },
+                    {
+                        "featureType": "railway",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#004981",
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#005b96",
+                            "lightness": 1,
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "highway",
+                        "elementType": "labels",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry",
+                        "stylers": {
+                            "color": "#004981",
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "geometry.fill",
+                        "stylers": {
+                            "color": "#00508b",
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "poi",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "green",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#056197",
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "subway",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "manmade",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "local",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "arterial",
+                        "elementType": "labels",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "building",
+                        "elementType": "all",
+                        "stylers": {
+                            "color": "#1a5787",
+                            "visibility": "off"
+                        }
+                    },
+                    {
+                        "featureType": "label",
+                        "elementType": "all",
+                        "stylers": {
+                            "visibility": "off"
+                        }
+                    }
+                ]
+            }
+        },
+        series : [
+            {
+                name: '队员',
+                type: 'effectScatter',
+                coordinateSystem: 'bmap',
+                data: convertData(data),
+                symbolSize: function (val) {
+                    return val[2] *5;
+                },
+                encode: {
+                    value: 2
+                },
+                showEffectOn: 'render',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                label: {
+                    color: 'black',
+                    formatter: '{b}',
+                    position: 'top',
+                    show: true
+                },
+                itemStyle: {
+                    color: 'magenta',
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                },
+                zlevel: 1
+            },
+            {
+                name: '指导',
+                type: 'effectScatter',
+                coordinateSystem: 'bmap',
+                data: convertData(data.slice(3, 4)),
+                symbolSize: function (val) {
+                    return val[2] *12;
+                },
+                encode: {
+                    value: 2
+                },
+                showEffectOn: 'render',
+                rippleEffect: {
+                    brushType: 'stroke'
+                },
+                hoverAnimation: true,
+                label: {
+                    color: 'black',
+                    formatter: '{b}',
+                    position: 'bottom',
+                    show: true
+                },
+                itemStyle: {
+                    color: 'blue',
+                    shadowBlur: 10,
+                    shadowColor: '#333'
+                },
+                zlevel: 1
+            }
         ]
-      },
+    };
 
-      "areasSettings": {
-          "color": "#FFCC00",
-          "outlineThickness": 0,
-          "unlistedAreasColor": "#999",
-          "unlistedAreasAlpha": 0.6
-      },
-
-      "imagesSettings": {
-        "color": "#00FF00",
-        "rollOverColor": "#FFFF00",
-        "selectedColor": "#000000",
-        "rollOverScale": 2
-      },
-
-      "linesSettings": {
-        "arc": 0.4,
-        "arrow": "none",
-        "color": "#FFFF00",
-        "alpha": 1,
-        "arrowAlpha": 0.9,
-        "arrowSize": 0,
-        "thickness": 0.5
-      },
-
-      "balloon": {
-          "drop": true,
-          "enabled": false
-      },
-
-      "zoomControl": {
-        "homeButtonEnabled": false,
-        "zoomControlEnabled": false,
-        "buttonSize": 20,
-        "gridHeight": 0,
-        "draggerAlpha": 0,
-        "gridAlpha": 0
-      },
-
-      "backgroundZoomsToTop": true,
-      "linesAboveImages": true,
-
-      "export": {
-        "enabled": false
-      }
-    } );
-
-    map.addListener( "positionChanged", updateCustomMarkers );
-
-    function updateCustomMarkers( event ) {
-      var map = event.chart;
-
-      for ( var x in map.dataProvider.images ) {
-        var image = map.dataProvider.images[ x ];
-        <!--if (x == 5 || x == 6) {-->
-        if (x == 6) {
-            if ( 'undefined' == typeof image.externalElement )
-            image.externalElement = createCustomMarker( image );
-            var xy = map.coordinatesToStageXY( image.longitude, image.latitude );
-            image.externalElement.style.top = xy.y + 'px';
-            image.externalElement.style.left = xy.x + 'px';
-        }
-      }
-    }
-
-    function createCustomMarker( image ) {
-      var holder = document.createElement( 'div' );
-      holder.className = 'map-marker';
-      holder.title = image.title;
-      holder.style.position = 'absolute';
-
-      if ( undefined != image.url ) {
-        holder.onclick = function() {
-          window.location.href = image.url;
-        };
-        holder.className += ' map-clickable';
-      }
-
-      var dot = document.createElement( 'div' );
-      dot.className = 'dot';
-      holder.appendChild( dot );
-
-      var pulse = document.createElement( 'div' );
-      pulse.className = 'pulse';
-      holder.appendChild( pulse );
-
-      image.chart.chartDiv.appendChild( holder );
-
-      return holder;
-    }
+    myMap.setOption(option);
     </script>
-    </body>
-    <div id="chartdiv"></div>
+</body>
 
-    <!-- qq enterprise mail -->
-    <style>
-      .bizmail_loginpanel{font-size:12px;width:99.5%;height:auto;border:1px solid #cccccc;background:#ffffff;}
-      .bizmail_LoginBox{padding:20px 20px;}
-      .bizmail_loginpanel h3{padding-bottom:5px;margin:0 0 5px 0;border-bottom:1px solid #cccccc;font-size:14px;}
-      .bizmail_loginpanel form{margin:10;padding:10;}
-      .bizmail_loginpanel input.text{font-size:12px;width:130px;height:20px;margin:0 2px;border:1px solid #C3C3C3;border-color:#7C7C7C #C3C3C3 #C3C3C3 #9A9A9A;}
-      .bizmail_loginpanel .bizmail_column{height:28px;}
-      .bizmail_loginpanel .bizmail_column label{display:block;float:left;width:50px;height:24px;line-height:24px;font-size:12px;}
-      .bizmail_loginpanel .bizmail_column .bizmail_inputArea{float:left;width:240px;}
-      .bizmail_loginpanel .bizmail_column span{font-size:12px;word-wrap:break-word;margin-left: 2px;line-height:200%;}
-      .bizmail_loginpanel .bizmail_SubmitArea{margin-left:30px;clear:both;}
-      .bizmail_loginpanel .bizmail_SubmitArea a{font-size:12px;margin-left:5px;}
-      .bizmail_loginpanel select{width:110px;height:20px;margin:0 2px;}
-  </style>
-  <script type="text/javascript" src="http://exmail.qq.com/en_US/htmledition/js_biz/outerlogin.js"  charset="gb18030"></script>
-  <script type="text/javascript">
-      writeLoginPanel({domainlist:"zhangfangli.cn", mode:"vertical"});
-    </script>
+<!-- qq enterprise mail -->
+<style>
+.bizmail_loginpanel{font-size:12px;width:99.5%;height:auto;border:1px solid #cccccc;background:#ffffff;}
+.bizmail_LoginBox{padding:20px 20px;}
+.bizmail_loginpanel h3{padding-bottom:5px;margin:0 0 5px 0;border-bottom:1px solid #cccccc;font-size:14px;}
+.bizmail_loginpanel form{margin:10;padding:10;}
+.bizmail_loginpanel input.text{font-size:12px;width:130px;height:20px;margin:0 2px;border:1px solid #C3C3C3;border-color:#7C7C7C #C3C3C3 #C3C3C3 #9A9A9A;}
+.bizmail_loginpanel .bizmail_column{height:28px;}
+.bizmail_loginpanel .bizmail_column label{display:block;float:left;width:50px;height:24px;line-height:24px;font-size:12px;}
+.bizmail_loginpanel .bizmail_column .bizmail_inputArea{float:left;width:240px;}
+.bizmail_loginpanel .bizmail_column span{font-size:12px;word-wrap:break-word;margin-left: 2px;line-height:200%;}
+.bizmail_loginpanel .bizmail_SubmitArea{margin-left:30px;clear:both;}
+.bizmail_loginpanel .bizmail_SubmitArea a{font-size:12px;margin-left:5px;}
+.bizmail_loginpanel select{width:110px;height:20px;margin:0 2px;}
+</style>
+<script type="text/javascript" src="http://exmail.qq.com/en_US/htmledition/js_biz/outerlogin.js"  charset="gb18030"></script>
+<script type="text/javascript">
+writeLoginPanel({domainlist:"zhangfangli.cn", mode:"vertical"});
+</script>
+
 </html>
+
 
 <!-- If you are having any questions or suggestions, feel free to contact me. -->
 If you are having any questions or suggestions, feel free to contact [me](http://www.zhangfangli.cn).
