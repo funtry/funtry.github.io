@@ -364,7 +364,7 @@ title: Contact me
                     show: true
                 },
                 itemStyle: {
-                    color: 'magenta',
+                    color: 'green',
                     shadowBlur: 10,
                     shadowColor: '#333'
                 },
@@ -374,7 +374,7 @@ title: Contact me
                 name: '指导',
                 type: 'effectScatter',
                 coordinateSystem: 'bmap',
-                data: convertData(data.slice(3, 4)),
+                data: convertData(data.slice(6, 7)),
                 symbolSize: function (val) {
                     return val[2] *12;
                 },
@@ -387,7 +387,7 @@ title: Contact me
                 },
                 hoverAnimation: true,
                 label: {
-                    color: 'black',
+                    color: 'blue',
                     formatter: '{b}',
                     position: 'bottom',
                     show: true
