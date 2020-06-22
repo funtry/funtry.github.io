@@ -302,10 +302,11 @@ image:
 <head>
     <meta charset="utf-8">
     <title>武汉人物</title>
-    <script src="../echarts/echarts-master/dist/echarts.js"></script>
-    <script src="../echarts/echarts-master/dist/extension/bmap.js"></script>
-    <script src="../echarts/echarts-master/map/js/china.js"></script>
-    <script src="../echarts/echarts-master/map/js/province/hubei.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/dist/echarts.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/dist/extension/bmap.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/benchmark/dep/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/map/js/china.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/map/js/province/hubei.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
@@ -315,16 +316,16 @@ image:
     var myChart = echarts.init(document.getElementById('wuhan_people'));
     myChart.showLoading();
 
-    $.get(ROOT_PATH + 'map/json/china.json', function (geoJson) {
+    $.get('./map/json/china.json', function (geoJson) {
         myChart.hideLoading();
 
         echarts.registerMap('china', geoJson);
 
         myChart.setOption(option = {
             title: {
-                text: '香港18区人口密度 （2011）',
-                subtext: '人口密度数据来自Wikipedia',
-                sublink: 'http://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83#cite_note-12'
+                text: '',
+                subtext: '',
+                sublink: ''
             },
             tooltip: {
                 trigger: 'item',
@@ -343,9 +344,8 @@ image:
             },
             series: [
                 {
-                    name: '香港18区人口密度',
-                    type: 'map',
-                    mapType: 'HK', // 自定义扩展图表类型
+                    name: '',
+                    type: 'china',
                     label: {
                         show: false
                     },
