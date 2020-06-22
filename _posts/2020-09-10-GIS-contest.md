@@ -7,10 +7,10 @@ categories: thesis
 notshow: 1
 tags: [contest, undergraduate]
 image:
-feature: contest/GIS_contest_2020.png
-teaser: contest/GIS_contest_2020.png
-credit: javascript
-creditlink: ""
+    feature: contest/GIS_contest_2020.png
+    teaser: contest/GIS_contest_2020.png
+    credit: javascript
+    creditlink: ""
 ---
 
 # 2020年第十二届全国高校GIS技能大赛
@@ -88,7 +88,7 @@ creditlink: ""
             }
         },
         bmap: {
-            center: [114, 30],
+            center: [114, 31],
             zoom: 5,
             roam: true,
             mapStyle: {
@@ -312,7 +312,7 @@ creditlink: ""
     <script type="text/javascript">
     var myMap = echarts.init(document.getElementById('wuhan_people'));
 
-    myMap.showLoading();
+    //myMap.showLoading();
 
     $.get('../echarts/echarts-master/map/json/china.json', function (chinaJson) {
         myMap.hideLoading();
