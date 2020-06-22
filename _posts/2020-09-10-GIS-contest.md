@@ -310,24 +310,70 @@ image:
 <body>
     <div id="wuhan_people" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-    var myMap = echarts.init(document.getElementById('wuhan_people'));
 
-    //myMap.showLoading();
+    $.getJSON('../echarts/echarts-master/map/json/province/hubei.json', function (data) {
+        echarts.registerMap('hubei', data);
+        var chart = echarts.init(document.getElementById('wuhan_people'));
+        var option = {
+            backgroundColor: '#404a59',
+            title: {
+                text: '武汉地图',
+                color:"#fff"
+            },
+            visualMap: {
+                show:false,
+                left: 'right',
+                categories: ['1',],
+                inRange: {
+                    color: ['#f46d43']
+                },
+                text:['High','Low'],
+                calculable: true
+            },
+            series: [{
+                type: 'map',
+                map: 'hubei',
+                data:data11,
+                aspectScale:1,
+                roam: true,
+                label: {
+                    show:true,
+                    normal: {
+                        show: true,
+                        color:"#fff",
+                    },
+                    emphasis: {
+                        show: true,
+                        fontSize:16,
+                        color:"#fff"
 
-    $.get('../echarts/echarts-master/map/json/china.json', function (chinaJson) {
-        myMap.hideLoading();
-
-        echarts.registerMap('China', chinaJson);
-        option = {
-            series: [
-                {
-                    type: 'map',
-                    map: 'china'
+                    }
+                },
+                itemStyle: {
+                    normal: {
+                        areaColor: '#323c48',
+                        borderColor: '#111'
+                    },
+                    emphasis: {
+                        areaColor: '#f46d43'
+                    }
                 }
-            ]
-        };
 
-        myMap.setOption(option);
+            }]
+        };
+        chart.setOption(option);
+        chart.on('click', function(params){
+            console.log(params);
+            for(var i=0;i<data11.length;i++){
+                data11[i].value="0";
+                if(params.name == data11[i].name){
+                    data11[i].value="1";
+                }
+            }
+            chart.setOption(option);
+
+
+        });
     });
     </script>
 </body>
