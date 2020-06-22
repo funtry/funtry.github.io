@@ -312,15 +312,49 @@ image:
     <div id="wuhan_people" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
 
-        var myChart = echarts.init(document.getElementById('wuhan_people'));
-        myChart.showLoading();
+    var myChart = echarts.init(document.getElementById('wuhan_people'));
+    myChart.showLoading();
 
-        $.get('../echarts/echarts-master/map/json/china.json', function (geoJson) {
-            myChart.hideLoading();
+    $.get('../echarts/echarts-master/map/json/china.json', function (geoJson) {
+        myChart.hideLoading();
 
-            echarts.registerMap('china', geoJson);
+        echarts.registerMap('china', geoJson);
 
+        myChart.setOption(option = {
+            title: {
+                text: '香港18区人口密度 （2011）',
+                subtext: '人口密度数据来自Wikipedia',
+                sublink: 'http://zh.wikipedia.org/wiki/%E9%A6%99%E6%B8%AF%E8%A1%8C%E6%94%BF%E5%8D%80%E5%8A%83#cite_note-12'
+            },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}<br/>{c} (p / km2)'
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            series: [
+                {
+                    name: '香港18区人口密度',
+                    type: 'map',
+                    mapType: 'HK', // 自定义扩展图表类型
+                    label: {
+                        show: false
+                    },
+                    data: [
+                    ]
+                }
+            ]
         });
+    });
 
     </script>
 </body>
