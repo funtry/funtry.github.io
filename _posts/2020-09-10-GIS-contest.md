@@ -7,10 +7,10 @@ categories: thesis
 notshow: 1
 tags: [contest, undergraduate]
 image:
-feature: contest/GIS_contest_2020.png
-teaser: contest/GIS_contest_2020.png
-credit: javascript
-creditlink: ""
+    feature: contest/GIS_contest_2020.png
+    teaser: contest/GIS_contest_2020.png
+    credit: javascript
+    creditlink: ""
 ---
 
 # 2020年第十二届全国高校GIS技能大赛
@@ -246,7 +246,7 @@ creditlink: ""
                     show: true
                 },
                 itemStyle: {
-                    color: "magenta",
+                    color: "#ff00ff",
                     shadowBlur: 10,
                     shadowColor: "#333"
                 },
@@ -275,7 +275,7 @@ creditlink: ""
                     show: true
                 },
                 itemStyle: {
-                    color: "blue",
+                    color: "#0000ff",
                     shadowBlur: 10,
                     shadowColor: "#333"
                 },
@@ -291,8 +291,6 @@ creditlink: ""
 
 
 ## 2020614 确定参赛主题
-武汉人物
-
 <html>
 <style type="text/css">
 .anchorBL{
@@ -312,11 +310,13 @@ creditlink: ""
 </head>
 <body>
     <div id="wuhan_people" style="width: 100%; height: 640px;"></div>
-
     <script type="text/javascript">
-    var dom = document.getElementById("wuhan_people");
-    var myChart = echarts.init(dom);
+    var myChart = echarts.init(document.getElementById("wuhan_people"));
     var option = {
+        title: {
+            text: '武汉人物',
+            left: 'center'
+        },
         series: [{
             name: '武汉人物',
             type: 'map',
@@ -324,8 +324,8 @@ creditlink: ""
             itemStyle: {
                 normal: {
                     show: true,
-                    areaColor: "#CECECE",
-                    borderColor: "#FCFCFC",
+                    areaColor: "#f3f3f3",
+                    borderColor: "#7f7f7f",
                     borderWidth: "1"
                 },
                 emphasis: {
@@ -341,11 +341,7 @@ creditlink: ""
                     show: true
                 }
             },
-        }],
-        title: {
-            text: '湖北',
-            left: 'center'
-        }
+        }]
     };
 
     myChart.setOption(option);
