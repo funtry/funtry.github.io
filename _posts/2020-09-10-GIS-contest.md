@@ -312,15 +312,16 @@ image:
     <div id="wuhan_people" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
     var myChart = echarts.init(document.getElementById("wuhan_people"));
+    echarts.
     var option = {
         title: {
             text: '武汉人物',
             left: 'center'
         },
         series: [{
-            name: '武汉人物',
+            name: '',
             type: 'map',
-            mapType: '湖北',
+            mapType: 'hubei',
             itemStyle: {
                 normal: {
                     show: true,
@@ -335,7 +336,7 @@ image:
             },
             label: {
                 normal: {
-                    show: true
+                    show: false
                 },
                 emphasis: {
                     show: true
