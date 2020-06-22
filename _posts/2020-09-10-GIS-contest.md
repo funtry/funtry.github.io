@@ -321,7 +321,7 @@ image:
         series: [{
             name: '',
             type: 'map',
-            mapType: 'hubei',
+            mapType: '武汉',
             itemStyle: {
                 normal: {
                     show: true,
