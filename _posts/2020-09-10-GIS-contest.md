@@ -315,7 +315,7 @@ image:
     var myChart = echarts.init(document.getElementById('wuhan_people'));
     myChart.showLoading();
 
-    $.get('../echarts/echarts-master/map/json/china.json', function (geoJson) {
+    $.get(ROOT_PATH + 'map/json/china.json', function (geoJson) {
         myChart.hideLoading();
 
         echarts.registerMap('china', geoJson);

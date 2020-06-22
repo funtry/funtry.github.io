@@ -81,6 +81,7 @@ title: Contact me
         {name: '南昌', value: 1},
         {name: '怀化', value: 1},
         {name: '凤凰', value: 1},
+        {name: '井冈山', value: 1},
         {name: '郴州', value: 1},
         {name: '平谭', value: 1},
         {name: '福州', value: 1},
@@ -95,6 +96,7 @@ title: Contact me
         {name: '珠海', value: 1},
         {name: '澳门', value: 1},
         {name: '东莞', value: 1},
+        {name: '汕尾', value: 1},
         {name: '广州', value: 1}
     ];
 
@@ -155,10 +157,11 @@ title: Contact me
         '井冈山': [121.36, 38.55],
         '庐山': [116.01, 29.56],
         '南昌': [115.86, 28.68],
-        '怀化': [109.58, 27.33],
-        '凤凰': [110, 28],
-        '郴州': [113.02, 25.46],
-        '平谭': [119.72, 27.33],
+        '怀化': [109.991558,27.547777],
+        '凤凰': [109.608831,27.955092],
+        '井冈山': [114.142632,26.638031],
+        '郴州': [112.976615,25.742841],
+        '平谭': [119.814471, 25.508353],
         '福州': [119.18, 26.05],
         '海口': [110.2, 20.02],
         '三亚': [109.31, 18.14],
@@ -171,6 +174,7 @@ title: Contact me
         '珠海': [113.570599, 22.2778],
         '澳门': [113.548058, 22.189968],
         '东莞': [113.756288, 23.037614],
+        '汕尾': [115.432716,22.820046],
         '广州': [113.248428, 23.116626]
     };
 
@@ -210,134 +214,103 @@ title: Contact me
             zoom: 5,
             roam: true,
             mapStyle: {
-                styleJson: [
-                    {
-                        "featureType": "water",
-                        "elementType": "all",
-                        "stylers": {
-                            "color": "#b8cefa"
-                        }
-                    },
-                    {
-                        "featureType": "land",
-                        "elementType": "all",
-                        "stylers": {
-                            "color": "#f3f3f3"
-                        }
-                    },
-                    {
-                        "featureType": "boundary",
-                        "elementType": "geometry",
-                        "stylers": {
-                            "color": "#7f7f7f"
-                        }
-                    },
-                    {
-                        "featureType": "railway",
-                        "elementType": "all",
-                        "stylers": {
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "highway",
-                        "elementType": "geometry",
-                        "stylers": {
-                            "color": "#004981",
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "highway",
-                        "elementType": "geometry.fill",
-                        "stylers": {
-                            "color": "#005b96",
-                            "lightness": 1,
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "highway",
-                        "elementType": "labels",
-                        "stylers": {
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "arterial",
-                        "elementType": "geometry",
-                        "stylers": {
-                            "color": "#004981",
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "arterial",
-                        "elementType": "geometry.fill",
-                        "stylers": {
-                            "color": "#00508b",
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "poi",
-                        "elementType": "all",
-                        "stylers": {
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "green",
-                        "elementType": "all",
-                        "stylers": {
-                            "color": "#056197",
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "subway",
-                        "elementType": "all",
-                        "stylers": {
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "manmade",
-                        "elementType": "all",
-                        "stylers": {
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "local",
-                        "elementType": "all",
-                        "stylers": {
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "arterial",
-                        "elementType": "labels",
-                        "stylers": {
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "building",
-                        "elementType": "all",
-                        "stylers": {
-                            "color": "#1a5787",
-                            "visibility": "off"
-                        }
-                    },
-                    {
-                        "featureType": "label",
-                        "elementType": "all",
-                        "stylers": {
-                            "visibility": "off"
-                        }
+                styleJson: [{
+                    'featureType': 'water',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#d1d1d1'
                     }
-                ]
+                }, {
+                    'featureType': 'land',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#f3f3f3'
+                    }
+                }, {
+                    'featureType': 'railway',
+                    'elementType': 'all',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'highway',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#fdfdfd'
+                    }
+                }, {
+                    'featureType': 'highway',
+                    'elementType': 'labels',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'arterial',
+                    'elementType': 'geometry',
+                    'stylers': {
+                        'color': '#fefefe'
+                    }
+                }, {
+                    'featureType': 'arterial',
+                    'elementType': 'geometry.fill',
+                    'stylers': {
+                        'color': '#fefefe'
+                    }
+                }, {
+                    'featureType': 'poi',
+                    'elementType': 'all',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'green',
+                    'elementType': 'all',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'subway',
+                    'elementType': 'all',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'manmade',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#d1d1d1'
+                    }
+                }, {
+                    'featureType': 'local',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#d1d1d1'
+                    }
+                }, {
+                    'featureType': 'arterial',
+                    'elementType': 'labels',
+                    'stylers': {
+                        'visibility': 'off'
+                    }
+                }, {
+                    'featureType': 'boundary',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#fefefe'
+                    }
+                }, {
+                    'featureType': 'building',
+                    'elementType': 'all',
+                    'stylers': {
+                        'color': '#d1d1d1'
+                    }
+                }, {
+                    'featureType': 'label',
+                    'elementType': 'labels.text.fill',
+                    'stylers': {
+                        'color': '#999999'
+                    }
+                }]
             }
         },
         series : [
