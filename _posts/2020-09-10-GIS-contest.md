@@ -307,54 +307,100 @@ image:
     <script type="text/javascript" src="../echarts/echarts-master/benchmark/dep/jquery/jquery.js"></script>
     <script type="text/javascript" src="../echarts/echarts-master/map/js/china.js"></script>
     <script type="text/javascript" src="../echarts/echarts-master/map/js/province/hubei.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/map/js/province/shanxi.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
-    <div id="wuhan_people" style="width: 100%; height: 640px;"></div>
+    <div id="main0" style="width: 100%; height: 640px;"></div>
+
     <script type="text/javascript">
-
-    var myChart = echarts.init(document.getElementById('wuhan_people'));
-    myChart.showLoading();
-
-    $.get('./map/json/china.json', function (geoJson) {
-        myChart.hideLoading();
-
-        echarts.registerMap('china', geoJson);
-
-        myChart.setOption(option = {
-            title: {
-                text: '',
-                subtext: '',
-                sublink: ''
-            },
-            tooltip: {
-                trigger: 'item',
-                formatter: '{b}<br/>{c} (p / km2)'
-            },
-            toolbox: {
-                show: true,
-                orient: 'vertical',
-                left: 'right',
-                top: 'center',
-                feature: {
-                    dataView: {readOnly: false},
-                    restore: {},
-                    saveAsImage: {}
-                }
-            },
-            series: [
-                {
-                    name: '',
-                    type: 'china',
-                    label: {
-                        show: false
-                    },
-                    data: [
-                    ]
-                }
-            ]
-        });
-    });
+//container 为div的id
+var dom = document.getElementById("main0");
+//得到echarts的实例对象
+var myChart = echarts.init(dom);
+initEcharts('山西');
+function initEcharts(pName) {
+  //关键是配置项
+  var option = {
+    series: [{
+      name: '网点个数',
+      //series[i]-map:系列列表。每个系列通过 type 决定自己的图表类型,此处是地图类型
+      type: 'map',
+      mapType: pName,
+      //地图区域的多边形 图形样式，有 normal 和 emphasis 两个状态
+      itemStyle: {
+        //normal 是图形在默认状态下的样式；
+        normal: {
+          show: true,
+          areaColor: "#CECECE",
+          borderColor: "#FCFCFC",
+          borderWidth: "1"
+        },
+        //emphasis 是图形在高亮状态下的样式，比如在鼠标悬浮或者图例联动高亮时。
+        emphasis: {
+          show: true,
+          areaColor: "#C8A5DF",
+        }
+      },
+      //图形上的文本标签，可用于说明图形的一些数据信息
+      label: {
+        normal: {
+          show: true
+        },
+        emphasis: {
+          show: true
+        }
+      },
+    }],
+    title: {
+      text: pName,
+      left: 'center'
+    }
+  };
+  //使用刚指定的配置项和数据显示图表。
+  myChart.setOption(option);
+}
+//定义全国省份的数组
+var provinces = ['datong', 'shuozhou', 'xinzhou', 'lvliang', 'taiyuan', 'yangquan', 'jinzhong', 'linfen', 'changzhi', 'jincheng', 'yuncheng'];
+var provincesText = ['大同市', '朔州市', '忻州市', '吕梁市', '太原市', '阳泉市', '晋中市', '临汾市', '长治市', '晋城市', '运城市'	];
+myChart.on('click', function(param) {
+  //console.log(param);
+  //遍历取到provincesText 中的下标  去拿到对应的省js
+  for (var i = 0; i < provincesText.length; i++) {
+    if (param.name == provincesText[i]) {
+      //显示对应省份的方法
+      showProvince(provincesText[i],provinces[i]);
+      break;
+    }
+  }
+});
+//展示对应的省
+function showProvince(pText,pName) {
+  loadBdScript('$' + pName + 'JS', 'js/province/' + pName + '.js', function() {
+    //初始化echarts
+    initEcharts(pText);
+  });
+}
+//加载对应的JS
+function loadBdScript(scriptId, url, callback) {
+  var script = document.createElement("script")
+  script.type = "text/javascript";
+  if (script.readyState) { //IE
+    script.onreadystatechange = function() {
+      if (script.readyState == "loaded" || script.readyState == "complete") {
+        script.onreadystatechange = null;
+        callback();
+      }
+    };
+  } else { //Others
+    script.onload = function() {
+      callback();
+    };
+  }
+  script.src = url;
+  script.id = scriptId;
+  document.getElementsByTagName("head")[0].appendChild(script);
+};
 
     </script>
 </body>
