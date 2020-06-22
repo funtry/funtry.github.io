@@ -305,11 +305,22 @@ image:
     <script src="../echarts/echarts-master/dist/echarts.js"></script>
     <script src="../echarts/echarts-master/dist/extension/bmap.js"></script>
     <script src="../echarts/echarts-master/map/js/china.js"></script>
+    <script src="../echarts/echarts-master/map/js/province/hubei.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
     <div id="wuhan_people" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
+
+    var data11 = [
+            {name:"武汉市",value:"1"},
+            {name:"荆州市",value:"0"},
+            {name:"仙桃市",value:"0"},
+            {name:"黄冈市",value:"0"},
+            {name:"天门市",value:"0"},
+            {name:"潜江市",value:"0"},
+            {name:"咸宁市",value:"0"}
+        ];
 
     $.getJSON('../echarts/echarts-master/map/json/province/hubei.json', function (data) {
         echarts.registerMap('hubei', data);
