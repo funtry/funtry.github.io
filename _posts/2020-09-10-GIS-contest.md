@@ -315,78 +315,40 @@ creditlink: ""
 
     <script type="text/javascript">
     var dom = document.getElementById("wuhan_people");
-
     var myChart = echarts.init(dom);
-    initEcharts('湖北');
-    function initEcharts(pName) {
-
-        var option = {
-            series: [{
-                name: '武汉人物',
-                type: 'map',
-                mapType: pName,
-                itemStyle: {
-                    normal: {
-                        show: true,
-                        areaColor: "#CECECE",
-                        borderColor: "#FCFCFC",
-                        borderWidth: "1"
-                    },
-                    emphasis: {
-                        show: true,
-                        areaColor: "#C8A5DF",
-                    }
+    var option = {
+        series: [{
+            name: '武汉人物',
+            type: 'map',
+            mapType: '湖北',
+            itemStyle: {
+                normal: {
+                    show: true,
+                    areaColor: "#CECECE",
+                    borderColor: "#FCFCFC",
+                    borderWidth: "1"
                 },
-                label: {
-                    normal: {
-                        show: false
-                    },
-                    emphasis: {
-                        show: true
-                    }
-                },
-            }],
-            title: {
-                text: pName,
-                left: 'center'
-            }
-        };
-        myChart.setOption(option);
-    }
-    var provinces = ['wuhan', 'huangshi', 'jingzhou', 'huanggang', 'tianmen', 'xiantao', 'xianning', 'xiaogan'];
-    var provincesText = ['武汉市', '黄石市', '荆州市', '黄冈市', '天门市', '仙桃市', '咸宁市', '孝感市'];
-    myChart.on('click', function(param) {
-        for (var i = 0; i < provincesText.length; i++) {
-            if (param.name == provincesText[i]) {
-                showProvince(provincesText[i],provinces[i]);
-                break;
-            }
-        }
-    });
-    function showProvince(pText,pName) {
-        loadBdScript('$' + pName + 'JS', 'js/province/' + pName + '.js', function() {
-            initEcharts(pText);
-        });
-    }
-    function loadBdScript(scriptId, url, callback) {
-        var script = document.createElement("script")
-        script.type = "text/javascript";
-        if (script.readyState) {
-            script.onreadystatechange = function() {
-                if (script.readyState == "loaded" || script.readyState == "complete") {
-                    script.onreadystatechange = null;
-                    callback();
+                emphasis: {
+                    show: true,
+                    areaColor: "#C8A5DF",
                 }
-            };
-        } else {
-            script.onload = function() {
-                callback();
-            };
+            },
+            label: {
+                normal: {
+                    show: true
+                },
+                emphasis: {
+                    show: true
+                }
+            },
+        }],
+        title: {
+            text: '湖北',
+            left: 'center'
         }
-        script.src = url;
-        script.id = scriptId;
-        document.getElementsByTagName("head")[0].appendChild(script);
     };
+
+    myChart.setOption(option);
 
     </script>
 </body>
