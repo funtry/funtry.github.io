@@ -311,9 +311,17 @@ image:
 <body>
     <div id="wuhan_people" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-         $.getJSON('../echarts/echarts-master/map/json/china.json', function (data) {
-             echarts.registerMap('china', data);
-         }
+
+        var myChart = echarts.init(document.getElementById('wuhan_people'));
+        myChart.showLoading();
+
+        $.get('../echarts/echarts-master/map/json/china.json', function (geoJson) {
+            myChart.hideLoading();
+
+            echarts.registerMap('china', geoJson);
+
+        });
+
     </script>
 </body>
 
