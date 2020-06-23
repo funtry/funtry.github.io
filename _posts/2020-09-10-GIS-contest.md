@@ -370,75 +370,75 @@ image:
     <div id="wuhan_1" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
     $.get('json/420100.json', function (wuhanJson){
-    echarts.registerMap('武汉', wuhanJson);
-    var chart = echarts.init(document.getElementById('wuhan_1'));
+        echarts.registerMap('武汉', wuhanJson);
+        var chart = echarts.init(document.getElementById('wuhan_1'));
 
-    var dataMap = [{ name: '江岸区' }, { name: '蔡甸区' }];
+        var dataMap = [{ name: '江岸区' }, { name: '蔡甸区' }];
 
-    option = {
-        title: {
-            x: 'left',
-            y: 'top',
-            text: '2015吴忠市人口数量',
-            subtext:"人口密度数据来自吴忠市统计局年鉴"
-        },
+        var option = {
+            title: {
+                x: 'left',
+                y: 'top',
+                text: '2015吴忠市人口数量',
+                subtext:"人口密度数据来自吴忠市统计局年鉴"
+            },
 
-         tooltip: {
-        trigger: 'item',
-        formatter: '{b}<br/>{c} (人)'
-    },
-          toolbox: {
-        show: true,
-        orient: 'vertical',
-        left: 'right',
-        top: 'center',
-        feature: {
-            dataView: {readOnly: false},
-            restore: {},
-            saveAsImage: {}
-        }
-    },
+            tooltip: {
+                trigger: 'item',
+                formatter: '{b}<br/>{c} (人)'
+            },
+            toolbox: {
+                show: true,
+                orient: 'vertical',
+                left: 'right',
+                top: 'center',
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
 
-    visualMap: {
-        min: 170259,
-        max: 401178,
-        text:['max','min'],
-        realtime: false,
-        calculable: true,
-        inRange: {
-            color: ['lightskyblue','yellow', 'orangered']
-        }
-    },
+            visualMap: {
+                min: 170259,
+                max: 401178,
+                text:['max','min'],
+                realtime: false,
+                calculable: true,
+                inRange: {
+                    color: ['lightskyblue','yellow', 'orangered']
+                }
+            },
 
-        series:[
-            {
-                name:'人口数量',
-                type:'map',
-                map:'武汉',
+            series:[
+                {
+                    name:'人口数量',
+                    type:'map',
+                    map:'武汉',
 
-                mapLocation:{
-                    y:100
-                },
-                itemSytle:{
-                    normal:{label:{show:true}},
-                    emphasis:{label:{show:false}}
-                },
-                 label: {
-                normal: {show: true},
-                emphasis: {show: true},
+                    mapLocation:{
+                        y:100
+                    },
+                    itemSytle:{
+                        normal:{label:{show:true}},
+                        emphasis:{label:{show:false}}
+                    },
+                    label: {
+                        normal: {show: true},
+                        emphasis: {show: true},
 
-               },
-                data:[
-                    {name:'江岸区',value:401178},
-                    {name:'蔡甸',value:281953}
-                ],
+                    },
+                    data:[
+                        {name:'江岸区',value:401178},
+                        {name:'蔡甸',value:281953}
+                    ],
 
-            }
-        ],
+                }
+            ],
 
-    };
-    chart.setOption(option);
-});
+        };
+        chart.setOption(option);
+    });
 
     </script>
 </body>
@@ -464,78 +464,24 @@ image:
 <body>
     <div id="wuhan_2" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-    $.get('json/420100.json', function (wuhanJson){
-    echarts.registerMap('江岸区', wuhanJson);
-    var chart = echarts.init(document.getElementById('wuhan_2'));
+    $.get('https://geo.datav.aliyun.com/areas_v2/bound/420100_full.json', function (data){
+        var name = "武汉";
+        echarts.registerMap(name, data);
+        var myChart = echarts.init(document.getElementById('wuhan_2'));
 
-    var dataMap = [{ name: '江岸区' }, { name: '蔡甸区' }];
+        var option = {
+            series: [
+                {
+                    type: 'map',
+                    map: name,
+                    label: {show:true},
+                    roam: true
+                }]
+            };
+            myChart.setOption(option, true);
+        });
 
-    option = {
-        title: {
-            x: 'left',
-            y: 'top',
-            text: '2015吴忠市人口数量',
-            subtext:"人口密度数据来自吴忠市统计局年鉴"
-        },
-
-         tooltip: {
-        trigger: 'item',
-        formatter: '{b}<br/>{c} (人)'
-    },
-          toolbox: {
-        show: true,
-        orient: 'vertical',
-        left: 'right',
-        top: 'center',
-        feature: {
-            dataView: {readOnly: false},
-            restore: {},
-            saveAsImage: {}
-        }
-    },
-
-    visualMap: {
-        min: 170259,
-        max: 401178,
-        text:['max','min'],
-        realtime: false,
-        calculable: true,
-        inRange: {
-            color: ['lightskyblue','yellow', 'orangered']
-        }
-    },
-
-        series:[
-            {
-                name:'人口数量',
-                type:'map',
-                map:'江岸区',
-
-                mapLocation:{
-                    y:100
-                },
-                itemSytle:{
-                    normal:{label:{show:true}},
-                    emphasis:{label:{show:false}}
-                },
-                 label: {
-                normal: {show: true},
-                emphasis: {show: true},
-
-               },
-                data:[
-                    {name:'江岸区',value:401178},
-                    {name:'蔡甸',value:281953}
-                ],
-
-            }
-        ],
-
-    };
-    chart.setOption(option);
-});
-
-    </script>
-</body>
+        </script>
+    </body>
 
 </html>
