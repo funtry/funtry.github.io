@@ -369,25 +369,171 @@ image:
 <body>
     <div id="wuhan_1" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
+    $.get('json/420100.json', function (wuhanJson){
+    echarts.registerMap('武汉', wuhanJson);
+    var chart = echarts.init(document.getElementById('wuhan_1'));
 
-        var myChart = ec.init(document.getElementById('wuhan_1'));
+    var dataMap = [{ name: '江岸区' }, { name: '蔡甸区' }];
 
-        var option = {
-    geo: {
-        map: '湖北',
-        zoom:  0.06 ,
-        itemStyle: {
-            normal: {
-	        color:'green',
-	        borderColor: '#6495ED',
-	        borderWidth: 2
-	    }
-       }
-    }
-};
+    option = {
+        title: {
+            x: 'left',
+            y: 'top',
+            text: '2015吴忠市人口数量',
+            subtext:"人口密度数据来自吴忠市统计局年鉴"
+        },
 
-        myChart.setOption(option);
+         tooltip: {
+        trigger: 'item',
+        formatter: '{b}<br/>{c} (人)'
+    },
+          toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
 
+    visualMap: {
+        min: 170259,
+        max: 401178,
+        text:['max','min'],
+        realtime: false,
+        calculable: true,
+        inRange: {
+            color: ['lightskyblue','yellow', 'orangered']
+        }
+    },
+
+        series:[
+            {
+                name:'人口数量',
+                type:'map',
+                map:'武汉',
+
+                mapLocation:{
+                    y:100
+                },
+                itemSytle:{
+                    normal:{label:{show:true}},
+                    emphasis:{label:{show:false}}
+                },
+                 label: {
+                normal: {show: true},
+                emphasis: {show: true},
+
+               },
+                data:[
+                    {name:'江岸区',value:401178},
+                    {name:'蔡甸',value:281953}
+                ],
+
+            }
+        ],
+
+    };
+    chart.setOption(option);
+});
+
+    </script>
+</body>
+
+</html>
+
+## 2020614 测试2
+<html>
+<style type="text/css">
+.anchorBL{
+    display:none
+}
+</style>
+<head>
+    <meta charset="utf-8">
+    <title>武汉人物</title>
+    <script type="text/javascript" src="../echarts/echarts-master/dist/echarts.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/dist/extension/bmap.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/benchmark/dep/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/map/js/province/hubei.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
+</head>
+<body>
+    <div id="wuhan_2" style="width: 100%; height: 640px;"></div>
+    <script type="text/javascript">
+    $.get('json/420100.json', function (wuhanJson){
+    echarts.registerMap('江岸区', wuhanJson);
+    var chart = echarts.init(document.getElementById('wuhan_2'));
+
+    var dataMap = [{ name: '江岸区' }, { name: '蔡甸区' }];
+
+    option = {
+        title: {
+            x: 'left',
+            y: 'top',
+            text: '2015吴忠市人口数量',
+            subtext:"人口密度数据来自吴忠市统计局年鉴"
+        },
+
+         tooltip: {
+        trigger: 'item',
+        formatter: '{b}<br/>{c} (人)'
+    },
+          toolbox: {
+        show: true,
+        orient: 'vertical',
+        left: 'right',
+        top: 'center',
+        feature: {
+            dataView: {readOnly: false},
+            restore: {},
+            saveAsImage: {}
+        }
+    },
+
+    visualMap: {
+        min: 170259,
+        max: 401178,
+        text:['max','min'],
+        realtime: false,
+        calculable: true,
+        inRange: {
+            color: ['lightskyblue','yellow', 'orangered']
+        }
+    },
+
+        series:[
+            {
+                name:'人口数量',
+                type:'map',
+                map:'江岸区',
+
+                mapLocation:{
+                    y:100
+                },
+                itemSytle:{
+                    normal:{label:{show:true}},
+                    emphasis:{label:{show:false}}
+                },
+                 label: {
+                normal: {show: true},
+                emphasis: {show: true},
+
+               },
+                data:[
+                    {name:'江岸区',value:401178},
+                    {name:'蔡甸',value:281953}
+                ],
+
+            }
+        ],
+
+    };
+    chart.setOption(option);
+});
 
     </script>
 </body>
