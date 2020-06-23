@@ -1,6 +1,6 @@
 ---
 layout: page
-title: 2019-2020学年第2学期C语言程序设计课程
+title: 方小地的GIS课堂
 ---
 <ul class="posts">
   {% for post in site.categories.course %}
