@@ -369,7 +369,7 @@ image:
 <body>
     <div id="wuhan_1" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-    $.get('json/420100.json', function (wuhanJson){
+    $.getJSON('json/420100.json', function (wuhanJson){
         echarts.registerMap('武汉', wuhanJson);
         var chart = echarts.init(document.getElementById('wuhan_1'));
 
@@ -464,7 +464,7 @@ image:
 <body>
     <div id="wuhan_2" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-    $.get('https://geo.datav.aliyun.com/areas_v2/bound/420100_full.json', function (data){
+    $.getJSON('https://geo.datav.aliyun.com/areas_v2/bound/420100_full.json', function (data){
         var name = "武汉";
         echarts.registerMap(name, data);
         var myChart = echarts.init(document.getElementById('wuhan_2'));
