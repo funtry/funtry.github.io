@@ -369,43 +369,24 @@ image:
 <body>
     <div id="wuhan_1" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-    $.getJSON('./420100.json', function (data) {
-        echarts.registerMap('江岸区', data);
-        var myChart = echarts.init(document.getElementById("wuhan_1"));
+
+        var myChart = ec.init(document.getElementById('wuhan_1'));
+
         var option = {
-            title: {
-                text: '武汉人物',
-                left: 'center'
-            },
-            series: [{
-                name: '',
-                type: 'map',
-                mapType: '江岸区',
-                itemStyle: {
-                    normal: {
-                        show: true,
-                        areaColor: "#f3f3f3",
-                        borderColor: "#7f7f7f",
-                        borderWidth: "1"
-                    },
-                    emphasis: {
-                        show: true,
-                        areaColor: "#C8A5DF",
-                    }
-                },
-                label: {
-                    normal: {
-                        show: false
-                    },
-                    emphasis: {
-                        show: true
-                    }
-                },
-            }]
-        };
+    geo: {
+        map: '湖北',
+        zoom:  0.06 ,
+        itemStyle: {
+            normal: {
+	        color:'green',
+	        borderColor: '#6495ED',
+	        borderWidth: 2
+	    }
+       }
+    }
+};
 
         myChart.setOption(option);
-    }
 
 
     </script>
