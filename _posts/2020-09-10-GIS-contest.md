@@ -23,7 +23,6 @@ image:
 {:toc}
 
 ## 2020526 组建参赛队伍
-
 <html>
 <style type="text/css">
 .anchorBL{
@@ -240,15 +239,25 @@ image:
                 },
                 hoverAnimation: true,
                 label: {
-                    color: "black",
-                    formatter: '{b}',
-                    position: 'top',
-                    show: true
+                    normal: {
+                        formatter: '{b}',
+                        position: 'top',
+                        show: true,
+                        fontSize: 20
+                    },
+                    emphasis: {
+                        show: true ,
+                        color: '#00f',
+                        fontSize: 24
+                    }
                 },
                 itemStyle: {
-                    color: "#ff00ff",
-                    shadowBlur: 10,
-                    shadowColor: "#333"
+                    normal: {
+                        color: '#ff00ff'
+                    },
+                    emphasis: {
+                        color: '#00ff00'
+                    }
                 },
                 zlevel: 1
             },
@@ -269,15 +278,25 @@ image:
                 },
                 hoverAnimation: true,
                 label: {
-                    color: "black",
-                    formatter: '{b}',
-                    position: 'bottom',
-                    show: true
+                    normal: {
+                        formatter: '{b}',
+                        position: 'bottom',
+                        show: true,
+                        fontSize: 20
+                    },
+                    emphasis: {
+                        show: true ,
+                        color: '#00f',
+                        fontSize: 24
+                    }
                 },
                 itemStyle: {
-                    color: "#0000ff",
-                    shadowBlur: 10,
-                    shadowColor: "#333"
+                    normal: {
+                        color: '#000000'
+                    },
+                    emphasis: {
+                        color: '#00ff00'
+                    }
                 },
                 zlevel: 1
             }
@@ -288,6 +307,7 @@ image:
     </script>
 </body>
 </html>
+
 
 
 ## 2020614 确定参赛主题
