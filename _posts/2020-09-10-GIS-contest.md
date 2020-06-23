@@ -303,16 +303,13 @@ image:
     <script type="text/javascript" src="../echarts/echarts-master/dist/echarts.js"></script>
     <script type="text/javascript" src="../echarts/echarts-master/dist/extension/bmap.js"></script>
     <script type="text/javascript" src="../echarts/echarts-master/benchmark/dep/jquery/jquery.js"></script>
-    <script type="text/javascript" src="../echarts/echarts-master/map/js/china.js"></script>
     <script type="text/javascript" src="../echarts/echarts-master/map/js/province/hubei.js"></script>
-    <script type="text/javascript" src="../echarts/echarts-master/map/js/province/shanxi.js"></script>
     <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
 </head>
 <body>
     <div id="wuhan_people" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
     var myChart = echarts.init(document.getElementById("wuhan_people"));
-    echarts.
     var option = {
         title: {
             text: '武汉人物',
@@ -346,6 +343,70 @@ image:
     };
 
     myChart.setOption(option);
+
+    </script>
+</body>
+
+</html>
+
+
+## 2020614 测试
+<html>
+<style type="text/css">
+.anchorBL{
+    display:none
+}
+</style>
+<head>
+    <meta charset="utf-8">
+    <title>武汉人物</title>
+    <script type="text/javascript" src="../echarts/echarts-master/dist/echarts.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/dist/extension/bmap.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/benchmark/dep/jquery/jquery.js"></script>
+    <script type="text/javascript" src="../echarts/echarts-master/map/js/province/hubei.js"></script>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?v=3.0&ak=UQIbZ8RrepxcyoSARRWIrIxZNdSyt96f"></script>
+</head>
+<body>
+    <div id="wuhan_1" style="width: 100%; height: 640px;"></div>
+    <script type="text/javascript">
+    $.getJSON('../echarts/echarts-master/map/datav/cities/420100.json', function (data) {
+        echarts.registerMap('江岸区', data);
+        var myChart = echarts.init(document.getElementById("wuhan_1"));
+        var option = {
+            title: {
+                text: '武汉人物',
+                left: 'center'
+            },
+            series: [{
+                name: '',
+                type: 'map',
+                mapType: '江岸区',
+                itemStyle: {
+                    normal: {
+                        show: true,
+                        areaColor: "#f3f3f3",
+                        borderColor: "#7f7f7f",
+                        borderWidth: "1"
+                    },
+                    emphasis: {
+                        show: true,
+                        areaColor: "#C8A5DF",
+                    }
+                },
+                label: {
+                    normal: {
+                        show: false
+                    },
+                    emphasis: {
+                        show: true
+                    }
+                },
+            }]
+        };
+
+        myChart.setOption(option);
+    }
+
 
     </script>
 </body>
