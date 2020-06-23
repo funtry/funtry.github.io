@@ -291,7 +291,7 @@ image:
 
 
 ## 2020614 确定参赛主题
-
+<!DOCTYPE html>
 <html>
 <style type="text/css">
 .anchorBL{
