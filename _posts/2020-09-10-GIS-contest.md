@@ -318,7 +318,7 @@ image:
         series: [{
             name: '',
             type: 'map',
-            mapType: '武汉',
+            mapType: '湖北',
             itemStyle: {
                 normal: {
                     show: true,
@@ -369,7 +369,7 @@ image:
 <body>
     <div id="wuhan_1" style="width: 100%; height: 640px;"></div>
     <script type="text/javascript">
-    $.getJSON('../echarts/echarts-master/map/datav/cities/420100.json', function (data) {
+    $.getJSON('./420100.json', function (data) {
         echarts.registerMap('江岸区', data);
         var myChart = echarts.init(document.getElementById("wuhan_1"));
         var option = {
