@@ -291,7 +291,7 @@ image:
 
 
 ## 2020614 确定参赛主题
-<!DOCTYPE html>
+武汉人物
 <html>
 <style type="text/css">
 .anchorBL{
