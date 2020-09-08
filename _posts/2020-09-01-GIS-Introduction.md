@@ -7,8 +7,8 @@ categories: course
 notshow: 1
 tags: [course, undergraduate]
 image:
-  feature: course/GIS-Intro-2020/GIS-Intro-0.png
-  teaser: course/GIS-Intro-2020/GIS-Intro-0.png
+  feature: course/GIS-Intro-2020/GIS-Intro-0.jpg
+  teaser: course/GIS-Intro-2020/GIS-Intro-0.jpg
   credit: javascript
   creditlink: ""
 ---
