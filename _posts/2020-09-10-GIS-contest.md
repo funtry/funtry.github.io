@@ -3,7 +3,8 @@ show_in_nav: false
 layout: post
 title: "2020年第十二届全国高校GIS技能大赛"
 author: "Fangli ZHANG"
-categories: thesis
+categories: private
+published:  false
 notshow: 1
 tags: [contest, undergraduate]
 image:
