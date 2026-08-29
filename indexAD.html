@@ -8532,42 +8532,42 @@
      * @return {Object} {years, months, days, totalDays}
      */
     function calcBabyAge(birthDate, targetDate) {
-        // 拷贝日期对象，防止修改外部原值
-        var birth = new Date(birthDate.getTime());
-        var now = new Date(targetDate.getTime());
+      // 拷贝日期对象，防止修改外部原值
+      var birth = new Date(birthDate.getTime());
+      var now = new Date(targetDate.getTime());
 
-        var years = now.getFullYear() - birth.getFullYear();
-        var months = now.getMonth() - birth.getMonth();
-        var days = now.getDate() - birth.getDate();
+      var years = now.getFullYear() - birth.getFullYear();
+      var months = now.getMonth() - birth.getMonth();
+      var days = now.getDate() - birth.getDate();
 
-        // 日期不够，向月份借位
-        if (days < 0) {
-            months = months - 1;
-            // 获取上月最后一天（原生最简写法，不依赖任何第三方历法库）
-            var lastMonthDay = new Date(now.getFullYear(), now.getMonth(), 0);
-            days = days + lastMonthDay.getDate();
-        }
+      // 日期不够，向月份借位
+      if (days < 0) {
+        months = months - 1;
+        // 获取上月最后一天（原生最简写法，不依赖任何第三方历法库）
+        var lastMonthDay = new Date(now.getFullYear(), now.getMonth(), 0);
+        days = days + lastMonthDay.getDate();
+      }
 
-        // 月份不够，向年份借位
-        if (months < 0) {
-            years = years - 1;
-            months = months + 12;
-        }
+      // 月份不够，向年份借位
+      if (months < 0) {
+        years = years - 1;
+        months = months + 12;
+      }
 
-        // ====== 计算总天数（消除时区零点bug）======
-        var birthDayOnly = new Date(birth.getFullYear(), birth.getMonth(), birth.getDate());
-        var nowDayOnly = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-        var oneDayMs = 24 * 60 * 60 * 1000;
-        // 老Safari避免浮点精度，使用Math.floor
-        var diffDayCount = Math.floor((nowDayOnly - birthDayOnly) / oneDayMs);
-        var totalDays = diffDayCount + 1; // 出生当天算第1天，保持你原有规则
+      // ====== 计算总天数（消除时区零点bug）======
+      var birthDayOnly = new Date(birth.getFullYear(), birth.getMonth(), birth.getDate());
+      var nowDayOnly = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      var oneDayMs = 24 * 60 * 60 * 1000;
+      // 老Safari避免浮点精度，使用Math.floor
+      var diffDayCount = Math.floor((nowDayOnly - birthDayOnly) / oneDayMs);
+      var totalDays = diffDayCount + 1; // 出生当天算第1天，保持你原有规则
 
-        return {
-            years: years,
-            months: months,
-            days: days,
-            totalDays: totalDays
-        };
+      return {
+        years: years,
+        months: months,
+        days: days,
+        totalDays: totalDays
+      };
     }
 
 
@@ -8580,7 +8580,7 @@
       var months = ageResult.months;
       var days = ageResult.days;
       var days_total = ageResult.totalDays;
-      
+
       var solar = Solar.fromDate(new Date());
       var lunar = Lunar.fromDate(new Date());
 
@@ -8595,25 +8595,26 @@
 
       var day_number = SolarUtil.getDaysInYear(date.getFullYear(), date.getMonth() + 1, date.getDate());
       var hour = date.getHours();
+      var week = date.getDay();
       //if (day_number % 2) { //隔日服
-        if (hour < 12) {  //半日服
-        document.getElementById("poet").style.color = "#00FF00";
-      } else {
+      //if (hour < 12) {  //半日服
+      if (week > 0 && week < 6) {
         document.getElementById("poet").style.color = "#FFFF00";
+      } else {
+        document.getElementById("poet").style.color = "#00FF00";
       }
 
-      //document.getElementById("poet").innerHTML = d5.toString() + "      Yoyo张鹤宁出生第" + days_total + "天    满" + years + "岁" + months + "月" + days + "天     " + d.toString() + d2.toString() + "     农历" + lunar.getYearShengXiao() + "年" + lunar.getMonthInChinese() + "月" + lunar.getDayInChinese() + "  " + d3.toString() + "  " + d4.toString() + "<span style=\"color:#FF00FF\">" + "  宜" + d6.toString() + "<span>" + "<span style=\"color:#FF0000\">" + "  忌" + d7.toString() + "<span>";
-      document.getElementById("poet").innerHTML = d5.toString() + "      Yoyo张鹤宁出生第" + days_total + "天    满" + years + "岁" + months + "月" + days + "天     " + d.toString() + d2.toString() + "     农历" + lunar.getYearShengXiao() + "年" + lunar.getMonthInChinese() + "月" + lunar.getDayInChinese() + "  " + d3.toString() + "  " + d4.toString();
-
+      document.getElementById("poet").innerHTML = d5.toString() + "      Yoyo张鹤宁出生第" + days_total + "天    满" + years + "岁" + months + "月" + days + "天     " + d.toString() + d2.toString() + "     农历" + lunar.getYearShengXiao() + "年" + lunar.getMonthInChinese() + "月" + lunar.getDayInChinese() + "  " + d3.toString() + "  " + d4.toString() + "<span style=\"color:#FF00FF\">" + "  宜" + d6.toString() + "<span>" + "<span style=\"color:#FF0000\">" + "  忌" + d7.toString() + "<span>";
+      //document.getElementById("poet").innerHTML = d5.toString() + "      Yoyo张鹤宁出生第" + days_total + "天    满" + years + "岁" + months + "月" + days + "天     " + d.toString() + d2.toString() + "     农历" + lunar.getYearShengXiao() + "年" + lunar.getMonthInChinese() + "月" + lunar.getDayInChinese() + "  " + d3.toString() + "  " + d4.toString();
     }
 
     var EatAD = false;
-    
+
     function getDate() {
       var date = new Date();
 
       var year = date.getFullYear();
-      var beginDate = new Date(2026, 3 - 1, 2);
+      var beginDate = new Date(2026, 9 - 1, 7);
       var month = date.getMonth() + 1;
       var day = date.getDate();
       var week_number = Math.ceil((parseInt((date - beginDate) / (24 * 60 * 60 * 1000)) + 0 + beginDate.getDay()) / 7);
@@ -8630,72 +8631,35 @@
       second = second < 10 ? "0" + second : second;
       var sec = date.getMilliseconds();
 
-      if (hour >= 0 && hour < 24) {
-        var solar = Solar.fromYmd(year, month, day);
-        var array = solar.getLunar().toFullString().split(" ");
-        var array_rand = array[Math.floor(Math.random() * array.length)];
+      var solar = Solar.fromYmd(year, month, day);
+      var array = solar.getLunar().toFullString().split(" ");
+      var array_rand = array[Math.floor(Math.random() * array.length)];
 
-        //if (day_number % 2) { //隔日服
-        if (hour < 12) {  //半日服
-          document.getElementById("date").style.color = "#00FF00";
-          document.getElementById("time").style.color = "#00FF00";
-          var strTime = sec > 500 ? hour + "<span style=\"color:#00FF00\">&colon;<span>" + "<span style=\"color:#00FF00\">" + minute + "<span>" : hour + "<span style=\"color:#000000\">&colon;<span>" + "<span style=\"color:#00FF00\">" + minute;
-          document.getElementById("time").innerHTML = strTime;
-          document.getElementById("date").innerHTML = month + "月" + day + "日第" + week_number + "周星期" + weekArr[week];
 
-          //0-1岁
-          if (hour == -1 && !EatAD) {
-            alert("该吃AD了！\n今天吃绿色的维生素A");
-            EatAD = true;
-          }
-
-          //补钙三个月
-          if (hour == -1 && !EatAD) {
-            alert("该吃AD了！\n今天也吃一粒黄色的维生素D");
-            EatAD = true;
-          }
-
-          //1岁以上
-          if (hour == 7 && !EatAD) {
-            alert("该吃AD了！\n今天吃红色的维生素AD");
-            EatAD = true;
-          }
-
-        } else {
-          document.getElementById("date").style.color = "#FFFF00";
-          document.getElementById("time").style.color = "#FFFF00";
-          var strTime = sec > 500 ? hour + "<span style=\"color:#FFFF00\">&colon;<span>" + "<span style=\"color:#FFFF00\">" + minute + "<span>" : hour + "<span style=\"color:#000000\">&colon;<span>" + "<span style=\"color:#FFFF00\">" + minute;
-          document.getElementById("time").innerHTML = strTime;
-          document.getElementById("date").innerHTML = month + "月" + day + "日第" + week_number + "周星期" + weekArr[week];
-
-          //补钙三个月
-          if (hour == 7 && !EatAD) {
-            alert("该吃AD了！\n今天也吃一粒绿色的维生素A");
-            EatAD = true;
-          }
-
-          if (hour == 19 && !EatAD) {
-            alert("该吃AD了！\n今天吃黄色的维生素D");
-            EatAD = true;
-          }
-        }
-        if (hour == 0 && EatAD) {
-          EatAD = false;
-        }
-        if (hour == 12 && EatAD) {
-          EatAD = false;
-        }
-      } else if (hour >= 12 && hour < 23) {
-        document.getElementById("time").style.color = "#FFFF00";
-        var strTime = sec > 500 ? hour + "<span style=\"color:#000000\">&colon;<span>" + "<span style=\"color:#FFFF00\">" + minute + "<span>" : hour + "<span style=\"color:#FFFF00\">&colon;<span>" + minute;
-        document.getElementById("time").innerHTML = solar.getLunar().toString() + "    " + strTime;
+      if (week > 0 && week < 6) {
         document.getElementById("date").style.color = "#FFFF00";
+        document.getElementById("time").style.color = "#FFFF00";
+        var strTime = sec > 500 ? hour + "<span style=\"color:#FFFF00\">&colon;<span>" + "<span style=\"color:#FFFF00\">" + minute + "<span>" : hour + "<span style=\"color:#000000\">&colon;<span>" + "<span style=\"color:#FFFF00\">" + minute;
+
+        document.getElementById("time").innerHTML = strTime;
+        document.getElementById("date").innerHTML = month + "月" + day + "日第" + week_number + "周星期" + weekArr[week];
       } else {
-        document.getElementById("time").style.color = "#003200";
-        var strTime = hour + "&colon;" + minute;
-        document.getElementById("time").innerHTML = solar.getLunar().toString() + "    " + strTime;
-        document.getElementById("date").style.color = "#003200";
-        document.getElementById("date").innerHTML = "小心小心看不见！";
+        document.getElementById("date").style.color = "#00FF00";
+        document.getElementById("time").style.color = "#00FF00";
+        var strTime = sec > 500 ? hour + "<span style=\"color:#00FF00\">&colon;<span>" + "<span style=\"color:#00FF00\">" + minute + "<span>" : hour + "<span style=\"color:#000000\">&colon;<span>" + "<span style=\"color:#00FF00\">" + minute;
+
+        document.getElementById("time").innerHTML = strTime;
+        document.getElementById("date").innerHTML = month + "月" + day + "日第" + week_number + "周星期" + weekArr[week];
+      }
+
+
+      if (hour == 7 && !EatAD) {
+        alert("该吃AD了！\n今天吃红色的维生素AD");
+        EatAD = true;
+      }
+
+      if (hour == 0 && EatAD) {
+        EatAD = false;
       }
     }
     setInterval(getDate, 100);
