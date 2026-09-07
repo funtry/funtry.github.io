@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+  <meta charset="UTF-8">
+  <title>随机滚动签到</title>
+  <style>
+    * { box-sizing: border-box; }
+    html {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f4f4f4;
+    }
+    body {
+      width: min(100vw, calc(100vh * 4 / 3));
+      height: min(100vh, calc(100vw * 3 / 4));
+      margin: 0;
+      padding: 90px 50px 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      background: white;
+    }
+    #course { position: absolute; top: 24px; left: 32px; font-size: 32px; }
+    #class { position: absolute; top: 24px; right: 32px; font-size: 32px; }
+    #name { font-size: 96px; text-align: center; line-height: 1.2; }
+    #info { font-size: 36px; text-align: center; margin-top: 36px; }
+    #controls {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 24px;
+      margin-top: 72px;
+    }
+    button { margin: 0; padding: 18px 34px; font-size: 28px; background-color: gray; color: white; border: none; cursor: not-allowed; }
+    button.active { background-color:  #f39c12; color: black; cursor: pointer; }
+    @media (max-width: 700px) {
+      body { padding: 70px 20px 30px; }
+      #course, #class { top: 16px; font-size: 20px; }
+      #course { left: 16px; }
+      #class { right: 16px; }
+      #name { font-size: 60px; }
+      #info { font-size: 22px; margin-top: 24px; }
+      #controls { gap: 12px; margin-top: 44px; }
+      button { padding: 12px 20px; font-size: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="course">《地理信息服务》</div>
+  <div id="class"></div>
+  <div id="name"></div>
+  <div id="info"></div>
+  <div id="controls">
+    <button id="start" class="active">开始</button>
+    <button id="pause">暂停</button>
+    <button id="signin">签到</button>
+    <button id="saveData">保存数据</button>
+  </div>
+
+  <script>
+    let data = [];
+    let currentIndex = 0;
+    let interval;
+    let isRolling = false;
+
+    // 直接读取同目录的 HS.json
+    async function loadData() {
+      try {
+        const response = await fetch('HS.json');
+        if (!response.ok) {
+          throw new Error(`HS.json 加载失败: ${response.status}`);
+        }
+        const jsonData = await response.json();
+        if (!Array.isArray(jsonData) || jsonData.length === 0) {
+          throw new Error('HS.json 中没有有效名单');
+        }
+        data = jsonData;
+        displayStudent(0);
+      } catch (err) {
+        document.getElementById('name').textContent = '名单加载失败';
+        document.getElementById('info').textContent = '请通过本地服务器打开 HW.html';
+        console.error(err);
+      }
+    }
+
+    // 按钮状态管理
+    function setButtonStates(startActive, pauseActive, signinActive, saveActive = false) {
+      document.getElementById('start').classList.toggle('active', startActive);
+      document.getElementById('pause').classList.toggle('active', pauseActive);
+      document.getElementById('signin').classList.toggle('active', signinActive);
+      document.getElementById('saveData').classList.toggle('active', saveActive);
+    }
+
+    // 保存数据到JSON文件
+    document.getElementById('saveData').addEventListener('click', () => {
+      if (!document.getElementById('saveData').classList.contains('active')) return;
+      const json = JSON.stringify(data, null, 2);
+      const blob = new Blob([json], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = '独立作业.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      alert('数据已保存，请下载独立作业.json文件替换原文件');
+      setButtonStates(true, false, false, false); // 回到初始状态
+    });
+
+    function displayStudent(index) {
+      const student = data[index];
+      document.getElementById('class').textContent = student.className;
+      document.getElementById('name').textContent = student.name;
+      document.getElementById('name').style.color = student.signed ? 'red' : 'blue';
+      document.getElementById('info').textContent = `学号: ${student.id}, 作业: ${student.fileName}`;
+      document.getElementById('info').style.color = student.signed ? 'red' : 'blue';
+    }
+
+    document.getElementById('start').addEventListener('click', () => {
+      if (!document.getElementById('start').classList.contains('active')) return;
+      if (data.length === 0) return;
+      if (isRolling) return;
+      isRolling = true;
+      setButtonStates(false, true, false); // 激活暂停
+      interval = setInterval(() => {
+        currentIndex = Math.floor(Math.random() * data.length);
+        displayStudent(currentIndex);
+      }, 100);
+    });
+
+    document.getElementById('pause').addEventListener('click', () => {
+      if (!document.getElementById('pause').classList.contains('active')) return;
+      clearInterval(interval);
+      isRolling = false;
+      setButtonStates(true, false, true); // 激活开始和签到
+    });
+
+    document.getElementById('signin').addEventListener('click', () => {
+      if (!document.getElementById('signin').classList.contains('active')) return;
+      const student = data[currentIndex];
+      if (student.signed) return;
+      student.signed = true;
+      displayStudent(currentIndex);
+      alert(`${student.name} 已签到`);
+      setButtonStates(true, false, false, true); // 激活开始和保存数据
+    });
+
+    // 初始化
+    loadData();
+  </script>
+</body>
+</html>

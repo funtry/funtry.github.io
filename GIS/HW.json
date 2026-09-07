@@ -1,0 +1,30 @@
+[
+  {
+    "className": "地信22401班",
+    "id": "2024001",
+    "name": "张三",
+    "signed": false,
+    "fileName": "张三-作业.pptx"
+  },
+  {
+    "className": "地信22401班",
+    "id": "2024002",
+    "name": "李四",
+    "signed": false,
+    "fileName": "李四-作业.pptx"
+  },
+  {
+    "className": "地信22401班",
+    "id": "2024003",
+    "name": "王五",
+    "signed": false,
+    "fileName": "王五-作业.pptx"
+  },
+  {
+    "className": "地信22402班",
+    "id": "2024004",
+    "name": "赵六",
+    "signed": false,
+    "fileName": "赵六-作业.pptx"
+  }
+]
