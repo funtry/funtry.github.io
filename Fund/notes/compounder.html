@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>寻找能长期复利的公司 · 投资手记</title>
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="../index.html"
+        ><span class="brand-mark">F</span><span>投资手记</span></a
+      >
+      <nav class="top-nav" aria-label="主导航">
+        <a class="active" href="../index.html">目录</a
+        ><a href="reading-framework.html">阅读框架</a
+        ><button class="theme-toggle" type="button" aria-label="切换深色模式">
+          ◐
+        </button>
+      </nav>
+    </header>
+    <main class="article-layout">
+      <aside class="article-aside">
+        <a class="back-link" href="../index.html">← 返回目录</a>
+        <p class="toc-title">ON THIS PAGE</p>
+        <a href="#definition">01 / 定义</a><a href="#checklist">02 / 清单</a
+        ><a href="#patience">03 / 耐心</a>
+      </aside>
+      <article>
+        <header class="article-header">
+          <p class="eyebrow">CHAPTER 02 · 案例</p>
+          <h1>寻找能长期<br /><em>复利的公司</em></h1>
+          <p class="summary">
+            复利不是一句赞美，而是一台能够持续把新增资源变成更高回报的机器。
+          </p>
+          <p class="article-meta">2026.09.08　·　8 MIN READ</p>
+        </header>
+        <div class="article-body">
+          <p id="definition">
+            判断一家公司能否复利，我会把“增长”拆成两个问题：它的客户价值是否在变高？它把利润重新投入后，是否还能获得相近甚至更高的回报？
+          </p>
+          <div class="mermaid">
+            flowchart TD A[留存客户] --> B[收入增长] B --> C[规模优势] C -->
+            D[更高自由现金流] D --> E[再投资] E --> A
+          </div>
+          <h2 id="checklist">02 / 一页清单</h2>
+          <p>
+            清单不是为了给公司打分，而是为了让遗漏变得可见。下面的问题足以作为第一次研究的入口：
+          </p>
+          <ul>
+            <li>客户留下来的理由，会随着时间变强吗？</li>
+            <li>竞争者能否用资本轻易复制它？</li>
+            <li>管理层把每一元现金留在公司里的回报是多少？</li>
+            <li>最重要的假设改变时，利润表会如何变化？</li>
+          </ul>
+          <h2 id="patience">03 / 耐心也是策略</h2>
+          <p>
+            长期持有不是把时间交给公司，而是持续检查原来的假设。只要生意质量、管理行为和价格条件没有发生根本变化，短期波动就只是研究记录里的新一行。
+          </p>
+          <div class="note-callout">
+            我的持仓笔记只在三种情况下更新：事实改变、假设改变、价格改变。其他内容归入阅读清单。
+          </div>
+          <div class="pager">
+            <a href="reading-framework.html">← 上一章：阅读框架</a
+            ><a href="../index.html">回到目录 →</a>
+          </div>
+        </div>
+      </article>
+    </main>
+    <footer class="site-footer">
+      <span>Personal research log</span><span>Fund / 02</span>
+    </footer>
+    <script src="../app.js"></script>
+    <script type="module">
+      import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs";
+      mermaid.initialize({ startOnLoad: true, theme: "neutral" });
+    </script>
+  </body>
+</html>
